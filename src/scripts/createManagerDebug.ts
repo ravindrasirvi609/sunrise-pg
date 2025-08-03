@@ -66,7 +66,7 @@ async function createManager() {
     // Create manager
     console.log("Creating user object...");
     const manager = new User({
-      name: "ComfortStay Manager",
+      name: "Sunrise Manager",
       email,
       phone: "0000000001",
       role: "manager",

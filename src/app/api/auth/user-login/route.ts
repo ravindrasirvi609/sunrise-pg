@@ -21,7 +21,7 @@ export async function POST(request: NextRequest) {
       // Generate JWT token for hardcoded admin
       const token = await generateToken({
         _id: "admin_id_123456789",
-        name: "ComfortStay Admin",
+        name: "Sunrise Admin",
         email: "comfortstaypg@gmail.com",
         role: "admin",
         pgId: "ADMIN123",
@@ -41,7 +41,7 @@ export async function POST(request: NextRequest) {
         message: "Login successful",
         user: {
           _id: "admin_id_123456789",
-          name: "ComfortStay Admin",
+          name: "Sunrise Admin",
           email: "comfortstaypg@gmail.com",
           role: "admin",
         },

@@ -113,7 +113,7 @@ const Amenities = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="card p-4 text-center"
               >
-                <div className="mb-2 text-pink-600 dark:text-pink-400">
+                <div className="mb-2 text-orange-600 dark:text-orange-400">
                   {amenity.icon}
                 </div>
                 <h3 className="text-lg font-semibold mb-2">{amenity.title}</h3>

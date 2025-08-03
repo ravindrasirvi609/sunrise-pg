@@ -3,13 +3,13 @@ import VisitForm from "@/components/VisitForm";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact Us - Comfort Stay PG | Best Girls PG in Hinjewadi Phase 1",
+  title: "Contact Us - Sunrise PG | Best Girls PG in Hinjewadi Phase 1",
   description:
-    "Contact Comfort Stay PG in Hinjewadi Phase 1, Pune. New premium accommodation for women opened February 2025. Call us at 9922538989 to book your stay today.",
+    "Contact Sunrise PG in Hinjewadi Phase 1, Pune. New premium accommodation for women opened February 2025. Call us at 9922538989 to book your stay today.",
   keywords:
-    "girls PG Hinjewadi, ladies PG Pune, Comfort Stay PG contact, Hinjewadi Phase 1 PG, working women accommodation Pune, affordable PG Hinjewadi, new PG Hinjewadi 2025",
+    "girls PG Hinjewadi, ladies PG Pune, Sunrise PG contact, Hinjewadi Phase 1 PG, working women accommodation Pune, affordable PG Hinjewadi, new PG Hinjewadi 2025",
   openGraph: {
-    title: "Contact Comfort Stay PG - New Premium Girls PG in Hinjewadi",
+    title: "Contact Sunrise PG - New Premium Girls PG in Hinjewadi",
     description:
       "Brand new PG accommodation opened February 2025 with 2 & 3 sharing options. Contact us at 9922538989 for bookings and inquiries.",
     type: "website",
@@ -197,7 +197,7 @@ export default function ContactPage() {
             How to Reach Us
           </h2>
           <p className="text-center text-gray-600 dark:text-gray-300 mb-12 max-w-3xl mx-auto">
-            Our brand new Comfort Stay PG is easily accessible via various
+            Our brand new Sunrise PG is easily accessible via various
             transportation options from different parts of Pune.
           </p>
 

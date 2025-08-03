@@ -50,8 +50,8 @@ const About = () => {
           className="glass-effect p-8 md:p-12 rounded-lg"
         >
           <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              Welcome to Comfort Stay PG
+            <h2 className="text-4xl font-bold mb-6 text-center">
+              Welcome to Sunrise PG
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-400">
               Your premier accommodation choice in Hinjewadi Phase 1, Pune.
@@ -65,8 +65,8 @@ const About = () => {
             <div>
               <p className="text-lg mb-6">
                 Welcome to{" "}
-                <span className="font-semibold text-pink-600 dark:text-pink-400">
-                  Comfort Stay PG
+                <span className="font-semibold text-orange-600 dark:text-orange-400">
+                  Sunrise PG
                 </span>
                 , an exclusive girls&apos; paying guest accommodation that
                 opened in February 2025 in the heart of Hinjewadi, Pune. Our
@@ -98,7 +98,7 @@ const About = () => {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="card p-4 text-center"
                 >
-                  <div className="mb-2 text-pink-600 dark:text-pink-400">
+                  <div className="mb-2 text-orange-600 dark:text-orange-400">
                     {feature.icon}
                   </div>
                   <h3 className="text-lg font-semibold mb-2">

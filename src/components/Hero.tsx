@@ -19,11 +19,11 @@ const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Background Gradient */}
-      <div className="absolute inset-0 z-0 bg-gradient-to-br from-pink-50 via-white to-pink-50/50 dark:from-pink-900/30 dark:via-purple-900/20 dark:to-pink-900/30" />
+      <div className="absolute inset-0 z-0 bg-gradient-to-br from-orange-50 via-white to-yellow-50/50 dark:from-orange-900/30 dark:via-amber-900/20 dark:to-yellow-900/30" />
 
       {/* Decorative elements */}
-      <div className="absolute top-[15%] right-[10%] w-72 h-72 bg-gradient-to-br from-pink-100/30 to-pink-50/10 rounded-full blur-3xl dark:from-pink-800/10 dark:to-purple-800/5"></div>
-      <div className="absolute bottom-[15%] left-[10%] w-80 h-80 bg-gradient-to-tr from-pink-100/30 to-pink-50/10 rounded-full blur-3xl dark:from-pink-800/10 dark:to-purple-800/5"></div>
+      <div className="absolute top-[15%] right-[10%] w-72 h-72 bg-gradient-to-br from-orange-100/30 to-yellow-50/10 rounded-full blur-3xl dark:from-orange-800/10 dark:to-amber-800/5"></div>
+      <div className="absolute bottom-[15%] left-[10%] w-80 h-80 bg-gradient-to-tr from-yellow-100/30 to-orange-50/10 rounded-full blur-3xl dark:from-yellow-800/10 dark:to-orange-800/5"></div>
 
       {/* Content */}
       <div className="container mx-auto px-4 z-10">
@@ -41,8 +41,8 @@ const Hero = () => {
               className="comfort-header text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-gray-800 dark:text-white"
             >
               Welcome to{" "}
-              <span className="text-pink-500 dark:text-pink-300">
-                Comfort Stay
+              <span className="text-orange-500 dark:text-orange-300">
+                Sunrise
               </span>
             </motion.h1>
 
@@ -50,7 +50,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="comfort-subheading text-xl md:text-2xl mb-6 text-gray-600 dark:text-pink-200/90"
+              className="comfort-subheading text-xl md:text-2xl mb-6 text-gray-600 dark:text-orange-200/90"
             >
               New Girls PG in Hinjewadi • Opened February 2025
             </motion.p>
@@ -71,9 +71,9 @@ const Hero = () => {
               transition={{ duration: 0.5, delay: 0.4 }}
               className="flex items-center justify-start mb-8 text-gray-600 dark:text-white/80"
             >
-              <MapPin size={18} className="mr-2 text-pink-500" />
+              <MapPin size={18} className="mr-2 text-orange-500" />
               <p className="text-sm md:text-base">
-                Comfort Stay PG, Hinjewadi Phase 1 Rd, Mukai Nagar, Phase 1,
+                Sunrise PG, Hinjewadi Phase 1 Rd, Mukai Nagar, Phase 1,
                 Hinjawadi Rajiv Gandhi Infotech Park, Hinjawadi, Pune,
                 Pimpri-Chinchwad, Maharashtra 411057
               </p>
@@ -108,11 +108,11 @@ const Hero = () => {
                 variants={featureAnimation}
                 initial="hidden"
                 animate="visible"
-                className="card p-6 bg-white/90 dark:bg-pink-900/20 shadow-lg hover:shadow-xl flex flex-col items-center text-center"
+                className="card p-6 bg-white/90 dark:bg-orange-900/20 shadow-lg hover:shadow-xl flex flex-col items-center text-center"
               >
-                <div className="w-14 h-14 rounded-full bg-pink-50 dark:bg-pink-900/30 flex items-center justify-center mb-4 shadow-inner">
+                <div className="w-14 h-14 rounded-full bg-orange-50 dark:bg-orange-900/30 flex items-center justify-center mb-4 shadow-inner">
                   <Shield
-                    className="text-pink-500 dark:text-pink-300"
+                    className="text-orange-500 dark:text-orange-300"
                     size={24}
                   />
                 </div>
@@ -129,11 +129,11 @@ const Hero = () => {
                 variants={featureAnimation}
                 initial="hidden"
                 animate="visible"
-                className="card p-6 bg-white/90 dark:bg-pink-900/20 shadow-lg hover:shadow-xl flex flex-col items-center text-center"
+                className="card p-6 bg-white/90 dark:bg-orange-900/20 shadow-lg hover:shadow-xl flex flex-col items-center text-center"
               >
-                <div className="w-14 h-14 rounded-full bg-pink-50 dark:bg-pink-900/30 flex items-center justify-center mb-4 shadow-inner">
+                <div className="w-14 h-14 rounded-full bg-yellow-50 dark:bg-yellow-900/30 flex items-center justify-center mb-4 shadow-inner">
                   <Heart
-                    className="text-pink-500 dark:text-pink-300"
+                    className="text-yellow-500 dark:text-yellow-300"
                     size={24}
                   />
                 </div>

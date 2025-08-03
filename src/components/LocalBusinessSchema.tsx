@@ -7,7 +7,7 @@ const LocalBusinessSchema = () => {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "LodgingBusiness",
-    name: "Comfort Stay PG",
+    name: "Sunrise PG",
     description:
       "Premium girls' PG accommodation in Hinjawadi, Pune with modern amenities, nutritious meals, and 24/7 security.",
     url: "https://www.comfortstaypg.com",

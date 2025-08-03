@@ -4,5 +4,5 @@ import type { Viewport } from "next";
 export const defaultViewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#d53f8c", // Comfort Stay PG brand color
+  themeColor: "#f59e0b", // Sunrise PG brand color
 };

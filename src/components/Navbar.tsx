@@ -79,17 +79,14 @@ export default function Navbar() {
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center">
             <Link href="/" className="flex items-center">
-              <div className="bg-gradient-to-r from-pink-400 to-pink-600 h-10 w-10 rounded-full flex items-center justify-center mr-2 shadow-sm">
-                <span className="text-white font-bold text-lg">CS</span>
+              <div className="bg-gradient-to-r from-orange-400 to-yellow-500 h-10 w-10 rounded-full flex items-center justify-center mr-2 shadow-sm">
+                <span className="text-white font-bold text-lg">S</span>
               </div>
-              <div className="flex flex-col">
-                <span className="font-bold text-xl text-gray-900 dark:text-white">
-                  Comfort<span className="text-pink-500">Stay</span>
+              <span className="text-xl md:text-2xl font-bold text-gray-800 dark:text-white">
+                <span className="bg-gradient-to-r from-orange-500 to-yellow-500 bg-clip-text text-transparent">
+                  Sunrise<span className="text-orange-500">PG</span>
                 </span>
-                <span className="text-xs text-gray-600 dark:text-gray-400 -mt-1">
-                  Girls PG • Hinjewadi
-                </span>
-              </div>
+              </span>
             </Link>
           </div>
 
@@ -101,8 +98,8 @@ export default function Navbar() {
                 href={link.href}
                 className={`px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center gap-1.5 ${
                   pathname === link.href
-                    ? "text-pink-600 dark:text-pink-400 font-semibold bg-pink-50/50 dark:bg-pink-900/20"
-                    : "text-gray-700 hover:text-pink-600 dark:text-gray-200 dark:hover:text-pink-400 hover:bg-pink-50/50 dark:hover:bg-pink-900/10"
+                    ? "text-orange-600 dark:text-orange-400 font-semibold bg-orange-50/50 dark:bg-orange-900/20"
+                    : "text-gray-700 hover:text-orange-600 dark:text-gray-200 dark:hover:text-orange-400 hover:bg-orange-50/50 dark:hover:bg-orange-900/10"
                 }`}
               >
                 <span className="opacity-70">{link.icon}</span>
@@ -122,10 +119,10 @@ export default function Navbar() {
                           ? "/manager"
                           : "/dashboard"
                     }
-                    className="flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium transition-colors bg-pink-50/50 dark:bg-pink-900/20 hover:bg-pink-100/80 dark:hover:bg-pink-800/30"
+                    className="flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium transition-colors bg-orange-50/50 dark:bg-orange-900/20 hover:bg-orange-100/80 dark:hover:bg-orange-800/30"
                   >
                     <div className="relative">
-                      <div className="h-8 w-8 rounded-full bg-pink-100 dark:bg-pink-800/30 flex items-center justify-center overflow-hidden border-2 border-pink-200 dark:border-pink-700">
+                      <div className="h-8 w-8 rounded-full bg-orange-100 dark:bg-orange-800/30 flex items-center justify-center overflow-hidden border-2 border-orange-200 dark:border-orange-700">
                         {user?.profileImage ? (
                           <Image
                             src={user.profileImage}
@@ -135,7 +132,7 @@ export default function Navbar() {
                             height={32}
                           />
                         ) : (
-                          <User className="h-4 w-4 text-pink-600 dark:text-pink-400" />
+                          <User className="h-4 w-4 text-orange-600 dark:text-orange-400" />
                         )}
                       </div>
                       <div className="absolute -bottom-1 -right-1 h-3 w-3 rounded-full bg-green-500 border-2 border-white dark:border-gray-900"></div>

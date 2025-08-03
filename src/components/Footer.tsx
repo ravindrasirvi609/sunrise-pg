@@ -59,18 +59,18 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-gradient-to-b from-transparent to-pink-50/50 dark:from-transparent dark:to-pink-950/20 pt-16 sm:pt-20">
+    <footer className="bg-gradient-to-b from-transparent to-orange-50/50 dark:from-transparent dark:to-orange-950/20 pt-16 sm:pt-20">
       <div className="container mx-auto px-4 sm:px-6">
         {/* Back to top button */}
         <div className="flex justify-center -mt-10 sm:-mt-12 mb-8 sm:mb-10">
           <button
             onClick={scrollToTop}
-            className="bg-white dark:bg-pink-900/60 w-10 h-10 sm:w-12 sm:h-12 rounded-full shadow-lg flex items-center justify-center transform hover:translate-y-[-5px] transition-all duration-300 group"
+            className="bg-white dark:bg-orange-900/60 w-10 h-10 sm:w-12 sm:h-12 rounded-full shadow-lg flex items-center justify-center transform hover:translate-y-[-5px] transition-all duration-300 group"
             aria-label="Back to top"
           >
             <ArrowUp
               size={18}
-              className="text-pink-500 dark:text-pink-300 group-hover:scale-110 transition-transform duration-300"
+              className="text-orange-500 dark:text-orange-300 group-hover:scale-110 transition-transform duration-300"
             />
           </button>
         </div>
@@ -79,10 +79,10 @@ const Footer = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* About Section */}
             <div>
-              <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-pink-500 dark:text-pink-300">
-                Comfort Stay
+              <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-orange-500 dark:text-orange-300">
+                Sunrise
               </h3>
-              <p className="text-gray-600 dark:text-pink-100/70 mb-4 text-sm leading-relaxed">
+              <p className="text-gray-600 dark:text-orange-100/70 mb-4 text-sm leading-relaxed">
                 Premium girls PG accommodation in Hinjewadi, Pune. Experience
                 comfort, security, and modern amenities in a safe and welcoming
                 environment.
@@ -90,32 +90,32 @@ const Footer = () => {
               <div className="flex items-center space-x-3 sm:space-x-4 mt-4">
                 <a
                   href="#"
-                  className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-pink-50 dark:bg-pink-900/30 flex items-center justify-center hover:bg-pink-100 dark:hover:bg-pink-800/50 transition-colors"
+                  className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-orange-50 dark:bg-orange-900/30 flex items-center justify-center hover:bg-orange-100 dark:hover:bg-orange-800/50 transition-colors"
                   aria-label="Facebook"
                 >
                   <Facebook
                     size={16}
-                    className="text-pink-500 dark:text-pink-300"
+                    className="text-orange-500 dark:text-orange-300"
                   />
                 </a>
                 <a
                   href="#"
-                  className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-pink-50 dark:bg-pink-900/30 flex items-center justify-center hover:bg-pink-100 dark:hover:bg-pink-800/50 transition-colors"
+                  className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-yellow-50 dark:bg-yellow-900/30 flex items-center justify-center hover:bg-yellow-100 dark:hover:bg-yellow-800/50 transition-colors"
                   aria-label="Twitter"
                 >
                   <Twitter
                     size={16}
-                    className="text-pink-500 dark:text-pink-300"
+                    className="text-yellow-500 dark:text-yellow-300"
                   />
                 </a>
                 <a
                   href="#"
-                  className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-pink-50 dark:bg-pink-900/30 flex items-center justify-center hover:bg-pink-100 dark:hover:bg-pink-800/50 transition-colors"
+                  className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-orange-50 dark:bg-orange-900/30 flex items-center justify-center hover:bg-orange-100 dark:hover:bg-orange-800/50 transition-colors"
                   aria-label="Instagram"
                 >
                   <Instagram
                     size={16}
-                    className="text-pink-500 dark:text-pink-300"
+                    className="text-orange-500 dark:text-orange-300"
                   />
                 </a>
               </div>
@@ -123,7 +123,7 @@ const Footer = () => {
 
             {/* Quick Links */}
             <div>
-              <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-pink-500 dark:text-pink-300">
+              <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-orange-500 dark:text-orange-300">
                 Quick Links
               </h3>
               <ul className="space-y-2">
@@ -139,9 +139,10 @@ const Footer = () => {
                   <li key={link.name}>
                     <Link
                       href={link.href}
-                      className="text-gray-600 dark:text-pink-100/70 hover:text-pink-500 dark:hover:text-pink-300 transition-colors flex items-center text-sm"
+                      className="text-gray-600 dark:text-orange-100/70 hover:text-orange-500 dark:hover:text-orange-300 transition-colors flex items-center text-sm"
                     >
-                      <span className="mr-2 text-pink-400">›</span> {link.name}
+                      <span className="mr-2 text-orange-400">›</span>{" "}
+                      {link.name}
                     </Link>
                   </li>
                 ))}
@@ -150,17 +151,17 @@ const Footer = () => {
 
             {/* Contact Info */}
             <div className="sm:col-span-2 lg:col-span-1">
-              <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-pink-500 dark:text-pink-300">
+              <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-orange-500 dark:text-orange-300">
                 Contact Info
               </h3>
-              <ul className="space-y-3 sm:space-y-4 text-gray-600 dark:text-pink-100/70">
+              <ul className="space-y-3 sm:space-y-4 text-gray-600 dark:text-orange-100/70">
                 <li className="flex items-start gap-3">
                   <MapPin
                     size={18}
-                    className="text-pink-400 mt-1 flex-shrink-0"
+                    className="text-orange-400 mt-1 flex-shrink-0"
                   />
                   <span className="text-sm">
-                    Comfort Stay PG, Mukai Nagar,
+                    Sunrise PG, Mukai Nagar,
                     <br />
                     Hinjawadi Rajiv Gandhi Infotech Park,
                     <br />
@@ -170,11 +171,11 @@ const Footer = () => {
                   </span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <Phone size={18} className="text-pink-400 flex-shrink-0" />
+                  <Phone size={18} className="text-orange-400 flex-shrink-0" />
                   <span className="text-sm">+91 9922 538 989</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <Mail size={18} className="text-pink-400 flex-shrink-0" />
+                  <Mail size={18} className="text-orange-400 flex-shrink-0" />
                   <span className="text-sm">info@comfortstay.com</span>
                 </li>
               </ul>
@@ -182,10 +183,10 @@ const Footer = () => {
 
             {/* Newsletter */}
             <div className="sm:col-span-2 lg:col-span-1">
-              <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-pink-500 dark:text-pink-300">
+              <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-orange-500 dark:text-orange-300">
                 Subscribe
               </h3>
-              <p className="text-gray-600 dark:text-pink-100/70 mb-3 sm:mb-4 text-sm">
+              <p className="text-gray-600 dark:text-orange-100/70 mb-3 sm:mb-4 text-sm">
                 Subscribe to our newsletter for updates and special offers.
               </p>
               <form
@@ -195,7 +196,7 @@ const Footer = () => {
                 <input
                   type="email"
                   placeholder="Your email address"
-                  className="rounded-lg sm:rounded-r-none py-2 px-3 bg-white dark:bg-pink-900/20 border border-pink-100 dark:border-pink-800/50 focus:outline-none focus:ring-2 focus:ring-pink-300 dark:focus:ring-pink-500 w-full text-sm"
+                  className="rounded-lg sm:rounded-r-none py-2 px-3 bg-white dark:bg-orange-900/20 border border-orange-100 dark:border-orange-800/50 focus:outline-none focus:ring-2 focus:ring-orange-300 dark:focus:ring-orange-500 w-full text-sm"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   disabled={loading}
@@ -218,28 +219,28 @@ const Footer = () => {
         </div>
 
         {/* Copyright */}
-        <div className="py-5 sm:py-6 text-center text-gray-500 dark:text-pink-100/40 text-xs">
+        <div className="py-5 sm:py-6 text-center text-gray-500 dark:text-orange-100/40 text-xs">
           <p>
-            &copy; {currentYear} Comfort Stay PG. All rights reserved. Made with{" "}
-            in Pune
+            &copy; {currentYear} Sunrise PG. All rights reserved. Made with in
+            Pune
           </p>
           <p className="mt-2">
             Developed and maintained by{" "}
             <Heart
               size={12}
-              className="inline-block text-pink-800 fill-pink-800 mb-0.5"
+              className="inline-block text-orange-600 fill-orange-600 mb-0.5"
             />{" "}
             <a
               href="https://ravindrachoudhary.in"
               target="_blank"
               rel="noopener noreferrer"
-              className="underline text-pink-600 hover:text-pink-800 dark:hover:text-pink-800 transition-colors"
+              className="underline text-orange-600 hover:text-orange-800 dark:hover:text-orange-400 transition-colors"
             >
               <strong>Ravindra Choudhary</strong>
             </a>{" "}
             <Heart
               size={12}
-              className="inline-block text-pink-800 fill-pink-800 mb-0.5"
+              className="inline-block text-orange-600 fill-orange-600 mb-0.5"
             />{" "}
           </p>
         </div>

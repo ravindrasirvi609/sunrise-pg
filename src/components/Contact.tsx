@@ -70,13 +70,13 @@ const Contact = () => {
             {/* Contact Information */}
             <div className="space-y-6">
               <div className="card p-6">
-                <h3 className="text-xl font-bold mb-4 text-pink-600 dark:text-pink-400">
+                <h3 className="text-xl font-bold mb-4 text-orange-600 dark:text-orange-400">
                   Get in Touch
                 </h3>
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
                     <Phone
-                      className="text-pink-600 dark:text-pink-400"
+                      className="text-orange-600 dark:text-orange-400"
                       size={20}
                     />
                     <div>
@@ -88,7 +88,7 @@ const Contact = () => {
                   </div>
                   <div className="flex items-center gap-3">
                     <Mail
-                      className="text-pink-600 dark:text-pink-400"
+                      className="text-orange-600 dark:text-orange-400"
                       size={20}
                     />
                     <div>
@@ -100,14 +100,13 @@ const Contact = () => {
                   </div>
                   <div className="flex items-center gap-3">
                     <MapPin
-                      className="text-pink-600 dark:text-pink-400"
+                      className="text-orange-600 dark:text-orange-400"
                       size={20}
                     />
                     <div>
                       <p className="font-semibold">Address</p>
                       <p className="text-gray-600 dark:text-gray-300">
-                        Comfort Stay PG, Hinjewadi Phase 1 Rd, Mukai Nagar,
-                        Phase 1,
+                        Sunrise PG, Hinjewadi Phase 1 Rd, Mukai Nagar, Phase 1,
                         <br />
                         Hinjawadi Rajiv Gandhi Infotech Park,
                         <br />
@@ -121,7 +120,7 @@ const Contact = () => {
               </div>
 
               <div className="card p-6">
-                <h3 className="text-xl font-bold mb-4 text-pink-600 dark:text-pink-400">
+                <h3 className="text-xl font-bold mb-4 text-orange-600 dark:text-orange-400">
                   Visiting Hours
                 </h3>
                 <div className="space-y-2">
@@ -138,7 +137,7 @@ const Contact = () => {
 
             {/* Contact Form */}
             <div className="card p-6">
-              <h3 className="text-xl font-bold mb-4 text-pink-600 dark:text-pink-400">
+              <h3 className="text-xl font-bold mb-4 text-orange-600 dark:text-orange-400">
                 Enquire Now
               </h3>
               <form onSubmit={handleSubmit} className="space-y-4">
@@ -210,7 +209,7 @@ const Contact = () => {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   type="submit"
-                  className="w-full bg-pink-600 hover:bg-pink-700 transition-colors text-white py-2 px-4 rounded-lg flex items-center justify-center gap-2"
+                  className="w-full bg-orange-600 hover:bg-orange-700 transition-colors text-white py-2 px-4 rounded-lg flex items-center justify-center gap-2"
                   disabled={loading}
                 >
                   {loading ? (

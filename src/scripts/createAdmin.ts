@@ -26,7 +26,7 @@ async function createAdmin() {
     const hashedPassword = await hashPassword(password);
 
     const admin = new User({
-      name: "ComfortStay Admin",
+      name: "Sunrise Admin",
       email,
       phone: "0000000000",
       role: "admin",

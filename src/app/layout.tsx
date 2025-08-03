@@ -59,18 +59,18 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Comfort Stay PG - Premium Girls PG in Hinjawadi, Pune",
+    title: "Sunrise PG - Premium Girls PG in Hinjawadi, Pune",
     description:
       "Comfortable & secure girls' PG in Hinjawadi Phase 1, Pune with modern amenities.",
     images: ["/og-image.png"],
   },
-  authors: [{ name: "Comfort Stay PG", url: siteUrl }],
+  authors: [{ name: "Sunrise PG", url: siteUrl }],
   alternates: {
     canonical: siteUrl,
   },
   category: "Accommodation",
-  creator: "Comfort Stay PG",
-  publisher: "Comfort Stay PG",
+  creator: "Sunrise PG",
+  publisher: "Sunrise PG",
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon-16x16.png",
@@ -90,7 +90,7 @@ export const metadata: Metadata = {
     },
   },
   manifest: "/manifest.json",
-  applicationName: "Comfort Stay PG",
+  applicationName: "Sunrise PG",
 };
 
 export const viewport: Viewport = {
@@ -98,7 +98,7 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 5, // Changed to allow zooming for better accessibility
   userScalable: true, // Changed to true for better accessibility
-  themeColor: "#FF92B7",
+  themeColor: "#f59e0b",
 };
 
 export default function RootLayout({
@@ -115,15 +115,15 @@ export default function RootLayout({
         {/* <link rel="apple-touch-icon" href="/icons/icon-192x192.png" /> */}
         {/* <meta name="apple-mobile-web-app-capable" content="yes" /> */}
         {/* <meta name="apple-mobile-web-app-status-bar-style" content="default" /> */}
-        {/* <meta name="apple-mobile-web-app-title" content="Comfort Stay PG" /> */}
+        {/* <meta name="apple-mobile-web-app-title" content="Sunrise PG" /> */}
       </head>
       <body className={poppins.className}>
         <Providers>
-          <div className="min-h-screen bg-gradient-to-br from-[#fff5f8] via-[#fff8fb] to-[#fff2f6] dark:from-[#472e3e] dark:via-[#422937] dark:to-[#3e2534] overflow-x-hidden">
-            <div className="fixed top-[-10%] right-[-5%] w-2/5 h-2/5 bg-gradient-to-br from-pink-50 to-transparent rounded-full blur-3xl -z-10 dark:from-pink-900/5"></div>
-            <div className="fixed bottom-[-10%] left-[-5%] w-2/5 h-2/5 bg-gradient-to-tr from-pink-50 to-transparent rounded-full blur-3xl -z-10 dark:from-pink-900/5"></div>
-            <div className="fixed top-1/4 left-[-10%] w-1/3 h-1/3 bg-gradient-to-tr from-pink-100/20 to-transparent rounded-full blur-3xl -z-10 dark:from-pink-800/5"></div>
-            <div className="fixed bottom-1/4 right-[-10%] w-1/3 h-1/3 bg-gradient-to-bl from-pink-100/20 to-transparent rounded-full blur-3xl -z-10 dark:from-pink-800/5"></div>
+          <div className="min-h-screen bg-gradient-to-br from-[#fff8f1] via-[#fffbf5] to-[#fef3c7] dark:from-[#4a3728] dark:via-[#452e1d] dark:to-[#3e2723] overflow-x-hidden">
+            <div className="fixed top-[-10%] right-[-5%] w-2/5 h-2/5 bg-gradient-to-br from-orange-50 to-transparent rounded-full blur-3xl -z-10 dark:from-orange-900/5"></div>
+            <div className="fixed bottom-[-10%] left-[-5%] w-2/5 h-2/5 bg-gradient-to-tr from-yellow-50 to-transparent rounded-full blur-3xl -z-10 dark:from-yellow-900/5"></div>
+            <div className="fixed top-1/4 left-[-10%] w-1/3 h-1/3 bg-gradient-to-tr from-orange-100/20 to-transparent rounded-full blur-3xl -z-10 dark:from-orange-800/5"></div>
+            <div className="fixed bottom-1/4 right-[-10%] w-1/3 h-1/3 bg-gradient-to-bl from-yellow-100/20 to-transparent rounded-full blur-3xl -z-10 dark:from-yellow-800/5"></div>
             <div className="fixed inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjZmZmIj48L3JlY3Q+CjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNmZmVhZjAiPjwvcmVjdD4KPC9zdmc+')] opacity-30 -z-10"></div>
             <Navbar />
             <main className="container mx-auto px-4 py-8">{children}</main>
