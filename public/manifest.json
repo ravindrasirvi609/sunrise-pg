@@ -1,6 +1,6 @@
 {
-  "name": "Comfort Stay PG - Premium Girls PG in Hinjawadi, Pune",
-  "short_name": "Comfort Stay PG",
+  "name": "Sunrise PG - Premium Girls PG in Hinjawadi, Pune",
+  "short_name": "Sunrise PG",
   "description": "Premium girls' PG accommodation in Hinjawadi, Pune with modern amenities, nutritious meals, and 24/7 security.",
   "start_url": "/",
   "display": "standalone",
@@ -79,14 +79,14 @@
     {
       "name": "Book a Room",
       "short_name": "Book",
-      "description": "Book a room at Comfort Stay PG",
+      "description": "Book a room at Sunrise PG",
       "url": "/contact?action=book",
       "icons": [{ "src": "/icons/book.png", "sizes": "192x192" }]
     },
     {
       "name": "View Amenities",
       "short_name": "Amenities",
-      "description": "See all amenities at Comfort Stay PG",
+      "description": "See all amenities at Sunrise PG",
       "url": "/#amenities",
       "icons": [{ "src": "/icons/amenities.png", "sizes": "192x192" }]
     }

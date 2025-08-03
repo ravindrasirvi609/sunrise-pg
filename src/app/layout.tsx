@@ -20,16 +20,15 @@ export const metadata: Metadata = {
   // Add metadataBase
   metadataBase: new URL(siteUrl),
   title: {
-    default:
-      "Comfort Stay PG - Premium Girls PG Accommodation in Hinjawadi, Pune",
-    template: "%s | Comfort Stay PG", // Allows page titles to be dynamic like "About Us | Comfort Stay PG"
+    default: "Sunrise PG - Premium Girls PG Accommodation in Hinjawadi, Pune",
+    template: "%s | Sunrise PG", // Allows page titles to be dynamic like "About Us | Sunrise PG"
   },
   description:
-    "Experience comfortable and secure living at Comfort Stay PG, a premium girls' PG accommodation located in Hinjawadi Phase 1, Pune. Offering modern amenities, high-speed WiFi, healthy meals, and 24/7 security.",
+    "Experience comfortable and secure living at Sunrise PG, a premium girls' PG accommodation located in Hinjawadi Phase 1, Pune. Offering modern amenities, high-speed WiFi, healthy meals, and 24/7 security.",
   keywords: [
     "Girls PG in Hinjawadi",
     "PG in Pune",
-    "Comfort Stay PG",
+    "Sunrise PG",
     "Girls Accommodation",
     "Ladies PG",
     "Women's Hostel",
@@ -42,17 +41,17 @@ export const metadata: Metadata = {
     "Best PG for women in Pune",
   ],
   openGraph: {
-    title: "Comfort Stay PG - Premium Girls PG in Hinjawadi, Pune",
+    title: "Sunrise PG - Premium Girls PG in Hinjawadi, Pune",
     description:
       "Comfortable & secure girls' PG in Hinjawadi Phase 1, Pune with modern amenities, nutritious meals, and 24/7 security.",
     url: siteUrl,
-    siteName: "Comfort Stay PG",
+    siteName: "Sunrise PG",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Comfort Stay PG Hinjawadi Pune",
+        alt: "Sunrise PG Hinjawadi Pune",
       },
     ],
     type: "website",

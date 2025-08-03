@@ -1,6 +1,6 @@
-# Comfort Stay PG Management System
+# Sunrise PG Management System
 
-A comprehensive Paying Guest (PG) Management System for Comfort Stay PG, built with Next.js, MongoDB, and Tailwind CSS.
+A comprehensive Paying Guest (PG) Management System for Sunrise PG, built with Next.js, MongoDB, and Tailwind CSS.
 
 ## Features
 
@@ -75,8 +75,8 @@ A comprehensive Paying Guest (PG) Management System for Comfort Stay PG, built w
 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/comfort-stay-pg.git
-cd comfort-stay-pg
+git clone https://github.com/your-username/sunrise-pg.git
+cd sunrise-pg
 ```
 
 2. Install dependencies
