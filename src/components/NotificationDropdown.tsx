@@ -252,7 +252,7 @@ export default function NotificationDropdown({
           maxWidth: "calc(100vw - 2rem)",
         }}
       >
-        <div className="w-80 md:w-96 backdrop-blur-xl bg-white/95 dark:bg-gray-900/95 rounded-lg shadow-lg border border-pink-100 dark:border-gray-700 py-1 max-h-[80vh] overflow-hidden flex flex-col">
+        <div className="w-80 md:w-96 backdrop-blur-xl bg-white/95 dark:bg-gray-900/95 rounded-lg shadow-lg border border-orange-100 dark:border-gray-700 py-1 max-h-[80vh] overflow-hidden flex flex-col">
           <div className="px-4 py-3 border-b border-gray-200 dark:border-gray-700 flex justify-between items-center">
             <h3 className="text-sm font-medium text-gray-900 dark:text-white">
               Notifications
@@ -260,7 +260,7 @@ export default function NotificationDropdown({
             {unreadCount > 0 && (
               <button
                 onClick={markAllAsRead}
-                className="text-xs text-pink-600 hover:text-pink-800 dark:text-pink-400 dark:hover:text-pink-300 px-2 py-1 rounded hover:bg-pink-50 dark:hover:bg-pink-900/20 transition-colors"
+                className="text-xs text-orange-600 hover:text-orange-800 dark:text-orange-400 dark:hover:text-orange-300 px-2 py-1 rounded hover:bg-orange-50 dark:hover:bg-orange-900/20 transition-colors"
                 type="button"
               >
                 Mark all as read
@@ -271,7 +271,7 @@ export default function NotificationDropdown({
           <div className="overflow-y-auto max-h-[calc(80vh-3rem)] py-1">
             {loading ? (
               <div className="flex justify-center items-center py-6">
-                <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-pink-500"></div>
+                <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-orange-500"></div>
               </div>
             ) : notifications.length > 0 ? (
               notifications.map((notification) => (
@@ -280,7 +280,7 @@ export default function NotificationDropdown({
                   className={`px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-800/50 border-l-4 ${
                     notification.isRead
                       ? "border-transparent"
-                      : "border-pink-500 bg-pink-50 dark:bg-pink-900/10"
+                      : "border-orange-500 bg-orange-50 dark:bg-orange-900/10"
                   } transition-colors duration-200`}
                 >
                   <div className="flex justify-between">
@@ -308,7 +308,7 @@ export default function NotificationDropdown({
                       {!notification.isRead && (
                         <button
                           onClick={(e) => markAsRead(e, notification._id)}
-                          className="text-gray-400 hover:text-pink-500 dark:text-gray-500 dark:hover:text-pink-400 p-1 rounded hover:bg-pink-50 dark:hover:bg-pink-900/20 transition-colors"
+                          className="text-gray-400 hover:text-orange-500 dark:text-gray-500 dark:hover:text-orange-400 p-1 rounded hover:bg-orange-50 dark:hover:bg-orange-900/20 transition-colors"
                           title="Mark as read"
                           type="button"
                         >
@@ -338,7 +338,7 @@ export default function NotificationDropdown({
             <div className="mt-auto border-t border-gray-200 dark:border-gray-700 p-2 text-center">
               <button
                 onClick={handleCloseDropdown}
-                className="text-xs text-pink-600 hover:text-pink-800 dark:text-pink-400 dark:hover:text-pink-300 px-3 py-1 rounded hover:bg-pink-50 dark:hover:bg-pink-900/20 transition-colors"
+                className="text-xs text-orange-600 hover:text-orange-800 dark:text-orange-400 dark:hover:text-orange-300 px-3 py-1 rounded hover:bg-orange-50 dark:hover:bg-orange-900/20 transition-colors"
                 type="button"
               >
                 Close
@@ -361,7 +361,7 @@ export default function NotificationDropdown({
       >
         <Bell size={22} />
         {unreadCount > 0 && (
-          <span className="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-white transform translate-x-1/2 -translate-y-1/2 bg-pink-600 rounded-full">
+          <span className="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-white transform translate-x-1/2 -translate-y-1/2 bg-orange-600 rounded-full">
             {unreadCount > 99 ? "99+" : unreadCount}
           </span>
         )}

@@ -107,8 +107,8 @@ const Gallery = () => {
                 onClick={() => setActiveCategory(category.id)}
                 className={`px-4 py-2 rounded-lg backdrop-blur-sm transition-all duration-300 ${
                   activeCategory === category.id
-                    ? "bg-pink-600 text-white"
-                    : "bg-white/10 hover:bg-pink-200/20 dark:hover:bg-pink-900/30"
+                    ? "bg-orange-600 text-white"
+                    : "bg-white/10 hover:bg-orange-200/20 dark:hover:bg-orange-900/30"
                 }`}
               >
                 {category.label}
@@ -127,7 +127,7 @@ const Gallery = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="card overflow-hidden aspect-square"
               >
-                <div className="w-full h-full bg-pink-50 dark:bg-pink-900/20 flex items-center justify-center group relative">
+                <div className="w-full h-full bg-orange-50 dark:bg-orange-900/20 flex items-center justify-center group relative">
                   <Image
                     src={image.src}
                     alt={image.alt}
@@ -135,7 +135,7 @@ const Gallery = () => {
                     width={300}
                     height={300}
                   />
-                  <div className="absolute inset-0 bg-pink-600/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute inset-0 bg-orange-600/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <span className="text-white font-medium">{image.alt}</span>
                   </div>
                 </div>

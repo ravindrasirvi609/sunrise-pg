@@ -16,7 +16,7 @@ const rooms = [
       "High-speed WiFi",
       "Attached bathroom",
     ],
-    color: "bg-pink-100 dark:bg-pink-900/20",
+    color: "bg-orange-100 dark:bg-orange-900/20",
     icon: <Users size={24} />,
   },
   {
@@ -31,7 +31,7 @@ const rooms = [
       "High-speed WiFi",
       "Attached bathroom",
     ],
-    color: "bg-pink-200 dark:bg-pink-900/40",
+    color: "bg-yellow-100 dark:bg-yellow-900/20",
     icon: <Bed size={24} />,
   },
 ];
@@ -68,7 +68,7 @@ const Rooms = () => {
                   className={`${room.color} px-4 py-3 flex items-center justify-between`}
                 >
                   <h3 className="text-xl font-bold">{room.type}</h3>
-                  <div className="text-pink-600 dark:text-pink-300">
+                  <div className="text-orange-600 dark:text-orange-300">
                     {room.icon}
                   </div>
                 </div>
@@ -78,14 +78,14 @@ const Rooms = () => {
                       <Users size={18} />
                       <span>{room.capacity}</span>
                     </span>
-                    <span className="text-pink-600 dark:text-pink-400 font-semibold">
+                    <span className="text-orange-600 dark:text-orange-400 font-semibold">
                       {room.price}
                     </span>
                   </div>
                   <ul className="space-y-2 mb-6 text-sm">
                     {room.features.map((feature, i) => (
                       <li key={i} className="flex items-center gap-2">
-                        <span className="text-pink-500">•</span>
+                        <span className="text-orange-500">•</span>
                         {feature}
                       </li>
                     ))}
@@ -93,7 +93,7 @@ const Rooms = () => {
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="w-full bg-pink-600 hover:bg-pink-700 transition-colors text-white py-2 px-4 rounded-lg"
+                    className="w-full bg-orange-600 hover:bg-orange-700 transition-colors text-white py-2 px-4 rounded-lg"
                   >
                     Book Now
                   </motion.button>

@@ -20,13 +20,13 @@ export default function ModeToggle() {
   return (
     <button
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className="p-2 rounded-md text-gray-700 dark:text-gray-200 hover:bg-pink-100 dark:hover:bg-pink-900/20 focus:outline-none focus:ring-2 focus:ring-pink-500"
+      className="p-2 rounded-md text-gray-700 dark:text-gray-200 hover:bg-orange-100 dark:hover:bg-orange-900/20 focus:outline-none focus:ring-2 focus:ring-orange-500"
       aria-label="Toggle theme"
     >
       {theme === "dark" ? (
-        <SunIcon className="h-5 w-5 text-pink-400" />
+        <SunIcon className="h-5 w-5 text-orange-400" />
       ) : (
-        <MoonIcon className="h-5 w-5 text-pink-600" />
+        <MoonIcon className="h-5 w-5 text-orange-600" />
       )}
     </button>
   );

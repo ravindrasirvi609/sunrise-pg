@@ -143,7 +143,7 @@ export default function Navbar() {
                   </Link>
                   <button
                     onClick={handleLogout}
-                    className="px-2 py-2 text-gray-600 dark:text-gray-400 hover:text-pink-600 dark:hover:text-pink-400 rounded-md"
+                    className="px-2 py-2 text-gray-600 dark:text-gray-400 hover:text-orange-600 dark:hover:text-orange-400 rounded-md"
                     title="Logout"
                   >
                     <LogOut className="w-4 h-4" />
@@ -155,8 +155,8 @@ export default function Navbar() {
                     href="/login"
                     className={`px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center gap-1.5 ${
                       pathname === "/login"
-                        ? "text-pink-600 dark:text-pink-400 font-semibold bg-pink-50/50 dark:bg-pink-900/20"
-                        : "text-gray-700 hover:text-pink-600 dark:text-gray-200 dark:hover:text-pink-400 hover:bg-pink-50/50 dark:hover:bg-pink-900/10"
+                        ? "text-orange-600 dark:text-orange-400 font-semibold bg-orange-50/50 dark:bg-orange-900/20"
+                        : "text-gray-700 hover:text-orange-600 dark:text-gray-200 dark:hover:text-orange-400 hover:bg-orange-50/50 dark:hover:bg-orange-900/10"
                     }`}
                   >
                     <LogIn className="w-4 h-4 opacity-70" />
@@ -164,7 +164,7 @@ export default function Navbar() {
                   </Link>
                   <Link
                     href="/register"
-                    className="px-3 py-2 bg-pink-600 hover:bg-pink-700 text-white rounded-md text-sm font-medium transition-colors flex items-center gap-1.5"
+                    className="px-3 py-2 bg-orange-600 hover:bg-orange-700 text-white rounded-md text-sm font-medium transition-colors flex items-center gap-1.5"
                   >
                     <UserPlus className="w-4 h-4" />
                     Register
@@ -178,7 +178,7 @@ export default function Navbar() {
           <div className="flex md:hidden items-center gap-2">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 dark:text-gray-200 hover:bg-pink-100 dark:hover:bg-pink-900/20 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-pink-500"
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 dark:text-gray-200 hover:bg-orange-100 dark:hover:bg-orange-900/20 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-orange-500"
             >
               <span className="sr-only">Open main menu</span>
               {isMenuOpen ? (
@@ -201,8 +201,8 @@ export default function Navbar() {
                 href={link.href}
                 className={`block px-3 py-2 rounded-md text-base font-medium transition-colors flex items-center gap-2 ${
                   pathname === link.href
-                    ? "text-pink-600 dark:text-pink-400 bg-pink-50 dark:bg-pink-900/20"
-                    : "text-gray-700 dark:text-gray-200 hover:bg-pink-50 dark:hover:bg-pink-900/10 hover:text-pink-600 dark:hover:text-pink-400"
+                    ? "text-orange-600 dark:text-orange-400 bg-orange-50 dark:bg-orange-900/20"
+                    : "text-gray-700 dark:text-gray-200 hover:bg-orange-50 dark:hover:bg-orange-900/10 hover:text-orange-600 dark:hover:text-orange-400"
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -223,10 +223,10 @@ export default function Navbar() {
                           ? "/manager"
                           : "/dashboard"
                     }
-                    className="col-span-2 px-3 py-2 rounded-md text-base font-medium transition-colors flex items-center gap-2 text-pink-600 dark:text-pink-400 bg-pink-50 dark:bg-pink-900/20"
+                    className="col-span-2 px-3 py-2 rounded-md text-base font-medium transition-colors flex items-center gap-2 text-orange-600 dark:text-orange-400 bg-orange-50 dark:bg-orange-900/20"
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    <div className="h-6 w-6 rounded-full bg-pink-100 dark:bg-pink-800/30 flex items-center justify-center overflow-hidden">
+                    <div className="h-6 w-6 rounded-full bg-orange-100 dark:bg-orange-800/30 flex items-center justify-center overflow-hidden">
                       {user?.profileImage ? (
                         <Image
                           src={user.profileImage}
@@ -236,7 +236,7 @@ export default function Navbar() {
                           height={24}
                         />
                       ) : (
-                        <User className="h-3 w-3 text-pink-600 dark:text-pink-400" />
+                        <User className="h-3 w-3 text-orange-600 dark:text-orange-400" />
                       )}
                     </div>
                     {user?.name?.split(" ")[0] || "Dashboard"}
@@ -257,8 +257,8 @@ export default function Navbar() {
                     href="/login"
                     className={`px-3 py-2 rounded-md text-base font-medium transition-colors flex items-center justify-center gap-2 ${
                       pathname === "/login"
-                        ? "text-pink-600 dark:text-pink-400 bg-pink-50 dark:bg-pink-900/20"
-                        : "text-gray-700 dark:text-gray-200 hover:bg-pink-50 dark:hover:bg-pink-900/10 hover:text-pink-600 dark:hover:text-pink-400 border border-gray-200 dark:border-gray-700"
+                        ? "text-orange-600 dark:text-orange-400 bg-orange-50 dark:bg-orange-900/20"
+                        : "text-gray-700 dark:text-gray-200 hover:bg-orange-50 dark:hover:bg-orange-900/10 hover:text-orange-600 dark:hover:text-orange-400 border border-gray-200 dark:border-gray-700"
                     }`}
                     onClick={() => setIsMenuOpen(false)}
                   >
@@ -267,7 +267,7 @@ export default function Navbar() {
                   </Link>
                   <Link
                     href="/register"
-                    className="px-3 py-2 bg-pink-600 hover:bg-pink-700 text-white rounded-md text-base font-medium transition-colors flex items-center justify-center gap-2"
+                    className="px-3 py-2 bg-orange-600 hover:bg-orange-700 text-white rounded-md text-base font-medium transition-colors flex items-center justify-center gap-2"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     <UserPlus className="w-4 h-4" />

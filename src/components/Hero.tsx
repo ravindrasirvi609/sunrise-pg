@@ -150,11 +150,11 @@ const Hero = () => {
                 variants={featureAnimation}
                 initial="hidden"
                 animate="visible"
-                className="card p-6 bg-white/90 dark:bg-pink-900/20 shadow-lg hover:shadow-xl flex flex-col items-center text-center"
+                className="card p-6 bg-white/90 dark:bg-orange-900/20 shadow-lg hover:shadow-xl flex flex-col items-center text-center"
               >
-                <div className="w-14 h-14 rounded-full bg-pink-50 dark:bg-pink-900/30 flex items-center justify-center mb-4 shadow-inner">
+                <div className="w-14 h-14 rounded-full bg-orange-50 dark:bg-orange-900/30 flex items-center justify-center mb-4 shadow-inner">
                   <Sparkles
-                    className="text-pink-500 dark:text-pink-300"
+                    className="text-orange-500 dark:text-orange-300"
                     size={24}
                   />
                 </div>
@@ -171,11 +171,11 @@ const Hero = () => {
                 variants={featureAnimation}
                 initial="hidden"
                 animate="visible"
-                className="card p-6 bg-white/90 dark:bg-pink-900/20 shadow-lg hover:shadow-xl flex flex-col items-center text-center"
+                className="card p-6 bg-white/90 dark:bg-orange-900/20 shadow-lg hover:shadow-xl flex flex-col items-center text-center"
               >
-                <div className="w-14 h-14 rounded-full bg-pink-50 dark:bg-pink-900/30 flex items-center justify-center mb-4 shadow-inner">
+                <div className="w-14 h-14 rounded-full bg-orange-50 dark:bg-orange-900/30 flex items-center justify-center mb-4 shadow-inner">
                   <MapPin
-                    className="text-pink-500 dark:text-pink-300"
+                    className="text-orange-500 dark:text-orange-300"
                     size={24}
                   />
                 </div>
@@ -203,7 +203,7 @@ const Hero = () => {
         }}
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
       >
-        <div className="w-6 h-10 border-2 border-pink-300 dark:border-pink-400 rounded-full flex items-center justify-center">
+        <div className="w-6 h-10 border-2 border-orange-300 dark:border-orange-400 rounded-full flex items-center justify-center">
           <motion.div
             animate={{
               y: [0, 6, 0],
@@ -213,7 +213,7 @@ const Hero = () => {
               repeat: Infinity,
               repeatType: "reverse",
             }}
-            className="w-1.5 h-2 bg-pink-300 dark:bg-pink-400 rounded-full"
+            className="w-1.5 h-2 bg-orange-300 dark:bg-orange-400 rounded-full"
           />
         </div>
       </motion.div>

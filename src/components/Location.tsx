@@ -22,13 +22,13 @@ const Location = () => {
             {/* Contact Information */}
             <div className="space-y-6">
               <div className="card p-6">
-                <h3 className="text-xl font-bold mb-4 text-pink-600 dark:text-pink-400">
+                <h3 className="text-xl font-bold mb-4 text-orange-600 dark:text-orange-400">
                   Contact Details
                 </h3>
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
                     <MapPin
-                      className="text-pink-600 dark:text-pink-400"
+                      className="text-orange-600 dark:text-orange-400"
                       size={20}
                     />
                     <div>
@@ -46,7 +46,7 @@ const Location = () => {
                   </div>
                   <div className="flex items-center gap-3">
                     <Phone
-                      className="text-pink-600 dark:text-pink-400"
+                      className="text-orange-600 dark:text-orange-400"
                       size={20}
                     />
                     <div>
@@ -58,7 +58,7 @@ const Location = () => {
                   </div>
                   <div className="flex items-center gap-3">
                     <Mail
-                      className="text-pink-600 dark:text-pink-400"
+                      className="text-orange-600 dark:text-orange-400"
                       size={20}
                     />
                     <div>
@@ -72,24 +72,24 @@ const Location = () => {
               </div>
 
               <div className="card p-6">
-                <h3 className="text-xl font-bold mb-4 text-pink-600 dark:text-pink-400">
+                <h3 className="text-xl font-bold mb-4 text-orange-600 dark:text-orange-400">
                   Nearby Locations
                 </h3>
                 <ul className="space-y-2">
                   <li className="flex items-center gap-2">
-                    <span className="text-pink-500">•</span>
+                    <span className="text-orange-500">•</span>
                     <span>Hinjawadi IT Park - 5 min walk</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <span className="text-pink-500">•</span>
+                    <span className="text-orange-500">•</span>
                     <span>Wakad - 10 min drive</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <span className="text-pink-500">•</span>
+                    <span className="text-orange-500">•</span>
                     <span>Baner - 15 min drive</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <span className="text-pink-500">•</span>
+                    <span className="text-orange-500">•</span>
                     <span>Pune Airport - 45 min drive</span>
                   </li>
                 </ul>

@@ -111,8 +111,8 @@ const RoomChangeDialog: React.FC<RoomChangeDialogProps> = ({
         <div className="inline-block overflow-hidden text-left align-bottom transition-all transform bg-white dark:bg-gray-800 rounded-lg shadow-xl sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
           <div className="px-4 pt-5 pb-4 bg-white dark:bg-gray-800 sm:p-6 sm:pb-4">
             <div className="sm:flex sm:items-start">
-              <div className="flex items-center justify-center flex-shrink-0 w-12 h-12 mx-auto bg-pink-100 dark:bg-pink-800 rounded-full sm:mx-0 sm:h-10 sm:w-10">
-                <FaExchangeAlt className="w-6 h-6 text-pink-600 dark:text-pink-300" />
+              <div className="flex items-center justify-center flex-shrink-0 w-12 h-12 mx-auto bg-orange-100 dark:bg-orange-800 rounded-full sm:mx-0 sm:h-10 sm:w-10">
+                <FaExchangeAlt className="w-6 h-6 text-orange-600 dark:text-orange-300" />
               </div>
 
               <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left w-full">
@@ -129,7 +129,7 @@ const RoomChangeDialog: React.FC<RoomChangeDialogProps> = ({
 
                   {loading ? (
                     <div className="flex justify-center py-4">
-                      <div className="w-6 h-6 border-2 border-gray-300 border-t-pink-600 rounded-full animate-spin"></div>
+                      <div className="w-6 h-6 border-2 border-gray-300 border-t-orange-600 rounded-full animate-spin"></div>
                     </div>
                   ) : (
                     <form onSubmit={handleRoomChange}>
@@ -152,7 +152,7 @@ const RoomChangeDialog: React.FC<RoomChangeDialogProps> = ({
                             name="roomId"
                             value={selectedRoomId}
                             onChange={(e) => setSelectedRoomId(e.target.value)}
-                            className="w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-md shadow-sm focus:outline-none focus:ring-pink-500 focus:border-pink-500 dark:bg-gray-800 dark:text-white"
+                            className="w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-md shadow-sm focus:outline-none focus:ring-orange-500 focus:border-orange-500 dark:bg-gray-800 dark:text-white"
                             required
                           >
                             <option value="">Select a room</option>
@@ -193,7 +193,7 @@ const RoomChangeDialog: React.FC<RoomChangeDialogProps> = ({
               type="button"
               onClick={handleRoomChange}
               disabled={submitting || availableRooms.length === 0}
-              className={`w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-pink-600 text-base font-medium text-white hover:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500 sm:ml-3 sm:w-auto sm:text-sm ${
+              className={`w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-orange-600 text-base font-medium text-white hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 sm:ml-3 sm:w-auto sm:text-sm ${
                 (submitting || availableRooms.length === 0) &&
                 "opacity-50 cursor-not-allowed"
               }`}
@@ -211,7 +211,7 @@ const RoomChangeDialog: React.FC<RoomChangeDialogProps> = ({
             <button
               type="button"
               onClick={onClose}
-              className="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 dark:border-gray-600 shadow-sm px-4 py-2 bg-white dark:bg-gray-800 text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
+              className="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 dark:border-gray-600 shadow-sm px-4 py-2 bg-white dark:bg-gray-800 text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
             >
               Cancel
             </button>

@@ -244,7 +244,7 @@ const ExitSurvey: React.FC<ExitSurveyProps> = ({
               name="wouldRecommend"
               checked={surveyData.wouldRecommend}
               onChange={handleCheckboxChange}
-              className="h-5 w-5 rounded border-gray-300 text-pink-600 focus:ring-pink-500"
+              className="h-5 w-5 rounded border-gray-300 text-orange-600 focus:ring-orange-500"
             />
             <label
               htmlFor="wouldRecommend"
@@ -354,7 +354,7 @@ const ExitSurvey: React.FC<ExitSurveyProps> = ({
             <button
               type="submit"
               disabled={isSubmitting}
-              className="px-4 py-2 bg-pink-600 text-white rounded-md hover:bg-pink-700 transition disabled:bg-pink-400 disabled:cursor-not-allowed"
+              className="px-4 py-2 bg-orange-600 text-white rounded-md hover:bg-orange-700 transition disabled:bg-orange-400 disabled:cursor-not-allowed"
             >
               {isSubmitting ? "Submitting..." : "Submit Feedback"}
             </button>

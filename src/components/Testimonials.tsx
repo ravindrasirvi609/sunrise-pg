@@ -79,14 +79,14 @@ const Testimonials = () => {
                 className="card p-6"
               >
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 rounded-full overflow-hidden bg-pink-100 dark:bg-pink-900/30 flex items-center justify-center border-2 border-pink-300 dark:border-pink-700">
+                  <div className="w-12 h-12 rounded-full overflow-hidden bg-orange-100 dark:bg-orange-900/30 flex items-center justify-center border-2 border-orange-300 dark:border-orange-700">
                     <User
                       size={24}
-                      className="text-pink-500 dark:text-pink-400"
+                      className="text-orange-500 dark:text-orange-400"
                     />
                   </div>
                   <div>
-                    <h3 className="font-bold text-pink-700 dark:text-pink-300">
+                    <h3 className="font-bold text-orange-700 dark:text-orange-300">
                       {testimonial.name}
                     </h3>
                     <p className="text-sm text-gray-600 dark:text-gray-300">
@@ -102,7 +102,7 @@ const Testimonials = () => {
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <Star
                       key={i}
-                      className="text-pink-500 fill-pink-500"
+                      className="text-orange-500 fill-orange-500"
                       size={16}
                     />
                   ))}
