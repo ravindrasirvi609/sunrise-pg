@@ -23,23 +23,7 @@ import Image from "next/image";
 
 const navLinks = [
   { href: "/", label: "Home", icon: <Home className="w-4 h-4" /> },
-  { href: "/about", label: "About", icon: <Building className="w-4 h-4" /> },
-  {
-    href: "/facilities",
-    label: "Facilities",
-    icon: <Sparkles className="w-4 h-4" />,
-  },
-  {
-    href: "/gallery",
-    label: "Gallery",
-    icon: <GalleryHorizontal className="w-4 h-4" />,
-  },
-  {
-    href: "/testimonials",
-    label: "Testimonials",
-    icon: <MessageSquareText className="w-4 h-4" />,
-  },
-  { href: "/faqs", label: "FAQs", icon: <HelpCircle className="w-4 h-4" /> },
+
   { href: "/contact", label: "Contact", icon: <Contact className="w-4 h-4" /> },
 ];
 

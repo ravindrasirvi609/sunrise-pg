@@ -1,7 +1,18 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, MapPin, Heart, Shield, Sparkles } from "lucide-react";
+import {
+  ArrowRight,
+  MapPin,
+  Heart,
+  Shield,
+  Sparkles,
+  Sun,
+  Star,
+  Zap,
+  Play,
+  CheckCircle,
+} from "lucide-react";
 
 const Hero = () => {
   const featureAnimation = {
@@ -17,175 +28,279 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-      {/* Background Gradient */}
-      <div className="absolute inset-0 z-0 bg-gradient-to-br from-orange-50 via-white to-yellow-50/50 dark:from-orange-900/30 dark:via-amber-900/20 dark:to-yellow-900/30" />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Dynamic Background */}
+      <div className="absolute inset-0 z-0">
+        {/* Animated gradient background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-orange-50 via-yellow-50 to-orange-100 dark:from-orange-900/20 dark:via-yellow-900/10 dark:to-orange-900/30" />
 
-      {/* Decorative elements */}
-      <div className="absolute top-[15%] right-[10%] w-72 h-72 bg-gradient-to-br from-orange-100/30 to-yellow-50/10 rounded-full blur-3xl dark:from-orange-800/10 dark:to-amber-800/5"></div>
-      <div className="absolute bottom-[15%] left-[10%] w-80 h-80 bg-gradient-to-tr from-yellow-100/30 to-orange-50/10 rounded-full blur-3xl dark:from-yellow-800/10 dark:to-orange-800/5"></div>
+        {/* Floating geometric shapes */}
+        <motion.div
+          animate={{
+            rotate: [0, 360],
+            scale: [1, 1.1, 1],
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+          className="absolute top-20 right-20 w-40 h-40 border-2 border-orange-300/30 rounded-full"
+        />
+        <motion.div
+          animate={{
+            rotate: [360, 0],
+            scale: [1, 1.2, 1],
+          }}
+          transition={{
+            duration: 25,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+          className="absolute bottom-20 left-20 w-60 h-60 border-2 border-yellow-300/30 rounded-full"
+        />
 
-      {/* Content */}
-      <div className="container mx-auto px-4 z-10">
-        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
+        {/* Animated sun rays */}
+        <motion.div
+          animate={{
+            rotate: [0, 360],
+          }}
+          transition={{
+            duration: 30,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+          className="absolute top-1/4 left-1/4 w-32 h-32"
+        >
+          {[...Array(8)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute w-1 h-8 bg-gradient-to-b from-orange-400 to-transparent"
+              style={{
+                transform: `rotate(${i * 45}deg) translateY(-20px)`,
+              }}
+            />
+          ))}
+        </motion.div>
+      </div>
+
+      {/* Main Content */}
+      <div className="container mx-auto px-4 z-10 relative">
+        <div className="grid lg:grid-cols-2 gap-16 items-center min-h-screen py-20">
+          {/* Left Content */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="glass-effect p-8 md:p-12 rounded-2xl max-w-2xl shadow-xl"
+            initial={{ opacity: 0, x: -100 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, delay: 0.2 }}
+            className="space-y-8"
           >
+            {/* Badge */}
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="inline-flex items-center gap-3 bg-gradient-to-r from-orange-500 to-yellow-500 text-white px-6 py-3 rounded-full shadow-xl"
+            >
+              <Sparkles size={16} />
+              <span className="font-semibold text-sm">Brand New Facility</span>
+              <div className="w-2 h-2 bg-white rounded-full animate-pulse" />
+            </motion.div>
+
+            {/* Main Heading */}
             <motion.h1
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="comfort-header text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-gray-800 dark:text-white"
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="text-6xl md:text-7xl lg:text-8xl font-black leading-tight"
             >
-              Welcome to{" "}
-              <span className="text-orange-500 dark:text-orange-300">
-                Sunrise
-              </span>
+              <span className="text-gray-800 dark:text-white">Welcome to</span>
+              <br />
+              <span className="sunrise-text">Sunrise</span>
+              <br />
+              <span className="text-gray-800 dark:text-white">PG</span>
             </motion.h1>
 
+            {/* Subtitle */}
             <motion.p
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="comfort-subheading text-xl md:text-2xl mb-6 text-gray-600 dark:text-orange-200/90"
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="text-2xl md:text-3xl text-gray-600 dark:text-gray-300 font-medium leading-relaxed"
             >
-              New Girls PG in Hinjewadi • Opened February 2025
+              Where every morning brings new opportunities and every evening
+              brings comfort
             </motion.p>
 
+            {/* Description */}
             <motion.p
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.35 }}
-              className="text-lg mb-6 text-gray-700 dark:text-gray-300"
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="text-lg text-gray-700 dark:text-gray-400 leading-relaxed max-w-2xl"
             >
-              Brand new facility now open with comfortable 2-sharing and
-              3-sharing rooms.
+              Experience premium accommodation designed exclusively for women.
+              Our brand new facility offers modern amenities, enhanced security,
+              and a supportive community in the heart of Hinjewadi.
             </motion.p>
 
+            {/* Location Card */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className="flex items-center justify-start mb-8 text-gray-600 dark:text-white/80"
+              transition={{ duration: 0.8, delay: 0.7 }}
+              className="flex items-center gap-4 p-6 bg-white/90 dark:bg-gray-800/90 rounded-2xl backdrop-blur-sm shadow-xl border border-orange-200/50"
             >
-              <MapPin size={18} className="mr-2 text-orange-500" />
-              <p className="text-sm md:text-base">
-                Sunrise PG, Hinjewadi Phase 1 Rd, Mukai Nagar, Phase 1,
-                Hinjawadi Rajiv Gandhi Infotech Park, Hinjawadi, Pune,
-                Pimpri-Chinchwad, Maharashtra 411057
-              </p>
+              <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-yellow-500 rounded-2xl flex items-center justify-center shadow-lg">
+                <MapPin size={24} className="text-white" />
+              </div>
+              <div>
+                <p className="font-bold text-gray-800 dark:text-white text-lg">
+                  Prime Location
+                </p>
+                <p className="text-gray-600 dark:text-gray-400">
+                  Hinjewadi Phase 1, Pune • Near IT Park
+                </p>
+              </div>
             </motion.div>
 
+            {/* CTA Buttons */}
             <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.5 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+              className="flex flex-col sm:flex-row gap-6"
             >
-              <a
-                href="#contact"
-                className="btn-primary inline-flex items-center gap-2"
+              <motion.button
+                whileHover={{ scale: 1.05, y: -5 }}
+                whileTap={{ scale: 0.95 }}
+                className="group relative overflow-hidden bg-gradient-to-r from-orange-500 to-yellow-500 text-white px-8 py-4 rounded-2xl font-bold text-lg shadow-xl hover:shadow-2xl transition-all duration-300"
               >
-                Book Your Stay
-                <ArrowRight size={18} />
-              </a>
+                <span className="relative z-10 flex items-center gap-3">
+                  Book Your Stay
+                  <ArrowRight
+                    size={20}
+                    className="group-hover:translate-x-1 transition-transform"
+                  />
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-orange-600 to-yellow-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </motion.button>
+
+              <motion.button
+                whileHover={{ scale: 1.05, y: -5 }}
+                whileTap={{ scale: 0.95 }}
+                className="group relative overflow-hidden border-2 border-orange-500 text-orange-600 dark:text-orange-400 px-8 py-4 rounded-2xl font-bold text-lg hover:bg-orange-500 hover:text-white transition-all duration-300"
+              >
+                <span className="relative z-10 flex items-center gap-3">
+                  <Play
+                    size={20}
+                    className="group-hover:scale-110 transition-transform"
+                  />
+                  Watch Video
+                </span>
+              </motion.button>
             </motion.div>
           </motion.div>
 
+          {/* Right Content - Feature Cards */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: 100 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="w-full max-w-lg"
+            transition={{ duration: 1, delay: 0.3 }}
+            className="relative"
           >
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-              <motion.div
-                custom={0}
-                variants={featureAnimation}
-                initial="hidden"
-                animate="visible"
-                className="card p-6 bg-white/90 dark:bg-orange-900/20 shadow-lg hover:shadow-xl flex flex-col items-center text-center"
-              >
-                <div className="w-14 h-14 rounded-full bg-orange-50 dark:bg-orange-900/30 flex items-center justify-center mb-4 shadow-inner">
-                  <Shield
-                    className="text-orange-500 dark:text-orange-300"
-                    size={24}
-                  />
+            {/* Main Feature Card */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="relative mb-8"
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-orange-500 to-yellow-500 rounded-3xl blur-xl opacity-20" />
+              <div className="relative bg-white/95 dark:bg-gray-800/95 backdrop-blur-xl rounded-3xl p-8 shadow-2xl border border-orange-200/50">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-yellow-500 rounded-2xl flex items-center justify-center shadow-lg">
+                    <Shield size={28} className="text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-gray-800 dark:text-white">
+                      24/7 Security
+                    </h3>
+                    <p className="text-gray-600 dark:text-gray-400">
+                      CCTV surveillance and dedicated security staff
+                    </p>
+                  </div>
                 </div>
-                <h3 className="font-semibold text-gray-800 dark:text-white text-lg mb-2">
-                  Enhanced Security
-                </h3>
-                <p className="text-gray-600 dark:text-gray-300 text-sm">
-                  24/7 security
-                </p>
-              </motion.div>
+                <div className="space-y-4">
+                  {[
+                    "CCTV cameras in all common areas",
+                    "Dedicated security personnel",
+                    "Secure entry system",
+                    "Emergency response protocols",
+                  ].map((feature, index) => (
+                    <div key={index} className="flex items-center gap-3">
+                      <CheckCircle
+                        size={16}
+                        className="text-green-500 flex-shrink-0"
+                      />
+                      <span className="text-gray-700 dark:text-gray-300">
+                        {feature}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
 
-              <motion.div
-                custom={1}
-                variants={featureAnimation}
-                initial="hidden"
-                animate="visible"
-                className="card p-6 bg-white/90 dark:bg-orange-900/20 shadow-lg hover:shadow-xl flex flex-col items-center text-center"
-              >
-                <div className="w-14 h-14 rounded-full bg-yellow-50 dark:bg-yellow-900/30 flex items-center justify-center mb-4 shadow-inner">
-                  <Heart
-                    className="text-yellow-500 dark:text-yellow-300"
-                    size={24}
-                  />
-                </div>
-                <h3 className="font-semibold text-gray-800 dark:text-white text-lg mb-2">
-                  Brand New Building
-                </h3>
-                <p className="text-gray-600 dark:text-gray-300 text-sm">
-                  Modern facilities opened February 2025
-                </p>
-              </motion.div>
-
-              <motion.div
-                custom={2}
-                variants={featureAnimation}
-                initial="hidden"
-                animate="visible"
-                className="card p-6 bg-white/90 dark:bg-orange-900/20 shadow-lg hover:shadow-xl flex flex-col items-center text-center"
-              >
-                <div className="w-14 h-14 rounded-full bg-orange-50 dark:bg-orange-900/30 flex items-center justify-center mb-4 shadow-inner">
-                  <Sparkles
-                    className="text-orange-500 dark:text-orange-300"
-                    size={24}
-                  />
-                </div>
-                <h3 className="font-semibold text-gray-800 dark:text-white text-lg mb-2">
-                  Premium Amenities
-                </h3>
-                <p className="text-gray-600 dark:text-gray-300 text-sm">
-                  High-speed WiFi, dining, laundry & more
-                </p>
-              </motion.div>
-
-              <motion.div
-                custom={3}
-                variants={featureAnimation}
-                initial="hidden"
-                animate="visible"
-                className="card p-6 bg-white/90 dark:bg-orange-900/20 shadow-lg hover:shadow-xl flex flex-col items-center text-center"
-              >
-                <div className="w-14 h-14 rounded-full bg-orange-50 dark:bg-orange-900/30 flex items-center justify-center mb-4 shadow-inner">
-                  <MapPin
-                    className="text-orange-500 dark:text-orange-300"
-                    size={24}
-                  />
-                </div>
-                <h3 className="font-semibold text-gray-800 dark:text-white text-lg mb-2">
-                  Prime Location
-                </h3>
-                <p className="text-gray-600 dark:text-gray-300 text-sm">
-                  Walking distance to Hinjewadi IT Park
-                </p>
-              </motion.div>
+            {/* Feature Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {[
+                {
+                  icon: <Heart size={28} />,
+                  title: "Women Only",
+                  description: "Safe and supportive community environment",
+                  gradient: "from-yellow-500 to-orange-500",
+                },
+                {
+                  icon: <Zap size={28} />,
+                  title: "High-Speed WiFi",
+                  description: "Fast internet for work and entertainment",
+                  gradient: "from-orange-500 to-yellow-500",
+                },
+                {
+                  icon: <Star size={28} />,
+                  title: "Premium Amenities",
+                  description: "Modern facilities and comfortable living",
+                  gradient: "from-yellow-500 to-orange-500",
+                },
+                {
+                  icon: <MapPin size={28} />,
+                  title: "Prime Location",
+                  description: "Walking distance to Hinjewadi IT Park",
+                  gradient: "from-orange-500 to-yellow-500",
+                },
+              ].map((feature, index) => (
+                <motion.div
+                  key={index}
+                  custom={index}
+                  variants={featureAnimation}
+                  initial="hidden"
+                  animate="visible"
+                  whileHover={{ scale: 1.05, y: -5 }}
+                  className="group relative overflow-hidden bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 border border-orange-200/50"
+                >
+                  <div
+                    className={`w-16 h-16 bg-gradient-to-br ${feature.gradient} rounded-2xl flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300`}
+                  >
+                    <div className="text-white">{feature.icon}</div>
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-2">
+                    {feature.title}
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                    {feature.description}
+                  </p>
+                </motion.div>
+              ))}
             </div>
           </motion.div>
         </div>
@@ -197,23 +312,23 @@ const Hero = () => {
           y: [0, 10, 0],
         }}
         transition={{
-          duration: 1.5,
+          duration: 2,
           repeat: Infinity,
           repeatType: "reverse",
         }}
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
       >
-        <div className="w-6 h-10 border-2 border-orange-300 dark:border-orange-400 rounded-full flex items-center justify-center">
+        <div className="w-6 h-12 border-2 border-orange-400 rounded-full flex items-center justify-center">
           <motion.div
             animate={{
-              y: [0, 6, 0],
+              y: [0, 8, 0],
             }}
             transition={{
-              duration: 1.5,
+              duration: 2,
               repeat: Infinity,
               repeatType: "reverse",
             }}
-            className="w-1.5 h-2 bg-orange-300 dark:bg-orange-400 rounded-full"
+            className="w-2 h-3 bg-gradient-to-b from-orange-500 to-yellow-500 rounded-full"
           />
         </div>
       </motion.div>
