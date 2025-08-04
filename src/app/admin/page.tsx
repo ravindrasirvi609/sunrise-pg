@@ -430,7 +430,7 @@ export default function AdminDashboard() {
     return (
       <div className="flex justify-center items-center h-screen">
         <div className="flex flex-col items-center">
-          <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-pink-600"></div>
+          <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-orange-600"></div>
           <p className="mt-4 text-gray-600 dark:text-gray-300">
             Loading dashboard data...
           </p>
@@ -476,11 +476,11 @@ export default function AdminDashboard() {
   return (
     <div className="max-[1600px] mx-auto px-4 py-6">
       {/* Dashboard Header */}
-      <div className="bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl shadow-xl p-6 mb-8 text-white">
+      <div className="bg-gradient-to-r from-orange-600 to-yellow-600 rounded-2xl shadow-xl p-6 mb-8 text-white">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div>
             <h1 className="text-3xl md:text-4xl font-bold">Admin Dashboard</h1>
-            <p className="mt-2 text-purple-100">
+            <p className="mt-2 text-orange-100">
               Welcome back! Here's what's happening today
             </p>
           </div>
@@ -490,7 +490,7 @@ export default function AdminDashboard() {
               <span className="text-sm">Show Rent</span>
               <button
                 onClick={() => setShowRentAmount(!showRentAmount)}
-                className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-purple-600 ${
+                className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-orange-600 ${
                   showRentAmount ? "bg-green-500" : "bg-gray-400"
                 }`}
               >
@@ -504,11 +504,11 @@ export default function AdminDashboard() {
             <button
               onClick={refreshDashboard}
               disabled={refreshing}
-              className="flex items-center space-x-2 bg-white text-purple-700 px-4 py-2 rounded-lg hover:bg-purple-50 transition-all duration-200 disabled:opacity-70"
+              className="flex items-center space-x-2 bg-white text-orange-700 px-4 py-2 rounded-lg hover:bg-orange-50 transition-all duration-200 disabled:opacity-70"
             >
               {refreshing ? (
                 <>
-                  <div className="animate-spin h-4 w-4 mr-2 border-2 border-purple-700 border-t-transparent rounded-full"></div>
+                  <div className="animate-spin h-4 w-4 mr-2 border-2 border-orange-700 border-t-transparent rounded-full"></div>
                   <span>Refreshing...</span>
                 </>
               ) : (
@@ -518,7 +518,7 @@ export default function AdminDashboard() {
                 </>
               )}
             </button>
-            <div className="flex items-center bg-purple-500/30 px-4 py-2 rounded-lg">
+            <div className="flex items-center bg-orange-500/30 px-4 py-2 rounded-lg">
               <FiCalendar className="h-4 w-4 mr-2" />
               <span>
                 {new Date().toLocaleDateString("en-IN", {
@@ -546,17 +546,17 @@ export default function AdminDashboard() {
                   {stats.totalUsers}
                 </h3>
                 <div className="flex items-center mt-2">
-                  <FiUsers className="h-4 w-4 text-purple-600 dark:text-purple-400 mr-1" />
+                  <FiUsers className="h-4 w-4 text-orange-600 dark:text-orange-400 mr-1" />
                   <Link
                     href="/admin/users"
-                    className="text-xs font-medium text-purple-600 dark:text-purple-400 hover:underline"
+                    className="text-xs font-medium text-orange-600 dark:text-orange-400 hover:underline"
                   >
                     View all users
                   </Link>
                 </div>
               </div>
-              <div className="bg-purple-100 dark:bg-purple-900/30 p-3 rounded-full">
-                <FiUsers className="h-6 w-6 text-purple-600 dark:text-purple-400" />
+              <div className="bg-orange-100 dark:bg-orange-900/30 p-3 rounded-full">
+                <FiUsers className="h-6 w-6 text-orange-600 dark:text-orange-400" />
               </div>
             </div>
           </div>
@@ -707,10 +707,10 @@ export default function AdminDashboard() {
         <div className="col-span-1 bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 border border-gray-100 dark:border-gray-700">
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-lg font-semibold text-gray-800 dark:text-white flex items-center">
-              <RiLineChartLine className="h-5 w-5 text-pink-600 mr-2" />
+              <RiLineChartLine className="h-5 w-5 text-orange-600 mr-2" />
               Revenue Trend
             </h2>
-            <span className="text-xs px-2 py-1 bg-pink-100 text-pink-800 dark:bg-pink-900/30 dark:text-pink-300 rounded-full">
+            <span className="text-xs px-2 py-1 bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-300 rounded-full">
               Last 6 months
             </span>
           </div>
@@ -751,10 +751,10 @@ export default function AdminDashboard() {
                   type="monotone"
                   dataKey="revenue"
                   name="Revenue (₹)"
-                  stroke="#d946ef"
+                  stroke="#f97316"
                   strokeWidth={3}
                   dot={{ r: 4, strokeWidth: 2 }}
-                  activeDot={{ r: 6, stroke: "#d946ef", strokeWidth: 2 }}
+                  activeDot={{ r: 6, stroke: "#f97316", strokeWidth: 2 }}
                 />
               </LineChart>
             </ResponsiveContainer>
@@ -814,7 +814,7 @@ export default function AdminDashboard() {
         <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 border border-gray-100 dark:border-gray-700">
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-lg font-semibold text-gray-800 dark:text-white flex items-center">
-              <RiBarChartLine className="h-5 w-5 text-purple-600 mr-2" />
+              <RiBarChartLine className="h-5 w-5 text-orange-600 mr-2" />
               State-wise Distribution
             </h2>
           </div>
@@ -847,7 +847,7 @@ export default function AdminDashboard() {
                 <Bar
                   dataKey="count"
                   name="Users"
-                  fill="#8b5cf6"
+                  fill="#f97316"
                   radius={[4, 4, 0, 0]}
                 />
               </BarChart>
@@ -987,12 +987,12 @@ export default function AdminDashboard() {
         <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md border border-gray-100 dark:border-gray-700 overflow-hidden">
           <div className="px-6 py-4 border-b border-gray-100 dark:border-gray-700 flex justify-between items-center">
             <h2 className="text-lg font-semibold text-gray-800 dark:text-white flex items-center">
-              <FiUsers className="h-5 w-5 text-purple-600 mr-2" />
+              <FiUsers className="h-5 w-5 text-orange-600 mr-2" />
               Recent Users
             </h2>
             <Link
               href="/admin/users"
-              className="text-sm text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-300 font-medium flex items-center"
+              className="text-sm text-orange-600 dark:text-orange-400 hover:text-orange-800 dark:hover:text-orange-300 font-medium flex items-center"
             >
               View all
               <svg
@@ -1037,7 +1037,7 @@ export default function AdminDashboard() {
                     >
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="flex items-center">
-                          <div className="h-8 w-8 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center text-purple-600 dark:text-purple-400 mr-3">
+                          <div className="h-8 w-8 rounded-full bg-orange-100 dark:bg-orange-900/30 flex items-center justify-center text-orange-600 dark:text-orange-400 mr-3">
                             {user.name
                               ? user.name.charAt(0).toUpperCase()
                               : "?"}
@@ -1071,7 +1071,7 @@ export default function AdminDashboard() {
                       <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                         <Link
                           href={`/admin/users/${user._id}`}
-                          className="text-indigo-600 hover:text-indigo-900 dark:text-indigo-400 dark:hover:text-indigo-300"
+                          className="text-orange-600 hover:text-orange-900 dark:text-orange-400 dark:hover:text-orange-300"
                         >
                           View
                         </Link>

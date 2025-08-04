@@ -90,19 +90,19 @@ export default function PendingRegistrationsPage() {
   if (loading) {
     return (
       <div className="flex justify-center items-center h-screen">
-        <FaSpinner className="animate-spin text-4xl text-pink-600" />
+        <FaSpinner className="animate-spin text-4xl text-orange-600" />
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen w-full bg-gradient-to-br from-pink-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-purple-900 p-4 sm:p-6 lg:p-8">
+    <div className="min-h-screen w-full bg-gradient-to-br from-orange-50 via-white to-yellow-50 dark:from-gray-900 dark:via-gray-800 dark:to-orange-900 p-4 sm:p-6 lg:p-8">
       <div className="max-w-7xl mx-auto">
         {/* Page header */}
         <div className="backdrop-blur-sm bg-white/60 dark:bg-gray-800/40 rounded-2xl p-6 mb-6 border border-white/20 dark:border-gray-700/30 shadow-lg">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
             <div>
-              <h1 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-600">
+              <h1 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-yellow-500">
                 Pending Registrations
               </h1>
               <p className="text-gray-600 dark:text-gray-400">
@@ -137,7 +137,7 @@ export default function PendingRegistrationsPage() {
         {/* Search filter */}
         <div className="backdrop-blur-sm bg-white/40 dark:bg-gray-800/30 rounded-2xl p-6 mb-6 border border-white/20 dark:border-gray-700/30 shadow-lg">
           <div className="relative group">
-            <div className="absolute -inset-0.5 bg-gradient-to-r from-pink-500 to-purple-600 rounded-lg blur opacity-20 group-hover:opacity-40 transition duration-300"></div>
+            <div className="absolute -inset-0.5 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-lg blur opacity-20 group-hover:opacity-40 transition duration-300"></div>
             <div className="relative bg-white/60 dark:bg-gray-900/60 rounded-lg">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                 <svg
@@ -262,7 +262,7 @@ export default function PendingRegistrationsPage() {
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium flex justify-end space-x-2">
                         <button
-                          className="text-pink-600 hover:text-pink-900 dark:text-pink-400 dark:hover:text-pink-300"
+                          className="text-orange-600 hover:text-orange-900 dark:text-orange-400 dark:hover:text-orange-300"
                           onClick={() => handleViewDetails(registration._id)}
                         >
                           View Details
@@ -346,7 +346,7 @@ export default function PendingRegistrationsPage() {
                           onClick={() => setCurrentPage(page)}
                           className={`relative inline-flex items-center px-4 py-2 border text-sm font-medium ${
                             currentPage === page
-                              ? "z-10 bg-pink-50 dark:bg-pink-900/30 border-pink-500 text-pink-600 dark:text-pink-400"
+                              ? "z-10 bg-orange-50 dark:bg-orange-900/30 border-orange-500 text-orange-600 dark:text-orange-400"
                               : "bg-white/50 dark:bg-gray-800/50 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700"
                           }`}
                         >

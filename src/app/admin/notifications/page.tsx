@@ -72,7 +72,7 @@ export default function SendNotificationsPage() {
   return (
     <div className="max-w-4xl mx-auto p-6">
       <div className="flex items-center mb-8">
-        <Bell className="text-pink-500 mr-3" size={28} />
+        <Bell className="text-orange-500 mr-3" size={28} />
         <h1 className="text-3xl font-bold text-gray-800 dark:text-white">
           Send Push Notifications
         </h1>
@@ -186,7 +186,7 @@ export default function SendNotificationsPage() {
           <button
             type="submit"
             disabled={isLoading || !title || !body}
-            className="px-6 py-2 bg-pink-500 text-white rounded-md hover:bg-pink-600 disabled:opacity-50 flex items-center"
+            className="px-6 py-2 bg-orange-500 text-white rounded-md hover:bg-orange-600 disabled:opacity-50 flex items-center"
           >
             {isLoading ? (
               <>

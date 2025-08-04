@@ -312,7 +312,7 @@ export default function AdminLayout({
   ];
 
   return (
-    <div className="h-screen flex overflow-hidden bg-gradient-to-br from-pink-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-purple-900">
+    <div className="h-screen flex overflow-hidden bg-gradient-to-br from-orange-50 via-white to-yellow-50 dark:from-gray-900 dark:via-gray-800 dark:to-orange-900">
       {/* Mobile sidebar backdrop */}
       {sidebarOpen && (
         <div
@@ -331,11 +331,11 @@ export default function AdminLayout({
           {/* Logo */}
           <div className="flex items-center justify-center h-20 border-b border-white/20 dark:border-gray-700/30">
             <div className="flex items-center space-x-2 px-4">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 flex items-center justify-center text-white font-bold text-lg">
-                CS
+              <div className="w-10 h-10 rounded-full bg-gradient-to-r from-orange-500 to-yellow-500 flex items-center justify-center text-white font-bold text-lg">
+                SP
               </div>
-              <div className="font-bold text-lg text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-600">
-                Comfort Stay
+              <div className="font-bold text-lg text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-yellow-500">
+                Sunrise PG
               </div>
             </div>
           </div>
@@ -351,7 +351,7 @@ export default function AdminLayout({
                     href={item.href}
                     className={`group flex items-center px-4 py-3 text-sm font-medium rounded-lg transition-all duration-200 ${
                       isActive
-                        ? "bg-gradient-to-r from-pink-500 to-purple-600 text-white"
+                        ? "bg-gradient-to-r from-orange-500 to-yellow-500 text-white"
                         : "text-gray-700 dark:text-gray-300 hover:bg-white/60 dark:hover:bg-gray-800/60"
                     }`}
                   >
@@ -367,7 +367,7 @@ export default function AdminLayout({
           <div className="p-4 border-t border-white/20 dark:border-gray-700/30">
             <div className="group w-full flex items-center space-x-3">
               <div className="flex-shrink-0">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 flex items-center justify-center text-white font-bold text-lg">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-r from-orange-500 to-yellow-500 flex items-center justify-center text-white font-bold text-lg">
                   A
                 </div>
               </div>
@@ -376,7 +376,7 @@ export default function AdminLayout({
                   Admin
                 </p>
                 <p className="text-xs text-gray-500 dark:text-gray-400 truncate">
-                  admin@comfortstay.com
+                  admin@sunrisepg.com
                 </p>
               </div>
               <Link
@@ -437,7 +437,7 @@ export default function AdminLayout({
               <NotificationDropdown />
               <span className="h-6 w-px bg-gray-300 dark:bg-gray-700"></span>
               <div className="relative flex">
-                <div className="w-8 h-8 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 flex items-center justify-center text-white font-bold text-sm">
+                <div className="w-8 h-8 rounded-full bg-gradient-to-r from-orange-500 to-yellow-500 flex items-center justify-center text-white font-bold text-sm">
                   A
                 </div>
               </div>

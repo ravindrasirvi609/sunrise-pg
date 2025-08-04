@@ -154,7 +154,7 @@ export default function Subscribers() {
       {/* Subscribers list */}
       {loading ? (
         <div className="flex justify-center items-center h-screen">
-          <FaSpinner className="animate-spin text-4xl text-pink-600" />
+          <FaSpinner className="animate-spin text-4xl text-orange-600" />
         </div>
       ) : subscribers.length === 0 ? (
         <div className="text-center py-10 bg-gray-50 dark:bg-gray-800 rounded-lg">
@@ -187,7 +187,7 @@ export default function Subscribers() {
                   >
                     <td className="px-6 py-4 whitespace-nowrap">
                       <div className="flex items-center">
-                        <Mail size={16} className="mr-2 text-pink-500" />
+                        <Mail size={16} className="mr-2 text-orange-500" />
                         <a
                           href={`mailto:${subscriber.email}`}
                           className="text-gray-900 dark:text-gray-100 hover:underline"

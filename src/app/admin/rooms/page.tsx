@@ -157,8 +157,8 @@ export default function RoomsPage() {
               ? "bg-green-50 dark:bg-green-900/20"
               : room.status === "occupied"
                 ? room.hasResidentsOnNotice
-                  ? "bg-gradient-to-br from-blue-50 to-orange-50 dark:from-blue-900/20 dark:to-orange-900/20"
-                  : "bg-blue-50 dark:bg-blue-900/20"
+                  ? "bg-gradient-to-br from-orange-50 to-yellow-50 dark:from-orange-900/20 dark:to-yellow-900/20"
+                  : "bg-orange-50 dark:bg-orange-900/20"
                 : "bg-yellow-50 dark:bg-yellow-900/20"
           }`}
       >
@@ -186,7 +186,7 @@ export default function RoomsPage() {
                 room.status === "available"
                   ? "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200"
                   : room.status === "occupied"
-                    ? "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200"
+                    ? "bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200"
                     : "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200"
               }`}
           >
@@ -207,8 +207,8 @@ export default function RoomsPage() {
           <div
             className={`h-1 ${
               room.hasResidentsOnNotice
-                ? "bg-gradient-to-r from-blue-500 to-orange-500"
-                : "bg-gradient-to-r from-pink-500 to-purple-600"
+                ? "bg-gradient-to-r from-orange-500 to-yellow-500"
+                : "bg-gradient-to-r from-orange-500 to-yellow-500"
             }`}
             style={{
               width: `${(room.currentOccupancy / room.capacity) * 100}%`,
@@ -242,7 +242,7 @@ export default function RoomsPage() {
   if (loading) {
     return (
       <div className="min-h-screen flex justify-center items-center">
-        <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-purple-500"></div>
+        <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-orange-500"></div>
       </div>
     );
   }
@@ -258,7 +258,7 @@ export default function RoomsPage() {
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="mb-8">
-        <h1 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-600">
+        <h1 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-yellow-500">
           Rooms Management
         </h1>
       </div>
@@ -269,7 +269,7 @@ export default function RoomsPage() {
           <h3 className="text-sm font-medium text-gray-500 dark:text-gray-400">
             Total Rooms
           </h3>
-          <p className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-600">
+          <p className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-yellow-500">
             {rooms.length}
           </p>
         </div>
@@ -285,7 +285,7 @@ export default function RoomsPage() {
           <h3 className="text-sm font-medium text-gray-500 dark:text-gray-400">
             Occupied
           </h3>
-          <p className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-600">
+          <p className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-indigo-600">
             {rooms.filter((room) => room.status === "occupied").length}
           </p>
         </div>
@@ -309,7 +309,7 @@ export default function RoomsPage() {
             </label>
             <input
               type="text"
-              className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 bg-white/50 dark:bg-gray-800/50"
+              className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-500 bg-white/50 dark:bg-gray-800/50"
               placeholder="Room number..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
@@ -322,7 +322,7 @@ export default function RoomsPage() {
               Building
             </label>
             <select
-              className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 bg-white/50 dark:bg-gray-800/50"
+              className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-500 bg-white/50 dark:bg-gray-800/50"
               value={filterBuilding}
               onChange={(e) => setFilterBuilding(e.target.value)}
             >
@@ -341,7 +341,7 @@ export default function RoomsPage() {
               Floor
             </label>
             <select
-              className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 bg-white/50 dark:bg-gray-800/50"
+              className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-500 bg-white/50 dark:bg-gray-800/50"
               value={filterFloor}
               onChange={(e) => setFilterFloor(e.target.value)}
             >
@@ -360,7 +360,7 @@ export default function RoomsPage() {
               Status
             </label>
             <select
-              className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 bg-white/50 dark:bg-gray-800/50"
+              className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-500 bg-white/50 dark:bg-gray-800/50"
               value={filterStatus}
               onChange={(e) => setFilterStatus(e.target.value)}
             >
@@ -377,7 +377,7 @@ export default function RoomsPage() {
               Room Capacity
             </label>
             <select
-              className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 bg-white/50 dark:bg-gray-800/50"
+              className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-500 bg-white/50 dark:bg-gray-800/50"
               value={filterType}
               onChange={(e) => setFilterType(e.target.value)}
             >
@@ -429,7 +429,7 @@ export default function RoomsPage() {
           <>
             {buildings.map((building) => (
               <div key={building} className="mb-10">
-                <h2 className="text-2xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-600">
+                <h2 className="text-2xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-yellow-500">
                   Building {building}
                 </h2>
 
@@ -486,7 +486,7 @@ export default function RoomsPage() {
               <span>Available</span>
             </div>
             <div className="flex items-center">
-              <div className="w-6 h-6 bg-blue-50 dark:bg-blue-900/20 border border-gray-200 dark:border-gray-700 mr-2 rounded"></div>
+              <div className="w-6 h-6 bg-orange-50 dark:bg-orange-900/20 border border-gray-200 dark:border-gray-700 mr-2 rounded"></div>
               <span>Occupied</span>
             </div>
             <div className="flex items-center">
@@ -494,7 +494,7 @@ export default function RoomsPage() {
               <span>Maintenance</span>
             </div>
             <div className="flex items-center">
-              <div className="w-6 h-6 bg-gradient-to-br from-blue-50 to-orange-50 dark:from-blue-900/20 dark:to-orange-900/20 border border-gray-200 dark:border-gray-700 mr-2 rounded"></div>
+              <div className="w-6 h-6 bg-gradient-to-br from-orange-50 to-yellow-50 dark:from-orange-900/20 dark:to-yellow-900/20 border border-gray-200 dark:border-gray-700 mr-2 rounded"></div>
               <span>Resident on Notice Period</span>
             </div>
           </div>
