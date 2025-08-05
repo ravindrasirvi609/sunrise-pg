@@ -151,7 +151,7 @@ const Contact = () => {
                         Email
                       </p>
                       <p className="text-gray-600 dark:text-gray-300">
-                        info@comfortstay.com
+                        info@sunrisepg.com
                       </p>
                     </div>
                   </div>
@@ -197,6 +197,47 @@ const Contact = () => {
                     * For PG residents: 24/7 access with secure entry
                   </p>
                 </div>
+              </div>
+            </motion.div>
+
+            {/* Map Section */}
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="card p-8"
+            >
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-yellow-500 rounded-xl flex items-center justify-center">
+                  <MapPin size={24} className="text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-800 dark:text-white">
+                  Our Location
+                </h3>
+              </div>
+
+              <div className="rounded-xl overflow-hidden shadow-lg">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1190.7664444648217!2d73.73210316893534!3d18.595278635427302!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bbdc6f79030b%3A0x94ed5c7b0d8ad887!2sSunrise%20PG%20Services%20(for%20Ladies)!5e1!3m2!1sen!2sin!4v1754408258953!5m2!1sen!2sin"
+                  width="100%"
+                  height="400"
+                  style={{ border: 0 }}
+                  allowFullScreen={true}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="w-full"
+                />
+              </div>
+
+              <div className="mt-4 p-4 bg-gradient-to-r from-orange-50 to-yellow-50 dark:from-orange-900/20 dark:to-yellow-900/20 rounded-xl">
+                <p className="text-sm text-gray-600 dark:text-gray-300 text-center">
+                  <strong>Sunrise PG Services (for Ladies)</strong>
+                  <br />
+                  Hinjewadi Phase 1 Rd, Mukai Nagar, Phase 1, Hinjawadi Rajiv
+                  Gandhi Infotech Park, Hinjawadi, Pune, Pimpri-Chinchwad,
+                  Maharashtra 411057
+                </p>
               </div>
             </motion.div>
 

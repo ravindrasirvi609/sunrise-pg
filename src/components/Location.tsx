@@ -64,7 +64,7 @@ const Location = () => {
                     <div>
                       <p className="font-semibold">Email</p>
                       <p className="text-gray-600 dark:text-gray-300">
-                        info@comfortstay.com
+                        info@sunrisepg.com
                       </p>
                     </div>
                   </div>
@@ -99,7 +99,7 @@ const Location = () => {
             {/* Map */}
             <div className="card h-[400px] overflow-hidden">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3781.523572720204!2d73.73011351145193!3d18.595506866806665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bb000faf5f0b%3A0x545fd94002c5ec22!2sComfort%20Stay%20PG!5e0!3m2!1sen!2sin!4v1744439824159!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1190.7664444648217!2d73.73210316893534!3d18.595278635427302!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bbdc6f79030b%3A0x94ed5c7b0d8ad887!2sSunrise%20PG%20Services%20(for%20Ladies)!5e1!3m2!1sen!2sin!4v1754408258953!5m2!1sen!2sin"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
