@@ -248,7 +248,7 @@ export default function PaymentsPage() {
         );
       case "Partial":
         return (
-          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300">
+          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-300">
             <FaHourglassHalf className="mr-1" />
             Partial
           </span>
@@ -303,7 +303,7 @@ export default function PaymentsPage() {
           </button>
 
           <Link href="/admin/payments/create">
-            <button className="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-pink-600 hover:bg-pink-700 dark:bg-pink-700 dark:hover:bg-pink-800 transition-colors duration-200">
+            <button className="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-orange-600 hover:bg-orange-700 dark:bg-orange-700 dark:hover:bg-orange-800 transition-colors duration-200">
               <FaPlus className="mr-2" />
               Add Payment
             </button>
@@ -325,8 +325,8 @@ export default function PaymentsPage() {
             <p className="text-gray-500 dark:text-gray-400 text-sm">
               Total Payments
             </p>
-            <div className="p-2 bg-pink-100 dark:bg-pink-900/30 rounded-lg">
-              <FaFileInvoiceDollar className="text-pink-600 dark:text-pink-400" />
+            <div className="p-2 bg-orange-100 dark:bg-orange-900/30 rounded-lg">
+              <FaFileInvoiceDollar className="text-orange-600 dark:text-orange-400" />
             </div>
           </div>
           <h3 className="text-2xl font-bold text-gray-900 dark:text-white mt-2">
@@ -375,8 +375,8 @@ export default function PaymentsPage() {
             <p className="text-gray-500 dark:text-gray-400 text-sm">
               This Month
             </p>
-            <div className="p-2 bg-blue-100 dark:bg-blue-900/30 rounded-lg">
-              <FaFileInvoiceDollar className="text-blue-600 dark:text-blue-400" />
+            <div className="p-2 bg-orange-100 dark:bg-orange-900/30 rounded-lg">
+              <FaFileInvoiceDollar className="text-orange-600 dark:text-orange-400" />
             </div>
           </div>
           <h3 className="text-2xl font-bold text-gray-900 dark:text-white mt-2">
@@ -412,7 +412,7 @@ export default function PaymentsPage() {
                 </div>
                 <input
                   type="text"
-                  className="bg-white/50 dark:bg-gray-900/50 focus:ring-pink-500 focus:border-pink-500 block w-full pl-10 pr-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md leading-5 placeholder-gray-500 dark:placeholder-gray-400 text-gray-900 dark:text-gray-100"
+                  className="bg-white/50 dark:bg-gray-900/50 focus:ring-orange-500 focus:border-orange-500 block w-full pl-10 pr-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md leading-5 placeholder-gray-500 dark:placeholder-gray-400 text-gray-900 dark:text-gray-100"
                   placeholder="Search by name or ID"
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
@@ -423,7 +423,7 @@ export default function PaymentsPage() {
             {/* Status filter */}
             <div>
               <select
-                className="bg-white/50 dark:bg-gray-900/50 focus:ring-pink-500 focus:border-pink-500 block w-full py-2 px-3 border border-gray-300 dark:border-gray-600 rounded-md leading-5 text-gray-900 dark:text-gray-100"
+                className="bg-white/50 dark:bg-gray-900/50 focus:ring-orange-500 focus:border-orange-500 block w-full py-2 px-3 border border-gray-300 dark:border-gray-600 rounded-md leading-5 text-gray-900 dark:text-gray-100"
                 value={statusFilter}
                 onChange={(e) => setStatusFilter(e.target.value)}
               >
@@ -438,7 +438,7 @@ export default function PaymentsPage() {
             {/* Month filter */}
             <div>
               <select
-                className="bg-white/50 dark:bg-gray-900/50 focus:ring-pink-500 focus:border-pink-500 block w-full py-2 px-3 border border-gray-300 dark:border-gray-600 rounded-md leading-5 text-gray-900 dark:text-gray-100"
+                className="bg-white/50 dark:bg-gray-900/50 focus:ring-orange-500 focus:border-orange-500 block w-full py-2 px-3 border border-gray-300 dark:border-gray-600 rounded-md leading-5 text-gray-900 dark:text-gray-100"
                 value={monthFilter}
                 onChange={(e) => setMonthFilter(e.target.value)}
               >
@@ -454,7 +454,7 @@ export default function PaymentsPage() {
             {/* Year filter */}
             <div>
               <select
-                className="bg-white/50 dark:bg-gray-900/50 focus:ring-pink-500 focus:border-pink-500 block w-full py-2 px-3 border border-gray-300 dark:border-gray-600 rounded-md leading-5 text-gray-900 dark:text-gray-100"
+                className="bg-white/50 dark:bg-gray-900/50 focus:ring-orange-500 focus:border-orange-500 block w-full py-2 px-3 border border-gray-300 dark:border-gray-600 rounded-md leading-5 text-gray-900 dark:text-gray-100"
                 value={yearFilter}
                 onChange={(e) => setYearFilter(e.target.value)}
               >
@@ -582,7 +582,7 @@ export default function PaymentsPage() {
                             {typeof user === "object" && user?._id ? (
                               <Link
                                 href={`/admin/users/${user._id}`}
-                                className="text-sm font-medium text-gray-900 dark:text-white hover:text-pink-600 dark:hover:text-pink-400"
+                                className="text-sm font-medium text-gray-900 dark:text-white hover:text-orange-600 dark:hover:text-orange-400"
                               >
                                 {user?.name || "Unknown"}
                               </Link>
@@ -611,12 +611,12 @@ export default function PaymentsPage() {
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap">
                         {payment.isDepositPayment ? (
-                          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-300">
+                          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300">
                             Deposit
                           </span>
                         ) : payment.months && payment.months.length > 1 ? (
                           <div>
-                            <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300">
+                            <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-300">
                               Multiple ({payment.months.length})
                             </span>
                             {payment.months && payment.months.length > 0 && (
@@ -643,7 +643,7 @@ export default function PaymentsPage() {
                       <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                         <Link
                           href={`/admin/payments/${payment._id}/edit`}
-                          className="text-pink-600 hover:text-pink-900 dark:text-pink-400 dark:hover:text-pink-300 mr-4"
+                          className="text-orange-600 hover:text-orange-900 dark:text-orange-400 dark:hover:text-orange-300 mr-4"
                           title="Edit Payment"
                         >
                           <FaEdit className="inline" />
@@ -717,7 +717,7 @@ export default function PaymentsPage() {
                     onClick={() => paginate(pageNumber)}
                     className={`relative inline-flex items-center px-3 py-2 border ${
                       currentPage === pageNumber
-                        ? "border-pink-500 bg-pink-50 dark:bg-pink-900/30 text-pink-600 dark:text-pink-400 font-medium"
+                        ? "border-orange-500 bg-orange-50 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 font-medium"
                         : "border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700"
                     } text-sm rounded-md`}
                   >

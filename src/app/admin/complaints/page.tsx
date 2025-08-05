@@ -112,19 +112,19 @@ export default function ComplaintsPage() {
   if (loading) {
     return (
       <div className="flex justify-center items-center h-screen">
-        <FaSpinner className="animate-spin text-4xl text-pink-600" />
+        <FaSpinner className="animate-spin text-4xl text-orange-600" />
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen w-full bg-gradient-to-br from-pink-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-purple-900 p-4 sm:p-6 lg:p-8">
+    <div className="min-h-screen w-full bg-gradient-to-br from-orange-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-purple-900 p-4 sm:p-6 lg:p-8">
       <div className="max-w-7xl mx-auto">
         {/* Page header */}
         <div className="backdrop-blur-sm bg-white/60 dark:bg-gray-800/40 rounded-2xl p-6 mb-6 border border-white/20 dark:border-gray-700/30 shadow-lg">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
             <div>
-              <h1 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-600">
+              <h1 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-yellow-600">
                 Complaints Management
               </h1>
               <p className="text-gray-600 dark:text-gray-400">
@@ -163,7 +163,7 @@ export default function ComplaintsPage() {
               onClick={() => setStatusFilter("all")}
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200 ${
                 statusFilter === "all"
-                  ? "bg-gradient-to-r from-pink-500 to-purple-600 text-white"
+                  ? "bg-gradient-to-r from-orange-600 to-yellow-600 text-white"
                   : "bg-white/60 dark:bg-gray-700/60 text-gray-700 dark:text-gray-300 hover:bg-white/80 dark:hover:bg-gray-700/80"
               }`}
             >
@@ -226,7 +226,7 @@ export default function ComplaintsPage() {
               >
                 <div className="flex justify-between">
                   <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 h-10 w-10 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 flex items-center justify-center text-white text-sm font-bold">
+                    <div className="flex-shrink-0 h-10 w-10 rounded-full bg-gradient-to-r from-orange-600 to-yellow-600 flex items-center justify-center text-white text-sm font-bold">
                       {complaint.userId?.name
                         ? complaint.userId.name.charAt(0).toUpperCase()
                         : "U"}
@@ -336,7 +336,7 @@ export default function ComplaintsPage() {
               </div>
 
               <div className="mb-4 flex items-center gap-2">
-                <div className="h-8 w-8 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 flex items-center justify-center text-white text-sm font-bold">
+                <div className="h-8 w-8 rounded-full bg-gradient-to-r from-orange-600 to-yellow-600 flex items-center justify-center text-white text-sm font-bold">
                   {selectedComplaint.userId?.name
                     ? selectedComplaint.userId.name.charAt(0).toUpperCase()
                     : "U"}

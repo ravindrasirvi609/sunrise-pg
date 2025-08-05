@@ -314,7 +314,7 @@ export default function CheckoutsPage() {
         <div className="flex space-x-2 mt-4 md:mt-0">
           <button
             onClick={toggleAnalyticsView}
-            className="flex items-center px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition"
+            className="flex items-center px-4 py-2 bg-orange-600 text-white rounded-md hover:bg-orange-700 transition"
           >
             {showAnalytics ? (
               <User size={16} className="mr-2" />
@@ -407,8 +407,8 @@ export default function CheckoutsPage() {
               </h2>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-                <div className="bg-indigo-50 dark:bg-indigo-900/20 p-4 rounded-lg">
-                  <h3 className="text-indigo-600 dark:text-indigo-400 font-medium text-sm">
+                <div className="bg-orange-50 dark:bg-orange-900/20 p-4 rounded-lg">
+                  <h3 className="text-orange-600 dark:text-orange-400 font-medium text-sm">
                     Total Checkouts
                   </h3>
                   <p className="text-2xl font-bold text-gray-900 dark:text-white mt-2">
@@ -425,8 +425,8 @@ export default function CheckoutsPage() {
                   </p>
                 </div>
 
-                <div className="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg">
-                  <h3 className="text-blue-600 dark:text-blue-400 font-medium text-sm">
+                <div className="bg-orange-50 dark:bg-orange-900/20 p-4 rounded-lg">
+                  <h3 className="text-orange-600 dark:text-orange-400 font-medium text-sm">
                     Survey Completion Rate
                   </h3>
                   <p className="text-2xl font-bold text-gray-900 dark:text-white mt-2">
@@ -455,7 +455,7 @@ export default function CheckoutsPage() {
                           </span>
                           <div className="w-20 bg-gray-200 dark:bg-gray-700 rounded-full h-2">
                             <div
-                              className="bg-indigo-500 h-2 rounded-full"
+                              className="bg-orange-500 h-2 rounded-full"
                               style={{
                                 width: `${(reason.count / analytics.totalCheckouts) * 100}%`,
                               }}

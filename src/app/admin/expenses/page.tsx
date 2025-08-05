@@ -99,13 +99,13 @@ export default function AdminExpensesPage() {
   });
 
   return (
-    <div className="min-h-screen w-full bg-gradient-to-br from-pink-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-purple-900 p-4 sm:p-6 lg:p-8">
+    <div className="min-h-screen w-full bg-gradient-to-br from-orange-50 via-white to-yellow-50 dark:from-gray-900 dark:via-gray-800 dark:to-purple-900 p-4 sm:p-6 lg:p-8">
       <div className="max-w-7xl mx-auto">
         {/* Page header */}
         <div className="backdrop-blur-sm bg-white/60 dark:bg-gray-800/40 rounded-2xl p-6 mb-6 border border-white/20 dark:border-gray-700/30 shadow-lg">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
             <div>
-              <h1 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-600">
+              <h1 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-yellow-500">
                 Expenses Management
               </h1>
               <p className="text-gray-600 dark:text-gray-400">
@@ -129,7 +129,7 @@ export default function AdminExpensesPage() {
             placeholder="Status"
           />
           <button
-            className="px-4 py-2 bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-lg font-semibold shadow hover:from-pink-600 hover:to-purple-700 transition disabled:opacity-60"
+            className="px-4 py-2 bg-gradient-to-r from-orange-500 to-yellow-600 text-white rounded-lg font-semibold shadow hover:from-orange-600 hover:to-yellow-700 transition disabled:opacity-60"
             onClick={fetchExpenses}
             disabled={loading}
           >
@@ -140,7 +140,7 @@ export default function AdminExpensesPage() {
         <div className="backdrop-blur-lg bg-white/30 dark:bg-gray-800/30 rounded-2xl border border-white/20 dark:border-gray-700/30 shadow-xl overflow-hidden">
           {loading ? (
             <div className="flex justify-center items-center py-24">
-              <FaSpinner className="animate-spin text-4xl text-pink-600" />
+              <FaSpinner className="animate-spin text-4xl text-orange-600" />
             </div>
           ) : error ? (
             <div className="flex justify-center items-center py-12">

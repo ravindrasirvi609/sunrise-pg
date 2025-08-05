@@ -109,7 +109,7 @@ export default function AdminNoticesPage() {
   if (loading) {
     return (
       <div className="flex justify-center items-center min-h-screen">
-        <div className="h-8 w-8 border-4 border-pink-500 border-t-transparent rounded-full animate-spin"></div>
+        <div className="h-8 w-8 border-4 border-orange-500 border-t-transparent rounded-full animate-spin"></div>
       </div>
     );
   }
@@ -118,12 +118,12 @@ export default function AdminNoticesPage() {
     <div className="container mx-auto px-4 py-8">
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-2xl font-bold text-gray-800 dark:text-white flex items-center">
-          <FaBell className="mr-3 text-pink-600" />
+          <FaBell className="mr-3 text-orange-600" />
           Notice Management
         </h1>
         <button
           onClick={() => setIsFormOpen(!isFormOpen)}
-          className="bg-pink-600 hover:bg-pink-700 text-white px-4 py-2 rounded-lg flex items-center transition-colors"
+          className="bg-orange-600 hover:bg-orange-700 text-white px-4 py-2 rounded-lg flex items-center transition-colors"
         >
           {isFormOpen ? (
             "Cancel"
@@ -161,7 +161,7 @@ export default function AdminNoticesPage() {
                 name="title"
                 value={formData.title}
                 onChange={handleInputChange}
-                className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-pink-500 focus:border-pink-500 bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
+                className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-orange-500 focus:border-orange-500 bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
                 placeholder="Notice Title"
                 required
               />
@@ -179,7 +179,7 @@ export default function AdminNoticesPage() {
                 value={formData.description}
                 onChange={handleInputChange}
                 rows={4}
-                className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-pink-500 focus:border-pink-500 bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
+                className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-orange-500 focus:border-orange-500 bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
                 placeholder="Notice description..."
                 required
               ></textarea>
@@ -195,7 +195,7 @@ export default function AdminNoticesPage() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="bg-pink-600 hover:bg-pink-700 text-white px-6 py-2 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                className="bg-orange-600 hover:bg-orange-700 text-white px-6 py-2 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? "Creating..." : "Create Notice"}
               </button>
