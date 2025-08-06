@@ -152,7 +152,7 @@ export async function GET(request: Request, context: unknown) {
             .brand-name {
               font-size: 28px;
               font-weight: bold;
-              color: #d53f8c;
+              color: #ff8c00;
               letter-spacing: 0.5px;
             }
             .brand-slogan {
@@ -175,10 +175,10 @@ export async function GET(request: Request, context: unknown) {
               align-items: center;
             }
             .receipt-number {
-              background-color: #fdf2f8;
+              background-color: #fff176;
               padding: 10px 15px;
               border-radius: 6px;
-              border-left: 4px solid #d53f8c;
+              border-left: 4px solid #ff8c00;
               font-weight: bold;
               margin-bottom: 10px;
             }
@@ -194,7 +194,7 @@ export async function GET(request: Request, context: unknown) {
               display: block;
               width: 80px;
               height: 3px;
-              background: linear-gradient(to right, #d53f8c, #f6a5c1);
+              background: linear-gradient(to right, #ff8c00, #ffa726);
               margin: 8px auto 0;
               border-radius: 2px;
             }
@@ -228,7 +228,7 @@ export async function GET(request: Request, context: unknown) {
               bottom: -1px;
               width: 40px;
               height: 2px;
-              background-color: #d53f8c;
+              background-color: #ff8c00;
             }
             .receipt-detail {
               display: flex;
@@ -262,7 +262,7 @@ export async function GET(request: Request, context: unknown) {
               background-color: #f6f9fc;
               font-weight: 600;
               color: #555;
-              border-bottom: 2px solid #d53f8c;
+              border-bottom: 2px solid #ff8c00;
             }
             .receipt-table tr:nth-child(even) {
               background-color: #f9f9f9;
@@ -282,7 +282,7 @@ export async function GET(request: Request, context: unknown) {
             }
             .receipt-total .value {
               min-width: 120px;
-              color: #d53f8c;
+              color: #ff8c00;
             }
             .status {
               display: inline-block;
@@ -313,7 +313,7 @@ export async function GET(request: Request, context: unknown) {
               justify-content: center;
               width: 60px;
               height: 60px;
-              background: #d53f8c;
+              background: #ff8c00;
               border-radius: 50%;
               color: white;
               font-weight: bold;
@@ -354,7 +354,7 @@ export async function GET(request: Request, context: unknown) {
               transform: translate(-50%, -50%) rotate(-45deg);
               font-size: 90px;
               opacity: 0.03;
-              color: #d53f8c;
+              color: #ff8c00;
               z-index: -1;
               white-space: nowrap;
               font-weight: bold;
@@ -394,10 +394,10 @@ export async function GET(request: Request, context: unknown) {
         </head>
         <body>
           <div class="receipt">
-            <div class="watermark">COMFORT STAY PG</div>
+            <div class="watermark">SUNRISE PG</div>
             <div class="receipt-header">
               <div class="brand">
-                <div class="brand-name">COMFORT STAY PG</div>
+                <div class="brand-name">SUNRISE PG</div>
                 <div class="brand-slogan">Your Home Away From Home</div>
                 <div class="brand-address">
                   Hinjewadi Phase 1 Rd, Mukai Nagar, Phase 1, 
@@ -406,8 +406,8 @@ export async function GET(request: Request, context: unknown) {
                 </div>
                 <div class="brand-contact">
                   <span style="margin-right: 10px;">📞 +91 9922 538 989</span>
-                  <span style="margin-right: 10px;">✉️ info@comfortstay.com</span>
-                  <span>🌐 www.comfortstaypg.com</span>
+                  <span style="margin-right: 10px;">✉️ info@sunrisepg.com</span>
+                  <span>🌐 www.sunrisepg.com</span>
                 </div>
               </div>
               <div>
@@ -524,8 +524,8 @@ export async function GET(request: Request, context: unknown) {
             
             <div class="footer">
               <p>This is a computer-generated receipt and does not require a signature.</p>
-              <p style="margin-top: 10px; color: #d53f8c;">Thank you for choosing Comfort Stay PG!</p>
-              <p style="margin-top: 5px; font-size: 11px;">Visit us at: <a href="https://www.comfortstaypg.com" style="color: #d53f8c; text-decoration: none;">www.comfortstaypg.com</a></p>
+              <p style="margin-top: 10px; color: #ff8c00;">Thank you for choosing Sunrise PG!</p>
+              <p style="margin-top: 5px; font-size: 11px;">Visit us at: <a href="https://www.sunrisepg.com" style="color: #ff8c00; text-decoration: none;">www.sunrisepg.com</a></p>
             </div>
           </div>
         </body>

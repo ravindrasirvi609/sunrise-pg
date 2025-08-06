@@ -125,7 +125,7 @@ export async function sendRegistrationConfirmationEmail(
   email: string,
   userId?: string | mongoose.Types.ObjectId
 ) {
-  const subject = "Registration Received - Comfort Stay PG";
+  const subject = "Registration Received - Sunrise PG";
 
   const html = `
     <!DOCTYPE html>
@@ -138,11 +138,11 @@ export async function sendRegistrationConfirmationEmail(
       <style type="text/css">
         table {border-collapse: collapse;}
         .button {padding: 12px 24px !important;}
-        .gradient-bg {background: #FF92B7 !important;}
+        .gradient-bg {background: #ff8c00 !important;}
       </style>
       <![endif]-->
     </head>
-    <body style="margin: 0; padding: 0; font-family: 'Poppins', Arial, sans-serif; background-color: #fff5f8; color: #4a4a4a;">
+    <body style="margin: 0; padding: 0; font-family: 'Poppins', Arial, sans-serif; background-color: #fff8e1; color: #4a4a4a;">
       <center>
         <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px; background-color: #ffffff; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-top: 20px; margin-bottom: 20px;">
           <!-- Header -->
@@ -150,49 +150,41 @@ export async function sendRegistrationConfirmationEmail(
             <td style="padding: 0;">
               <table border="0" cellpadding="0" cellspacing="0" width="100%">
                 <tr>
-                  <td style="background: linear-gradient(90deg, #FF92B7 0%, #FFC0D6 100%); padding: 30px; text-align: center; border-radius: 8px 8px 0 0;">
-                    <h1 style="color: #ffffff; font-size: 28px; margin: 0; font-weight: 600;">Comfort Stay PG</h1>
+                  <td style="background: linear-gradient(90deg, #ff8c00 0%, #ffa726 25%, #ffcc02 50%, #ffeb3b 75%, #fff176 100%); padding: 30px; text-align: center; border-radius: 8px 8px 0 0;">
+                    <h1 style="color: #ffffff; font-size: 28px; margin: 0; font-weight: 600;">Sunrise PG</h1>
                   </td>
                 </tr>
               </table>
             </td>
           </tr>
-          
           <!-- Content -->
           <tr>
             <td style="padding: 30px 40px;">
-              <h2 style="color: #FF92B7; font-size: 22px; margin: 0 0 20px; font-weight: 600;">Registration Received</h2>
-              
+              <h2 style="color: #ff8c00; font-size: 22px; margin: 0 0 20px; font-weight: 600;">Registration Received</h2>
               <p style="font-size: 16px; line-height: 1.5; margin: 0 0 15px;">Dear ${name},</p>
-              
-              <p style="font-size: 16px; line-height: 1.5; margin: 0 0 20px;">Thank you for registering with Comfort Stay PG. We're excited about your interest in our premium accommodation services!</p>
-              
+              <p style="font-size: 16px; line-height: 1.5; margin: 0 0 20px;">Thank you for registering with Sunrise PG. We're excited about your interest in our premium accommodation services!</p>
               <!-- Status Box -->
-              <table border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #ffeef5; border-radius: 8px; margin: 0 0 25px;">
+              <table border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #fffde7; border-radius: 8px; margin: 0 0 25px;">
                 <tr>
                   <td style="padding: 20px 25px;">
                     <p style="font-size: 16px; margin: 0; font-weight: 500;">
-                      <span style="display: inline-block; width: 12px; height: 12px; background-color: #FFC0D6; border-radius: 50%; margin-right: 8px;"></span>
+                      <span style="display: inline-block; width: 12px; height: 12px; background-color: #ffeb3b; border-radius: 50%; margin-right: 8px;"></span>
                       Your registration is currently under review
                     </p>
                   </td>
                 </tr>
               </table>
-              
               <p style="font-size: 16px; line-height: 1.5; margin: 0 0 20px;">Our administrative team is reviewing your application and will process it shortly. Upon approval, we'll send you your login credentials via email.</p>
-              
               <p style="font-size: 16px; line-height: 1.5; margin: 0 0 25px;">If you have any questions about your registration, feel free to contact our support team.</p>
-              
               <!-- Rules and Regulations Section -->
               <table border="0" cellpadding="0" cellspacing="0" width="100%" style="margin: 30px 0;">
                 <tr>
                   <td>
-                    <h3 style="color: #d53f8c; font-size: 18px; margin: 0 0 15px;">Important Rules & Regulations:</h3>
-                    
-                    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #f8f9fa; border-radius: 8px; margin: 0 0 20px;">
+                    <h3 style="color: #ff8c00; font-size: 18px; margin: 0 0 15px;">Important Rules & Regulations:</h3>
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #fffde7; border-radius: 8px; margin: 0 0 20px;">
                       <tr>
                         <td style="padding: 20px;">
-                          <h4 style="color: #d53f8c; font-size: 16px; margin: 0 0 10px;">General Rules:</h4>
+                          <h4 style="color: #ffa726; font-size: 16px; margin: 0 0 10px;">General Rules:</h4>
                           <ul style="margin: 0; padding-left: 20px; color: #4a4a4a;">
                             <li style="margin-bottom: 8px;">No outside visitors without prior approval</li>
                             <li style="margin-bottom: 8px;">STRICTLY NO FOOD ALLOWED IN ROOMS - All meals must be consumed in the dining area only</li>
@@ -203,11 +195,10 @@ export async function sendRegistrationConfirmationEmail(
                         </td>
                       </tr>
                     </table>
-
-                    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #f8f9fa; border-radius: 8px; margin: 0 0 20px;">
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #fffde7; border-radius: 8px; margin: 0 0 20px;">
                       <tr>
                         <td style="padding: 20px;">
-                          <h4 style="color: #d53f8c; font-size: 16px; margin: 0 0 10px;">Dining Rules:</h4>
+                          <h4 style="color: #ffa726; font-size: 16px; margin: 0 0 10px;">Dining Rules:</h4>
                           <ul style="margin: 0; padding-left: 20px; color: #4a4a4a;">
                             <li style="margin-bottom: 8px;">All meals must be consumed in the designated dining area only</li>
                             <li style="margin-bottom: 8px;">Carrying food to rooms is strictly prohibited</li>
@@ -215,11 +206,10 @@ export async function sendRegistrationConfirmationEmail(
                         </td>
                       </tr>
                     </table>
-
-                    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #f8f9fa; border-radius: 8px; margin: 0 0 20px;">
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #fffde7; border-radius: 8px; margin: 0 0 20px;">
                       <tr>
                         <td style="padding: 20px;">
-                          <h4 style="color: #d53f8c; font-size: 16px; margin: 0 0 10px;">Safety & Security:</h4>
+                          <h4 style="color: #ffa726; font-size: 16px; margin: 0 0 10px;">Safety & Security:</h4>
                           <ul style="margin: 0; padding-left: 20px; color: #4a4a4a;">
                             <li style="margin-bottom: 8px;">Keep belongings safe and lock rooms when not in use</li>
                             <li style="margin-bottom: 8px;">No smoking, alcohol, or narcotics on premises</li>
@@ -229,11 +219,10 @@ export async function sendRegistrationConfirmationEmail(
                         </td>
                       </tr>
                     </table>
-
-                    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #f8f9fa; border-radius: 8px;">
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #fffde7; border-radius: 8px;">
                       <tr>
                         <td style="padding: 20px;">
-                          <h4 style="color: #d53f8c; font-size: 16px; margin: 0 0 10px;">Payment Rules:</h4>
+                          <h4 style="color: #ffa726; font-size: 16px; margin: 0 0 10px;">Payment Rules:</h4>
                           <ul style="margin: 0; padding-left: 20px; color: #4a4a4a;">
                             <li style="margin-bottom: 8px;">Monthly rent due by the 5th of each month</li>
                             <li style="margin-bottom: 8px;">5% late payment penalty per week</li>
@@ -248,73 +237,69 @@ export async function sendRegistrationConfirmationEmail(
                   </td>
                 </tr>
               </table>
-              
               <!-- Rules and Regulations Buttons -->
               <table border="0" cellpadding="0" cellspacing="0" width="100%" style="margin: 30px 0;">
                 <tr>
                   <td align="center">
-                    <a href="${process.env.NEXT_PUBLIC_SITE_URL}/rules-regulations" target="_blank" style="background: linear-gradient(90deg, #FF92B7 0%, #FFC0D6 100%); color: white; text-decoration: none; font-weight: 600; padding: 14px 30px; border-radius: 6px; font-size: 16px; display: inline-block; text-align: center; margin: 0 10px;">View Full Rules & Regulations</a>
+                    <a href="https://www.sunrisepg.com/rules-regulations" target="_blank" style="background: linear-gradient(90deg, #ff8c00 0%, #ffa726 25%, #ffcc02 50%, #ffeb3b 75%, #fff176 100%); color: white; text-decoration: none; font-weight: 600; padding: 14px 30px; border-radius: 6px; font-size: 16px; display: inline-block; text-align: center; margin: 0 10px;">View Full Rules & Regulations</a>
                   </td>
                 </tr>
               </table>
-              
               <!-- Features Section -->
               <table border="0" cellpadding="0" cellspacing="0" width="100%" style="margin: 20px 0 25px;">
                 <tr>
                   <td>
-                    <h3 style="color: #d53f8c; font-size: 18px; margin: 0 0 15px;">What to expect at Comfort Stay PG:</h3>
-                    
+                    <h3 style="color: #ff8c00; font-size: 18px; margin: 0 0 15px;">What to expect at Sunrise PG:</h3>
                     <table border="0" cellpadding="0" cellspacing="0" width="100%">
                       <tr>
                         <td width="25" valign="top" style="padding-right: 10px; padding-bottom: 12px;">
-                          <div style="width: 8px; height: 8px; background-color: #FF92B7; border-radius: 50%; margin-top: 6px;"></div>
+                          <div style="width: 8px; height: 8px; background-color: #ffcc02; border-radius: 50%; margin-top: 6px;"></div>
                         </td>
                         <td style="font-size: 15px; padding-bottom: 12px;">Modern and comfortable accommodation with all amenities</td>
                       </tr>
                       <tr>
                         <td width="25" valign="top" style="padding-right: 10px; padding-bottom: 12px;">
-                          <div style="width: 8px; height: 8px; background-color: #FF92B7; border-radius: 50%; margin-top: 6px;"></div>
+                          <div style="width: 8px; height: 8px; background-color: #ffcc02; border-radius: 50%; margin-top: 6px;"></div>
                         </td>
                         <td style="font-size: 15px; padding-bottom: 12px;">Nutritious and delicious meals served three times daily</td>
                       </tr>
                       <tr>
                         <td width="25" valign="top" style="padding-right: 10px; padding-bottom: 12px;">
-                          <div style="width: 8px; height: 8px; background-color: #FF92B7; border-radius: 50%; margin-top: 6px;"></div>
+                          <div style="width: 8px; height: 8px; background-color: #ffcc02; border-radius: 50%; margin-top: 6px;"></div>
                         </td>
                         <td style="font-size: 15px; padding-bottom: 12px;">High-speed WiFi and fully furnished rooms</td>
                       </tr>
                       <tr>
                         <td width="25" valign="top" style="padding-right: 10px;">
-                          <div style="width: 8px; height: 8px; background-color: #FF92B7; border-radius: 50%; margin-top: 6px;"></div>
+                          <div style="width: 8px; height: 8px; background-color: #ffcc02; border-radius: 50%; margin-top: 6px;"></div>
                         </td>
                       </tr>
                     </table>
                   </td>
                 </tr>
               </table>
-              
+              <!-- Rules and Regulations Buttons -->
               <table border="0" cellpadding="0" cellspacing="0" width="100%" style="margin: 30px 0;">
                 <tr>
                   <td align="center">
-                    <a href="${process.env.NEXT_PUBLIC_SITE_URL}/rules-regulations" target="_blank" style="background: linear-gradient(90deg, #FF92B7 0%, #FFC0D6 100%); color: white; text-decoration: none; font-weight: 600; padding: 14px 30px; border-radius: 6px; font-size: 16px; display: inline-block; text-align: center;">View Full Rules & Regulations</a>
+                    <a href="https://www.sunrisepg.com/rules-regulations" target="_blank" style="background: linear-gradient(90deg, #ff8c00 0%, #ffa726 25%, #ffcc02 50%, #ffeb3b 75%, #fff176 100%); color: white; text-decoration: none; font-weight: 600; padding: 14px 30px; border-radius: 6px; font-size: 16px; display: inline-block; text-align: center;">View Full Rules & Regulations</a>
                   </td>
                 </tr>
               </table>
             </td>
           </tr>
-          
           <!-- Footer -->
           <tr>
             <td style="padding: 0;">
               <table border="0" cellpadding="0" cellspacing="0" width="100%">
                 <tr>
-                  <td style="background-color: #f9f9f9; padding: 20px 40px; text-align: center; border-radius: 0 0 8px 8px; border-top: 1px solid #eee;">
-                    <p style="font-size: 14px; color: #666; margin: 0 0 10px;">© ${new Date().getFullYear()} Comfort Stay PG. All rights reserved.</p>
+                  <td style="background-color: #fffde7; padding: 20px 40px; text-align: center; border-radius: 0 0 8px 8px; border-top: 1px solid #ffe082;">
+                    <p style="font-size: 14px; color: #666; margin: 0 0 10px;">© ${new Date().getFullYear()} Sunrise PG. All rights reserved.</p>
                     <p style="font-size: 14px; color: #666; margin: 0 0 5px;">Hinjewadi Phase 1 Rd, Mukai Nagar, Pune, Maharashtra 411057</p>
                     <p style="font-size: 14px; margin: 15px 0 0;">
-                      <a href="${process.env.NEXT_PUBLIC_SITE_URL}" style="color: #FF92B7; text-decoration: none; margin: 0 10px;">Website</a> |
-                      <a href="${process.env.NEXT_PUBLIC_SITE_URL}/contact" style="color: #FF92B7; text-decoration: none; margin: 0 10px;">Contact</a> |
-                      <a href="tel:+919922538989" style="color: #FF92B7; text-decoration: none; margin: 0 10px;">+91 9922 538 989</a>
+                      <a href="https://www.sunrisepg.com" style="color: #ff8c00; text-decoration: none; margin: 0 10px;">Website</a> |
+                      <a href="https://www.sunrisepg.com/contact" style="color: #ff8c00; text-decoration: none; margin: 0 10px;">Contact</a> |
+                      <a href="tel:+919922538989" style="color: #ff8c00; text-decoration: none; margin: 0 10px;">+91 9922 538 989</a>
                     </p>
                   </td>
                 </tr>
