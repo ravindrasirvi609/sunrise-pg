@@ -10,7 +10,7 @@ const testimonials = [
     company: "TCS",
     rating: 5,
     comment:
-      "I moved into Comfort Stay PG when it opened in February 2025. As a woman working in IT, safety was my priority, and this place has excellent security measures. The rooms are clean, spacious, and the staff is incredibly supportive.",
+      "I moved into Sunrise PG when it opened in February 2025. As a woman working in IT, safety was my priority, and this place has excellent security measures. The rooms are clean, spacious, and the staff is incredibly supportive.",
   },
   {
     name: "Neha Gupta",
@@ -18,7 +18,7 @@ const testimonials = [
     company: "Infosys",
     rating: 5,
     comment:
-      "Moving to Pune for work was made easy with Comfort Stay PG. Since they opened in February, I've enjoyed the homely atmosphere, wholesome food, and community of like-minded women. The location is perfect for quick commutes to Hinjewadi IT Park.",
+      "Moving to Pune for work was made easy with Sunrise PG. Since they opened in February, I've enjoyed the homely atmosphere, wholesome food, and community of like-minded women. The location is perfect for quick commutes to Hinjewadi IT Park.",
   },
   {
     name: "Priya Desai",
@@ -34,7 +34,7 @@ const testimonials = [
     company: "Wipro",
     rating: 4,
     comment:
-      "The amenities at Comfort Stay PG are thoughtfully designed for working women. I enjoy the beauty corner and lounge area where I can relax after work. My twin-sharing room is spacious and gives enough privacy. Glad I moved in shortly after they opened.",
+      "The amenities at Sunrise PG are thoughtfully designed for working women. I enjoy the beauty corner and lounge area where I can relax after work. My twin-sharing room is spacious and gives enough privacy. Glad I moved in shortly after they opened.",
   },
   {
     name: "Riya Mehta",
@@ -42,7 +42,7 @@ const testimonials = [
     company: "Tech Mahindra",
     rating: 5,
     comment:
-      "After researching several PGs in Pune, I can confirm Comfort Stay is the best choice I made. The cleanliness, nutritious meals, and attentive staff make it feel like home. In just two months since they opened, the management has been very responsive to feedback.",
+      "After researching several PGs in Pune, I can confirm Sunrise PG is the best choice I made. The cleanliness, nutritious meals, and attentive staff make it feel like home. In just two months since they opened, the management has been very responsive to feedback.",
   },
 ];
 

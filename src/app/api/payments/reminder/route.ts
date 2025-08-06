@@ -67,16 +67,16 @@ export async function POST(request: NextRequest) {
           subject: `Rent Payment Reminder: ${month}`,
           html: `
             <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-              <h2 style="color: #d53f8c;">Rent Payment Reminder</h2>
+              <h2 style="color: #ff8c00;">Rent Payment Reminder</h2>
               <p>Dear ${userDetails.name},</p>
               <p>This is a friendly reminder that your rent payment for <strong>${month}</strong> is currently due.</p>
-              <div style="background-color: #f8f4ff; border-left: 4px solid #d53f8c; padding: 15px; margin: 20px 0;">
+              <div style="background-color: #fff8e1; border-left: 4px solid #ff8c00; padding: 15px; margin: 20px 0;">
                 <p style="margin: 0;"><strong>Amount Due:</strong> ₹${userPayment.amount}</p>
                 <p style="margin: 10px 0 0;"><strong>Due Date:</strong> ${userPayment.dueDate ? new Date(userPayment.dueDate).toLocaleDateString() : "As soon as possible"}</p>
               </div>
               <p>Please make the payment at your earliest convenience to avoid any late fees.</p>
               <p>If you have already made the payment, please disregard this message.</p>
-              <p>Thank you,<br>Comfort Stay PG Management</p>
+              <p>Thank you,<br>Sunrise PG Management</p>
             </div>
           `,
         });
@@ -128,16 +128,16 @@ export async function POST(request: NextRequest) {
             subject: `Rent Payment Reminder: ${month}`,
             html: `
               <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-                <h2 style="color: #d53f8c;">Rent Payment Reminder</h2>
+                <h2 style="color: #ff8c00;">Rent Payment Reminder</h2>
                 <p>Dear ${userDetails.name},</p>
                 <p>This is a friendly reminder that your rent payment for <strong>${month}</strong> is currently due.</p>
-                <div style="background-color: #f8f4ff; border-left: 4px solid #d53f8c; padding: 15px; margin: 20px 0;">
+                <div style="background-color: #fff8e1; border-left: 4px solid #ff8c00; padding: 15px; margin: 20px 0;">
                   <p style="margin: 0;"><strong>Amount Due:</strong> ₹${payment.amount}</p>
                   <p style="margin: 10px 0 0;"><strong>Due Date:</strong> ${payment.dueDate ? new Date(payment.dueDate).toLocaleDateString() : "As soon as possible"}</p>
                 </div>
                 <p>Please make the payment at your earliest convenience to avoid any late fees.</p>
                 <p>If you have already made the payment, please disregard this message.</p>
-                <p>Thank you,<br>Comfort Stay PG Management</p>
+                <p>Thank you,<br>Sunrise PG Management</p>
               </div>
             `,
           });

@@ -96,11 +96,11 @@ export async function POST(
         html: `
           <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #e2e8f0; border-radius: 8px;">
             <div style="text-align: center; margin-bottom: 20px;">
-              <h1 style="color: #d53f8c; margin: 0; font-size: 24px;">Comfort Stay PG</h1>
+              <h1 style="color: #ff8c00; margin: 0; font-size: 24px;">Sunrise PG</h1>
               <p style="color: #4a5568; margin: 5px 0;">Payment Reminder Notice</p>
             </div>
 
-            <div style="background-color: #f8f4ff; border-left: 4px solid #d53f8c; padding: 20px; margin: 20px 0; border-radius: 4px;">
+            <div style="background-color: #fff8e1; border-left: 4px solid #ff8c00; padding: 20px; margin: 20px 0; border-radius: 4px;">
               <p style="margin: 0; color: #2d3748; font-size: 16px;">Dear ${userDetails.name},</p>
               <p style="margin: 10px 0; color: #4a5568;">This is a formal reminder regarding your pending rent payment for ${currentMonthYear}.</p>
             </div>
@@ -144,7 +144,7 @@ export async function POST(
 
             <div style="margin-top: 30px; text-align: center; color: #718096; font-size: 14px;">
               <p style="margin: 0;">Thank you for your cooperation.</p>
-              <p style="margin: 5px 0;">Comfort Stay PG Management</p>
+              <p style="margin: 5px 0;">Sunrise PG Management</p>
             </div>
           </div>
         `,

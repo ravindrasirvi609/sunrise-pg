@@ -45,7 +45,7 @@ export async function sendEmail({
     const data = await resend.emails.send({
       from:
         process.env.NEXT_PUBLIC_EMAIL_FROM ||
-        "Comfort Stay PG <dev@ravindrachoudhary.in>",
+        "Sunrise PG <dev@ravindrachoudhary.in>",
       to,
       subject,
       html,
@@ -325,7 +325,7 @@ export async function sendWelcomeEmail(
   password: string,
   userId?: string | mongoose.Types.ObjectId
 ) {
-  const subject = "Welcome to Comfort Stay PG - Your Login Credentials";
+  const subject = "Welcome to Sunrise PG - Your Login Credentials";
 
   const html = `
     <!DOCTYPE html>
@@ -338,11 +338,11 @@ export async function sendWelcomeEmail(
       <style type="text/css">
         table {border-collapse: collapse;}
         .button {padding: 12px 24px !important;}
-        .gradient-bg {background: #FF92B7 !important;}
+        .gradient-bg {background: #ff8c00 !important;}
       </style>
       <![endif]-->
     </head>
-    <body style="margin: 0; padding: 0; font-family: 'Poppins', Arial, sans-serif; background-color: #fff5f8; color: #4a4a4a;">
+    <body style="margin: 0; padding: 0; font-family: 'Poppins', Arial, sans-serif; background-color: #fff8e1; color: #4a4a4a;">
       <center>
         <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px; background-color: #ffffff; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-top: 20px; margin-bottom: 20px;">
           <!-- Header -->
@@ -350,8 +350,8 @@ export async function sendWelcomeEmail(
             <td style="padding: 0;">
               <table border="0" cellpadding="0" cellspacing="0" width="100%">
                 <tr>
-                  <td style="background: linear-gradient(90deg, #FF92B7 0%, #FFC0D6 100%); padding: 30px; text-align: center; border-radius: 8px 8px 0 0;">
-                    <h1 style="color: #ffffff; font-size: 28px; margin: 0; font-weight: 600;">Welcome to Comfort Stay PG!</h1>
+                  <td style="background: linear-gradient(90deg, #ff8c00 0%, #ffa726 25%, #ffcc02 50%, #ffeb3b 75%, #fff176 100%); padding: 30px; text-align: center; border-radius: 8px 8px 0 0;">
+                    <h1 style="color: #ffffff; font-size: 28px; margin: 0; font-weight: 600;">Welcome to Sunrise PG!</h1>
                   </td>
                 </tr>
               </table>
@@ -363,15 +363,15 @@ export async function sendWelcomeEmail(
             <td style="padding: 30px 40px;">
               <p style="font-size: 16px; line-height: 1.5; margin: 0 0 15px;">Dear ${name},</p>
               
-              <p style="font-size: 16px; line-height: 1.5; margin: 0 0 20px;">We're thrilled to welcome you to Comfort Stay PG! Your registration has been approved, and we've created your account. Below are your login credentials to access our resident portal:</p>
+              <p style="font-size: 16px; line-height: 1.5; margin: 0 0 20px;">We're thrilled to welcome you to Sunrise PG! Your registration has been approved, and we've created your account. Below are your login credentials to access our resident portal:</p>
               
               <!-- Credentials Box -->
-              <table border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #ffeef5; border-radius: 8px; margin: 0 0 25px;">
+              <table border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #fffde7; border-radius: 8px; margin: 0 0 25px;">
                 <tr>
                   <td style="padding: 20px 25px;">
-                    <p style="font-size: 15px; margin: 0 0 10px;"><strong style="color: #d53f8c;">Email (Login ID):</strong> ${email}</p>
-                    <p style="font-size: 15px; margin: 0 0 10px;"><strong style="color: #d53f8c;">PG ID:</strong> ${pgId}</p>
-                    <p style="font-size: 15px; margin: 0 0 10px;"><strong style="color: #d53f8c;">Password:</strong> ${password}</p>
+                    <p style="font-size: 15px; margin: 0 0 10px;"><strong style="color: #ff8c00;">Email (Login ID):</strong> ${email}</p>
+                    <p style="font-size: 15px; margin: 0 0 10px;"><strong style="color: #ff8c00;">PG ID:</strong> ${pgId}</p>
+                    <p style="font-size: 15px; margin: 0 0 10px;"><strong style="color: #ff8c00;">Password:</strong> ${password}</p>
                   </td>
                 </tr>
               </table>
@@ -382,12 +382,12 @@ export async function sendWelcomeEmail(
               <table border="0" cellpadding="0" cellspacing="0" width="100%" style="margin: 30px 0;">
                 <tr>
                   <td>
-                    <h3 style="color: #d53f8c; font-size: 18px; margin: 0 0 15px;">Important Rules & Regulations:</h3>
+                    <h3 style="color: #ff8c00; font-size: 18px; margin: 0 0 15px;">Important Rules & Regulations:</h3>
                     
-                    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #f8f9fa; border-radius: 8px; margin: 0 0 20px;">
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #fffde7; border-radius: 8px; margin: 0 0 20px;">
                       <tr>
                         <td style="padding: 20px;">
-                          <h4 style="color: #d53f8c; font-size: 16px; margin: 0 0 10px;">General Rules:</h4>
+                          <h4 style="color: #ffa726; font-size: 16px; margin: 0 0 10px;">General Rules:</h4>
                           <ul style="margin: 0; padding-left: 20px; color: #4a4a4a;">
                             <li style="margin-bottom: 8px;">No outside visitors without prior approval</li>
                             <li style="margin-bottom: 8px;">Meals only in the dining area</li>
@@ -399,10 +399,10 @@ export async function sendWelcomeEmail(
                       </tr>
                     </table>
 
-                    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #f8f9fa; border-radius: 8px; margin: 0 0 20px;">
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #fffde7; border-radius: 8px; margin: 0 0 20px;">
                       <tr>
                         <td style="padding: 20px;">
-                          <h4 style="color: #d53f8c; font-size: 16px; margin: 0 0 10px;">Safety & Security:</h4>
+                          <h4 style="color: #ffa726; font-size: 16px; margin: 0 0 10px;">Safety & Security:</h4>
                           <ul style="margin: 0; padding-left: 20px; color: #4a4a4a;">
                             <li style="margin-bottom: 8px;">Keep belongings safe and lock rooms when not in use</li>
                             <li style="margin-bottom: 8px;">No smoking, alcohol, or narcotics on premises</li>
@@ -413,10 +413,10 @@ export async function sendWelcomeEmail(
                       </tr>
                     </table>
 
-                    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #f8f9fa; border-radius: 8px;">
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #fffde7; border-radius: 8px;">
                       <tr>
                         <td style="padding: 20px;">
-                          <h4 style="color: #d53f8c; font-size: 16px; margin: 0 0 10px;">Payment Rules:</h4>
+                          <h4 style="color: #ffa726; font-size: 16px; margin: 0 0 10px;">Payment Rules:</h4>
                           <ul style="margin: 0; padding-left: 20px; color: #4a4a4a;">
                             <li style="margin-bottom: 8px;">Monthly rent due by the 5th of each month</li>
                             <li style="margin-bottom: 8px;">5% late payment penalty per week</li>
@@ -434,7 +434,7 @@ export async function sendWelcomeEmail(
               <table border="0" cellpadding="0" cellspacing="0" width="100%" style="margin: 30px 0;">
                 <tr>
                   <td align="center">
-                    <a href="${process.env.NEXT_PUBLIC_SITE_URL}/rules-regulations" target="_blank" style="background: linear-gradient(90deg, #FF92B7 0%, #FFC0D6 100%); color: white; text-decoration: none; font-weight: 600; padding: 14px 30px; border-radius: 6px; font-size: 16px; display: inline-block; text-align: center; margin: 0 10px;">View Full Rules & Regulations</a>
+                    <a href="${process.env.NEXT_PUBLIC_SITE_URL}/rules-regulations" target="_blank" style="background: linear-gradient(90deg, #ff8c00 0%, #ffa726 25%, #ffcc02 50%, #ffeb3b 75%, #fff176 100%); color: white; text-decoration: none; font-weight: 600; padding: 14px 30px; border-radius: 6px; font-size: 16px; display: inline-block; text-align: center; margin: 0 10px;">View Full Rules & Regulations</a>
                   </td>
                 </tr>
               </table>
@@ -443,30 +443,30 @@ export async function sendWelcomeEmail(
               <table border="0" cellpadding="0" cellspacing="0" width="100%" style="margin: 20px 0 10px;">
                 <tr>
                   <td>
-                    <h3 style="color: #d53f8c; font-size: 18px; margin: 0 0 15px;">What you can do with your account:</h3>
+                    <h3 style="color: #ff8c00; font-size: 18px; margin: 0 0 15px;">What you can do with your account:</h3>
                     
                     <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: separate; border-spacing: 0 12px;">
                       <tr>
                         <td width="36" valign="top">
-                          <div style="width: 24px; height: 24px; background: linear-gradient(135deg, #FF92B7 0%, #FFC0D6 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; text-align: center;">1</div>
+                          <div style="width: 24px; height: 24px; background: linear-gradient(135deg, #ff8c00 0%, #ffcc02 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; text-align: center;">1</div>
                         </td>
                         <td style="font-size: 15px;">View your room details and payment history</td>
                       </tr>
                       <tr>
                         <td width="36" valign="top">
-                          <div style="width: 24px; height: 24px; background: linear-gradient(135deg, #FF92B7 0%, #FFC0D6 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; text-align: center;">2</div>
+                          <div style="width: 24px; height: 24px; background: linear-gradient(135deg, #ff8c00 0%, #ffcc02 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; text-align: center;">2</div>
                         </td>
                         <td style="font-size: 15px;">Submit maintenance requests and track their status</td>
                       </tr>
                       <tr>
                         <td width="36" valign="top">
-                          <div style="width: 24px; height: 24px; background: linear-gradient(135deg, #FF92B7 0%, #FFC0D6 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; text-align: center;">3</div>
+                          <div style="width: 24px; height: 24px; background: linear-gradient(135deg, #ff8c00 0%, #ffcc02 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; text-align: center;">3</div>
                         </td>
                         <td style="font-size: 15px;">Access meal schedules and daily menus</td>
                       </tr>
                       <tr>
                         <td width="36" valign="top">
-                          <div style="width: 24px; height: 24px; background: linear-gradient(135deg, #FF92B7 0%, #FFC0D6 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; text-align: center;">4</div>
+                          <div style="width: 24px; height: 24px; background: linear-gradient(135deg, #ff8c00 0%, #ffcc02 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; text-align: center;">4</div>
                         </td>
                         <td style="font-size: 15px;">Communicate directly with management</td>
                       </tr>
@@ -478,7 +478,7 @@ export async function sendWelcomeEmail(
               <p style="font-size: 16px; line-height: 1.5; margin: 25px 0 10px;">We're delighted to have you as part of our community! If you have any questions, please don't hesitate to reach out to us.</p>
               
               <p style="font-size: 16px; line-height: 1.5; margin: 0;">Warm Regards,<br>
-              <strong>The Comfort Stay PG Team</strong></p>
+              <strong>The Sunrise PG Team</strong></p>
             </td>
           </tr>
           
@@ -487,13 +487,13 @@ export async function sendWelcomeEmail(
             <td style="padding: 0;">
               <table border="0" cellpadding="0" cellspacing="0" width="100%">
                 <tr>
-                  <td style="background-color: #f9f9f9; padding: 20px 40px; text-align: center; border-radius: 0 0 8px 8px; border-top: 1px solid #eee;">
-                    <p style="font-size: 14px; color: #666; margin: 0 0 10px;">© ${new Date().getFullYear()} Comfort Stay PG. All rights reserved.</p>
+                  <td style="background-color: #fffde7; padding: 20px 40px; text-align: center; border-radius: 0 0 8px 8px; border-top: 1px solid #ffe082;">
+                    <p style="font-size: 14px; color: #666; margin: 0 0 10px;">© ${new Date().getFullYear()} Sunrise PG. All rights reserved.</p>
                     <p style="font-size: 14px; color: #666; margin: 0 0 5px;">Hinjewadi Phase 1 Rd, Mukai Nagar, Pune, Maharashtra 411057</p>
                     <p style="font-size: 14px; margin: 15px 0 0;">
-                      <a href="${process.env.NEXT_PUBLIC_SITE_URL}" style="color: #FF92B7; text-decoration: none; margin: 0 10px;">Website</a> |
-                      <a href="${process.env.NEXT_PUBLIC_SITE_URL}/contact" style="color: #FF92B7; text-decoration: none; margin: 0 10px;">Contact</a> |
-                      <a href="tel:+919922538989" style="color: #FF92B7; text-decoration: none; margin: 0 10px;">+91 9922 538 989</a>
+                      <a href="${process.env.NEXT_PUBLIC_SITE_URL}" style="color: #ff8c00; text-decoration: none; margin: 0 10px;">Website</a> |
+                      <a href="${process.env.NEXT_PUBLIC_SITE_URL}/contact" style="color: #ff8c00; text-decoration: none; margin: 0 10px;">Contact</a> |
+                      <a href="tel:+919922538989" style="color: #ff8c00; text-decoration: none; margin: 0 10px;">+91 9922 538 989</a>
                     </p>
                   </td>
                 </tr>
@@ -519,7 +519,7 @@ export async function sendResetCredentialsEmail(
   password: string,
   userId?: string | mongoose.Types.ObjectId
 ) {
-  const subject = "Your Comfort Stay PG Account Has Been Reset";
+  const subject = "Your Sunrise PG Account Has Been Reset";
 
   const html = `
     <!DOCTYPE html>
@@ -532,11 +532,11 @@ export async function sendResetCredentialsEmail(
       <style type="text/css">
         table {border-collapse: collapse;}
         .button {padding: 12px 24px !important;}
-        .gradient-bg {background: #FF92B7 !important;}
+        .gradient-bg {background: #ff8c00 !important;}
       </style>
       <![endif]-->
     </head>
-    <body style="margin: 0; padding: 0; font-family: 'Poppins', Arial, sans-serif; background-color: #fff5f8; color: #4a4a4a;">
+    <body style="margin: 0; padding: 0; font-family: 'Poppins', Arial, sans-serif; background-color: #fff8e1; color: #4a4a4a;">
       <center>
         <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px; background-color: #ffffff; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-top: 20px; margin-bottom: 20px;">
           <!-- Header -->
@@ -544,7 +544,7 @@ export async function sendResetCredentialsEmail(
             <td style="padding: 0;">
               <table border="0" cellpadding="0" cellspacing="0" width="100%">
                 <tr>
-                  <td style="background: linear-gradient(90deg, #FF92B7 0%, #FFC0D6 100%); padding: 30px; text-align: center; border-radius: 8px 8px 0 0;">
+                  <td style="background: linear-gradient(90deg, #ff8c00 0%, #ffa726 25%, #ffcc02 50%, #ffeb3b 75%, #fff176 100%); padding: 30px; text-align: center; border-radius: 8px 8px 0 0;">
                     <h1 style="color: #ffffff; font-size: 28px; margin: 0; font-weight: 600;">Account Credentials Reset</h1>
                   </td>
                 </tr>
@@ -560,12 +560,12 @@ export async function sendResetCredentialsEmail(
               <p style="font-size: 16px; line-height: 1.5; margin: 0 0 20px;">Your account credentials have been reset as requested. Below are your new login details:</p>
               
               <!-- Credentials Box -->
-              <table border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #ffeef5; border-radius: 8px; margin: 0 0 25px;">
+              <table border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #fffde7; border-radius: 8px; margin: 0 0 25px;">
                 <tr>
                   <td style="padding: 20px 25px;">
-                    <p style="font-size: 15px; margin: 0 0 10px;"><strong style="color: #d53f8c;">Email (Login ID):</strong> ${email}</p>
-                    <p style="font-size: 15px; margin: 0 0 10px;"><strong style="color: #d53f8c;">PG ID:</strong> ${pgId}</p>
-                    <p style="font-size: 15px; margin: 0;"><strong style="color: #d53f8c;">New Password:</strong> ${password}</p>
+                    <p style="font-size: 15px; margin: 0 0 10px;"><strong style="color: #ff8c00;">Email (Login ID):</strong> ${email}</p>
+                    <p style="font-size: 15px; margin: 0 0 10px;"><strong style="color: #ff8c00;">PG ID:</strong> ${pgId}</p>
+                    <p style="font-size: 15px; margin: 0;"><strong style="color: #ff8c00;">New Password:</strong> ${password}</p>
                     <p style="font-size: 14px; color: #666; margin: 15px 0 0; font-style: italic;">For security, please change your password immediately after logging in.</p>
                   </td>
                 </tr>
@@ -584,7 +584,7 @@ export async function sendResetCredentialsEmail(
               <table border="0" cellpadding="0" cellspacing="0" width="100%" style="margin: 30px 0;">
                 <tr>
                   <td align="center">
-                    <a href="${process.env.NEXT_PUBLIC_SITE_URL}/login" target="_blank" style="background: linear-gradient(90deg, #FF92B7 0%, #FFC0D6 100%); color: white; text-decoration: none; font-weight: 600; padding: 12px 30px; border-radius: 6px; font-size: 16px; display: inline-block; text-align: center;">Login with New Password</a>
+                    <a href="${process.env.NEXT_PUBLIC_SITE_URL}/login" target="_blank" style="background: linear-gradient(90deg, #ff8c00 0%, #ffa726 25%, #ffcc02 50%, #ffeb3b 75%, #fff176 100%); color: white; text-decoration: none; font-weight: 600; padding: 12px 30px; border-radius: 6px; font-size: 16px; display: inline-block; text-align: center;">Login with New Password</a>
                   </td>
                 </tr>
               </table>
@@ -592,7 +592,7 @@ export async function sendResetCredentialsEmail(
               <p style="font-size: 16px; line-height: 1.5; margin: 0 0 10px;">If you need any assistance, don't hesitate to reach out to our support team.</p>
               
               <p style="font-size: 16px; line-height: 1.5; margin: 0;">Warm Regards,<br>
-              <strong>The Comfort Stay PG Team</strong></p>
+              <strong>The Sunrise PG Team</strong></p>
             </td>
           </tr>
           
@@ -601,13 +601,13 @@ export async function sendResetCredentialsEmail(
             <td style="padding: 0;">
               <table border="0" cellpadding="0" cellspacing="0" width="100%">
                 <tr>
-                  <td style="background-color: #f9f9f9; padding: 20px 40px; text-align: center; border-radius: 0 0 8px 8px; border-top: 1px solid #eee;">
-                    <p style="font-size: 14px; color: #666; margin: 0 0 10px;">© ${new Date().getFullYear()} Comfort Stay PG. All rights reserved.</p>
+                  <td style="background-color: #fffde7; padding: 20px 40px; text-align: center; border-radius: 0 0 8px 8px; border-top: 1px solid #ffe082;">
+                    <p style="font-size: 14px; color: #666; margin: 0 0 10px;">© ${new Date().getFullYear()} Sunrise PG. All rights reserved.</p>
                     <p style="font-size: 14px; color: #666; margin: 0 0 5px;">Hinjewadi Phase 1 Rd, Mukai Nagar, Pune, Maharashtra 411057</p>
                     <p style="font-size: 14px; margin: 15px 0 0;">
-                      <a href="${process.env.NEXT_PUBLIC_SITE_URL}" style="color: #FF92B7; text-decoration: none; margin: 0 10px;">Website</a> |
-                      <a href="${process.env.NEXT_PUBLIC_SITE_URL}/contact" style="color: #FF92B7; text-decoration: none; margin: 0 10px;">Contact</a> |
-                      <a href="tel:+919922538989" style="color: #FF92B7; text-decoration: none; margin: 0 10px;">+91 9922 538 989</a>
+                      <a href="${process.env.NEXT_PUBLIC_SITE_URL}" style="color: #ff8c00; text-decoration: none; margin: 0 10px;">Website</a> |
+                      <a href="${process.env.NEXT_PUBLIC_SITE_URL}/contact" style="color: #ff8c00; text-decoration: none; margin: 0 10px;">Contact</a> |
+                      <a href="tel:+919922538989" style="color: #ff8c00; text-decoration: none; margin: 0 10px;">+91 9922 538 989</a>
                     </p>
                   </td>
                 </tr>
@@ -632,7 +632,7 @@ export async function sendRejectionEmail(
   reason: string = "",
   userId?: string | mongoose.Types.ObjectId
 ) {
-  const subject = "Application Status Update - Comfort Stay PG";
+  const subject = "Application Status Update - Sunrise PG";
 
   const html = `
     <!DOCTYPE html>
@@ -645,11 +645,11 @@ export async function sendRejectionEmail(
       <style type="text/css">
         table {border-collapse: collapse;}
         .button {padding: 12px 24px !important;}
-        .gradient-bg {background: #FF92B7 !important;}
+        .gradient-bg {background: #ff8c00 !important;}
       </style>
       <![endif]-->
     </head>
-    <body style="margin: 0; padding: 0; font-family: 'Poppins', Arial, sans-serif; background-color: #fff5f8; color: #4a4a4a;">
+    <body style="margin: 0; padding: 0; font-family: 'Poppins', Arial, sans-serif; background-color: #fff8e1; color: #4a4a4a;">
       <center>
         <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px; background-color: #ffffff; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-top: 20px; margin-bottom: 20px;">
           <!-- Header -->
@@ -657,7 +657,7 @@ export async function sendRejectionEmail(
             <td style="padding: 0;">
               <table border="0" cellpadding="0" cellspacing="0" width="100%">
                 <tr>
-                  <td style="background: linear-gradient(90deg, #FF92B7 0%, #FFC0D6 100%); padding: 30px; text-align: center; border-radius: 8px 8px 0 0;">
+                  <td style="background: linear-gradient(90deg, #ff8c00 0%, #ffa726 25%, #ffcc02 50%, #ffeb3b 75%, #fff176 100%); padding: 30px; text-align: center; border-radius: 8px 8px 0 0;">
                     <h1 style="color: #ffffff; font-size: 28px; margin: 0; font-weight: 600;">Application Status Update</h1>
                   </td>
                 </tr>
@@ -670,7 +670,7 @@ export async function sendRejectionEmail(
             <td style="padding: 30px 40px;">
               <p style="font-size: 16px; line-height: 1.5; margin: 0 0 15px;">Dear ${name},</p>
               
-              <p style="font-size: 16px; line-height: 1.5; margin: 0 0 20px;">Thank you for your interest in Comfort Stay PG. We appreciate the time you took to submit your application.</p>
+              <p style="font-size: 16px; line-height: 1.5; margin: 0 0 20px;">Thank you for your interest in Sunrise PG. We appreciate the time you took to submit your application.</p>
               
               <p style="font-size: 16px; line-height: 1.5; margin: 0 0 20px;">After careful review of your application, we regret to inform you that we are unable to proceed with your registration at this time.</p>
               
@@ -678,10 +678,10 @@ export async function sendRejectionEmail(
                 reason
                   ? `
               <!-- Reason Box -->
-              <table border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #f8f9fa; border-radius: 8px; margin: 0 0 25px;">
+              <table border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #fffde7; border-radius: 8px; margin: 0 0 25px;">
                 <tr>
                   <td style="padding: 20px 25px;">
-                    <p style="font-size: 15px; margin: 0 0 5px;"><strong style="color: #d53f8c;">Reason:</strong></p>
+                    <p style="font-size: 15px; margin: 0 0 5px;"><strong style="color: #ff8c00;">Reason:</strong></p>
                     <p style="font-size: 15px; margin: 0; line-height: 1.5;">${reason}</p>
                   </td>
                 </tr>
@@ -698,13 +698,13 @@ export async function sendRejectionEmail(
               <table border="0" cellpadding="0" cellspacing="0" width="100%" style="margin: 30px 0;">
                 <tr>
                   <td align="center">
-                    <a href="${process.env.NEXT_PUBLIC_SITE_URL}/contact" target="_blank" style="background: linear-gradient(90deg, #FF92B7 0%, #FFC0D6 100%); color: white; text-decoration: none; font-weight: 600; padding: 12px 30px; border-radius: 6px; font-size: 16px; display: inline-block; text-align: center;">Contact Support</a>
+                    <a href="${process.env.NEXT_PUBLIC_SITE_URL}/contact" target="_blank" style="background: linear-gradient(90deg, #ff8c00 0%, #ffa726 25%, #ffcc02 50%, #ffeb3b 75%, #fff176 100%); color: white; text-decoration: none; font-weight: 600; padding: 12px 30px; border-radius: 6px; font-size: 16px; display: inline-block; text-align: center;">Contact Support</a>
                   </td>
                 </tr>
               </table>
               
               <p style="font-size: 16px; line-height: 1.5; margin: 0;">Warm Regards,<br>
-              <strong>The Comfort Stay PG Team</strong></p>
+              <strong>The Sunrise PG Team</strong></p>
             </td>
           </tr>
           
@@ -713,13 +713,13 @@ export async function sendRejectionEmail(
             <td style="padding: 0;">
               <table border="0" cellpadding="0" cellspacing="0" width="100%">
                 <tr>
-                  <td style="background-color: #f9f9f9; padding: 20px 40px; text-align: center; border-radius: 0 0 8px 8px; border-top: 1px solid #eee;">
-                    <p style="font-size: 14px; color: #666; margin: 0 0 10px;">© ${new Date().getFullYear()} Comfort Stay PG. All rights reserved.</p>
+                  <td style="background-color: #fffde7; padding: 20px 40px; text-align: center; border-radius: 0 0 8px 8px; border-top: 1px solid #ffe082;">
+                    <p style="font-size: 14px; color: #666; margin: 0 0 10px;">© ${new Date().getFullYear()} Sunrise PG. All rights reserved.</p>
                     <p style="font-size: 14px; color: #666; margin: 0 0 5px;">Hinjewadi Phase 1 Rd, Mukai Nagar, Pune, Maharashtra 411057</p>
                     <p style="font-size: 14px; margin: 15px 0 0;">
-                      <a href="${process.env.NEXT_PUBLIC_SITE_URL}" style="color: #FF92B7; text-decoration: none; margin: 0 10px;">Website</a> |
-                      <a href="${process.env.NEXT_PUBLIC_SITE_URL}/contact" style="color: #FF92B7; text-decoration: none; margin: 0 10px;">Contact</a> |
-                      <a href="tel:+919922538989" style="color: #FF92B7; text-decoration: none; margin: 0 10px;">+91 9922 538 989</a>
+                      <a href="${process.env.NEXT_PUBLIC_SITE_URL}" style="color: #ff8c00; text-decoration: none; margin: 0 10px;">Website</a> |
+                      <a href="${process.env.NEXT_PUBLIC_SITE_URL}/contact" style="color: #ff8c00; text-decoration: none; margin: 0 10px;">Contact</a> |
+                      <a href="tel:+919922538989" style="color: #ff8c00; text-decoration: none; margin: 0 10px;">+91 9922 538 989</a>
                     </p>
                   </td>
                 </tr>
@@ -744,9 +744,9 @@ export async function sendContactInquiryConfirmationEmail(
   phone: string,
   message: string
 ) {
-  const subject = "Contact Inquiry Received - Comfort Stay PG";
+  const subject = "Contact Inquiry Received - Sunrise PG";
   const whatsappNumber = "+919922538989"; // Use your PG WhatsApp number
-  const whatsappUrl = `https://wa.me/${whatsappNumber.replace(/[^\d]/g, "")}?text=Hello%2C%20I%20have%20an%20urgent%20query%20regarding%20Comfort%20Stay%20PG.`;
+  const whatsappUrl = `https://wa.me/${whatsappNumber.replace(/[^\d]/g, "")}?text=Hello%2C%20I%20have%20an%20urgent%20query%20regarding%20Sunrise%20PG.`;
 
   const html = `
     <!DOCTYPE html>
@@ -756,7 +756,7 @@ export async function sendContactInquiryConfirmationEmail(
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>${subject}</title>
     </head>
-    <body style="margin: 0; padding: 0; font-family: 'Poppins', Arial, sans-serif; background-color: #fff5f8; color: #4a4a4a;">
+    <body style="margin: 0; padding: 0; font-family: 'Poppins', Arial, sans-serif; background-color: #fff8e1; color: #4a4a4a;">
       <center>
         <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px; background-color: #ffffff; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-top: 20px; margin-bottom: 20px;">
           <!-- Header -->
@@ -764,8 +764,8 @@ export async function sendContactInquiryConfirmationEmail(
             <td style="padding: 0;">
               <table border="0" cellpadding="0" cellspacing="0" width="100%">
                 <tr>
-                  <td style="background: linear-gradient(90deg, #FF92B7 0%, #FFC0D6 100%); padding: 30px; text-align: center; border-radius: 8px 8px 0 0;">
-                    <h1 style="color: #ffffff; font-size: 28px; margin: 0; font-weight: 600;">Comfort Stay PG</h1>
+                  <td style="background: linear-gradient(90deg, #ff8c00 0%, #ffa726 25%, #ffcc02 50%, #ffeb3b 75%, #fff176 100%); padding: 30px; text-align: center; border-radius: 8px 8px 0 0;">
+                    <h1 style="color: #ffffff; font-size: 28px; margin: 0; font-weight: 600;">Sunrise PG</h1>
                   </td>
                 </tr>
               </table>
@@ -774,14 +774,14 @@ export async function sendContactInquiryConfirmationEmail(
           <!-- Content -->
           <tr>
             <td style="padding: 30px 40px;">
-              <h2 style="color: #FF92B7; font-size: 22px; margin: 0 0 20px; font-weight: 600;">Contact Inquiry Received</h2>
+              <h2 style="color: #ff8c00; font-size: 22px; margin: 0 0 20px; font-weight: 600;">Contact Inquiry Received</h2>
               <p style="font-size: 16px; line-height: 1.5; margin: 0 0 15px;">Dear ${name},</p>
-              <p style="font-size: 16px; line-height: 1.5; margin: 0 0 20px;">Thank you for reaching out to Comfort Stay PG. Your inquiry has been received and our team will get back to you soon.</p>
-              <table border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #ffeef5; border-radius: 8px; margin: 0 0 25px;">
+              <p style="font-size: 16px; line-height: 1.5; margin: 0 0 20px;">Thank you for reaching out to Sunrise PG. Your inquiry has been received and our team will get back to you soon.</p>
+              <table border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #fffde7; border-radius: 8px; margin: 0 0 25px;">
                 <tr>
                   <td style="padding: 20px 25px;">
                     <p style="font-size: 16px; margin: 0; font-weight: 500;">
-                      <span style="display: inline-block; width: 12px; height: 12px; background-color: #FFC0D6; border-radius: 50%; margin-right: 8px;"></span>
+                      <span style="display: inline-block; width: 12px; height: 12px; background-color: #ffcc02; border-radius: 50%; margin-right: 8px;"></span>
                       Your inquiry details:
                     </p>
                     <ul style="margin: 10px 0 0 20px; padding: 0; color: #4a4a4a; font-size: 15px;">
@@ -801,8 +801,8 @@ export async function sendContactInquiryConfirmationEmail(
                   </td>
                 </tr>
               </table>
-              <p style="font-size: 16px; line-height: 1.5; margin: 0 0 10px;">We appreciate your interest in Comfort Stay PG. If you have any further questions, feel free to reply to this email or contact us via WhatsApp.</p>
-              <p style="font-size: 16px; line-height: 1.5; margin: 0;">Warm Regards,<br><strong>The Comfort Stay PG Team</strong></p>
+              <p style="font-size: 16px; line-height: 1.5; margin: 0 0 10px;">We appreciate your interest in Sunrise PG. If you have any further questions, feel free to reply to this email or contact us via WhatsApp.</p>
+              <p style="font-size: 16px; line-height: 1.5; margin: 0;">Warm Regards,<br><strong>The Sunrise PG Team</strong></p>
             </td>
           </tr>
           <!-- Footer -->
@@ -810,13 +810,13 @@ export async function sendContactInquiryConfirmationEmail(
             <td style="padding: 0;">
               <table border="0" cellpadding="0" cellspacing="0" width="100%">
                 <tr>
-                  <td style="background-color: #f9f9f9; padding: 20px 40px; text-align: center; border-radius: 0 0 8px 8px; border-top: 1px solid #eee;">
-                    <p style="font-size: 14px; color: #666; margin: 0 0 10px;">© ${new Date().getFullYear()} Comfort Stay PG. All rights reserved.</p>
+                  <td style="background-color: #fffde7; padding: 20px 40px; text-align: center; border-radius: 0 0 8px 8px; border-top: 1px solid #ffe082;">
+                    <p style="font-size: 14px; color: #666; margin: 0 0 10px;">© ${new Date().getFullYear()} Sunrise PG. All rights reserved.</p>
                     <p style="font-size: 14px; color: #666; margin: 0 0 5px;">Hinjewadi Phase 1 Rd, Mukai Nagar, Pune, Maharashtra 411057</p>
                     <p style="font-size: 14px; margin: 15px 0 0;">
-                      <a href="${process.env.NEXT_PUBLIC_SITE_URL}" style="color: #FF92B7; text-decoration: none; margin: 0 10px;">Website</a> |
-                      <a href="${process.env.NEXT_PUBLIC_SITE_URL}/contact" style="color: #FF92B7; text-decoration: none; margin: 0 10px;">Contact</a> |
-                      <a href="tel:+919922538989" style="color: #FF92B7; text-decoration: none; margin: 0 10px;">+91 9922 538 989</a>
+                      <a href="${process.env.NEXT_PUBLIC_SITE_URL}" style="color: #ff8c00; text-decoration: none; margin: 0 10px;">Website</a> |
+                      <a href="${process.env.NEXT_PUBLIC_SITE_URL}/contact" style="color: #ff8c00; text-decoration: none; margin: 0 10px;">Contact</a> |
+                      <a href="tel:+919922538989" style="color: #ff8c00; text-decoration: none; margin: 0 10px;">+91 9922 538 989</a>
                     </p>
                   </td>
                 </tr>
