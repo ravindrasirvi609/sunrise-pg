@@ -26,6 +26,7 @@ import {
 import { motion } from "framer-motion";
 import { BiSolidMessageSquareDetail } from "react-icons/bi";
 import Image from "next/image";
+import { isValidImageSrc } from "@/utils/isValidImageSrc";
 import { useRouter } from "next/navigation";
 import { toast } from "react-hot-toast";
 import ExitSurvey from "@/components/ExitSurvey";
@@ -442,7 +443,7 @@ export default function UserProfilePage() {
             transition={{ type: "spring", stiffness: 300 }}
           >
             <div className="w-24 h-24 md:w-32 md:h-32 bg-gradient-to-r from-pink-500 via-pink-400 to-purple-600 rounded-full flex items-center justify-center overflow-hidden border-4 border-white/80 dark:border-gray-800/80 shadow-lg">
-              {user?.profileImage && user.profileImage.trim() !== "" ? (
+              {isValidImageSrc(user?.profileImage) ? (
                 <Image
                   src={user.profileImage}
                   alt={user?.name || "User"}

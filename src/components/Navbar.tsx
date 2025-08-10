@@ -20,6 +20,7 @@ import {
   User,
 } from "lucide-react";
 import Image from "next/image";
+import { isValidImageSrc } from "@/utils/isValidImageSrc";
 
 const navLinks = [
   { href: "/", label: "Home", icon: <Home className="w-4 h-4" /> },
@@ -105,7 +106,7 @@ export default function Navbar() {
                   >
                     <div className="relative">
                       <div className="h-8 w-8 rounded-full bg-orange-100 dark:bg-orange-800/30 flex items-center justify-center overflow-hidden border-2 border-orange-200 dark:border-orange-700">
-                        {user?.profileImage ? (
+                        {isValidImageSrc(user?.profileImage) ? (
                           <Image
                             src={user.profileImage}
                             alt={user.name}

@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useToast } from "@/hooks/useToast";
 import Image from "next/image";
+import { isValidImageSrc } from "@/utils/isValidImageSrc";
 import { FiUsers, FiEye, FiBell, FiX } from "react-icons/fi";
 import { FaFileExport, FaFileInvoiceDollar, FaUsers } from "react-icons/fa";
 
@@ -551,7 +552,7 @@ export default function UsersPage() {
                     <td className="px-6 py-4 whitespace-nowrap">
                       <div className="flex items-center">
                         <div className="flex-shrink-0 h-10 w-10">
-                          {user.profileImage ? (
+                          {isValidImageSrc(user.profileImage) ? (
                             <Image
                               src={user.profileImage}
                               alt={user.name}

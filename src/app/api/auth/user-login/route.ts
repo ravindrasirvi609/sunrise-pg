@@ -16,37 +16,8 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Handle fixed admin credentials
-    if (email === "comfortstaypg@gmail.com" && password === "Comfort@189") {
-      // Generate JWT token for hardcoded admin
-      const token = await generateToken({
-        _id: "admin_id_123456789",
-        name: "Sunrise Admin",
-        email: "comfortstaypg@gmail.com",
-        role: "admin",
-        pgId: "ADMIN123",
-      });
-
-      // Set cookie
-      const cookieStore = await cookies();
-      cookieStore.set("token", token, {
-        httpOnly: true,
-        path: "/",
-        secure: process.env.NODE_ENV === "production",
-        maxAge: 60 * 60 * 24, // 1 day
-      });
-
-      return NextResponse.json({
-        success: true,
-        message: "Login successful",
-        user: {
-          _id: "admin_id_123456789",
-          name: "Sunrise Admin",
-          email: "comfortstaypg@gmail.com",
-          role: "admin",
-        },
-      });
-    }
+    // Removed legacy hardcoded admin credential shortcut.
+    // All logins must authenticate against the database now.
 
     await connectToDatabase();
 
@@ -89,13 +60,13 @@ export async function POST(request: NextRequest) {
       pgId: user.pgId,
     });
 
-    // Set cookie
+    // Set cookie (30 days)
     const cookieStore = await cookies();
     cookieStore.set("token", token, {
       httpOnly: true,
       path: "/",
       secure: process.env.NODE_ENV === "production",
-      maxAge: 60 * 60 * 24, // 1 day
+      maxAge: 60 * 60 * 24 * 30, // 30 days
     });
 
     return NextResponse.json({

@@ -96,7 +96,8 @@ export async function generateToken(user: UserData): Promise<string> {
   })
     .setProtectedHeader({ alg: "HS256" })
     .setIssuedAt()
-    .setExpirationTime("1d")
+    // Set token expiry to 30 days to align with cookie expiry
+    .setExpirationTime("30d")
     .sign(JWT_SECRET_BYTES);
 
   return token;
