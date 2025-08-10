@@ -23,8 +23,6 @@ import Image from "next/image";
 
 const navLinks = [
   { href: "/", label: "Home", icon: <Home className="w-4 h-4" /> },
-
-  { href: "/contact", label: "Contact", icon: <Contact className="w-4 h-4" /> },
 ];
 
 export default function Navbar() {
