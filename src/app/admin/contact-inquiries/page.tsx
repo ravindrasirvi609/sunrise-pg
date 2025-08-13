@@ -111,7 +111,9 @@ export default function ContactInquiries() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-2xl font-bold mb-6">Contact Inquiries</h1>
+      <h1 className="text-2xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-yellow-500">
+        Contact Inquiries
+      </h1>
 
       {/* Filter controls */}
       <div className="mb-6">
@@ -120,7 +122,7 @@ export default function ContactInquiries() {
             onClick={() => setFilter("all")}
             className={`px-4 py-2 rounded-lg ${
               filter === "all"
-                ? "bg-pink-500 text-white"
+                ? "bg-gradient-to-r from-orange-500 to-yellow-500 text-white"
                 : "bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-200"
             }`}
           >
@@ -130,7 +132,7 @@ export default function ContactInquiries() {
             onClick={() => setFilter("pending")}
             className={`px-4 py-2 rounded-lg ${
               filter === "pending"
-                ? "bg-pink-500 text-white"
+                ? "bg-gradient-to-r from-orange-500 to-yellow-500 text-white"
                 : "bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-200"
             }`}
           >
@@ -140,7 +142,7 @@ export default function ContactInquiries() {
             onClick={() => setFilter("responded")}
             className={`px-4 py-2 rounded-lg ${
               filter === "responded"
-                ? "bg-pink-500 text-white"
+                ? "bg-gradient-to-r from-orange-500 to-yellow-500 text-white"
                 : "bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-200"
             }`}
           >
@@ -152,7 +154,7 @@ export default function ContactInquiries() {
       {/* Inquiries list */}
       {loading ? (
         <div className="flex justify-center items-center h-screen">
-          <FaSpinner className="animate-spin text-4xl text-pink-600" />
+          <FaSpinner className="animate-spin text-4xl text-orange-600" />
         </div>
       ) : inquiries.length === 0 ? (
         <div className="text-center py-10 bg-gray-50 dark:bg-gray-800 rounded-lg">
@@ -186,7 +188,7 @@ export default function ContactInquiries() {
 
               <div className="mb-4 flex flex-wrap gap-y-2 gap-x-6">
                 <div className="flex items-center text-gray-600 dark:text-gray-300">
-                  <Mail size={16} className="mr-2 text-pink-500" />
+                  <Mail size={16} className="mr-2 text-orange-500" />
                   <a
                     href={`mailto:${inquiry.email}`}
                     className="hover:underline"
@@ -195,7 +197,7 @@ export default function ContactInquiries() {
                   </a>
                 </div>
                 <div className="flex items-center text-gray-600 dark:text-gray-300">
-                  <Phone size={16} className="mr-2 text-pink-500" />
+                  <Phone size={16} className="mr-2 text-orange-500" />
                   <a href={`tel:${inquiry.phone}`} className="hover:underline">
                     {inquiry.phone}
                   </a>

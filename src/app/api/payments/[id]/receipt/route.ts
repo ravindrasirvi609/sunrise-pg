@@ -405,7 +405,7 @@ export async function GET(request: Request, context: unknown) {
                   Hinjawadi, Pune, Pimpri-Chinchwad, Maharashtra 411057
                 </div>
                 <div class="brand-contact">
-                  <span style="margin-right: 10px;">📞 +91 9922 538 989</span>
+                  <span style="margin-right: 10px;">📞 +91 88880 30009</span>
                   <span style="margin-right: 10px;">✉️ info@sunrisepg.com</span>
                   <span>🌐 www.sunrisepg.com</span>
                 </div>

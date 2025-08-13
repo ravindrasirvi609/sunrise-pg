@@ -81,7 +81,7 @@ export default function RegisterPage() {
     companyAddress: "",
     employeeId: "",
     profileImage: "",
-    agreeToTerms: false, // Added field for rules agreement
+    agreeToTerms: false,
   });
 
   useEffect(() => {
@@ -124,7 +124,6 @@ export default function RegisterPage() {
   // Navigation between steps
   const nextStep = () => {
     if (currentStep === 1) {
-      // Validate personal information
       if (
         !formData.fullName ||
         !formData.emailAddress ||
@@ -139,7 +138,6 @@ export default function RegisterPage() {
         return;
       }
 
-      // Validate mobile number format
       const mobileRegex = /^\d{10}$/;
       if (!mobileRegex.test(formData.mobileNumber)) {
         setError("Please enter a valid 10-digit mobile number");
@@ -150,7 +148,6 @@ export default function RegisterPage() {
         return;
       }
 
-      // Validate email format
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailRegex.test(formData.emailAddress)) {
         setError("Please enter a valid email address");
@@ -202,7 +199,6 @@ export default function RegisterPage() {
     }
 
     try {
-      // Submit registration request
       const response = await axios.post("/api/auth/register-request", {
         fullName: formData.fullName,
         emailAddress: formData.emailAddress,
@@ -224,7 +220,6 @@ export default function RegisterPage() {
       if (response.data.success) {
         setSuccess(true);
         window.scrollTo(0, 0);
-        // Clear form data
         setFormData({
           fullName: "",
           emailAddress: "",
@@ -267,26 +262,18 @@ export default function RegisterPage() {
     }
   };
 
-  // If still loading auth state or component not mounted yet, show loading or nothing
-  if (!mounted || authLoading) {
-    return null;
-  }
-
-  // If user is already authenticated, we'll redirect in the useEffect
-  if (isAuthenticated) {
-    return null;
-  }
+  if (!mounted || authLoading) return null;
+  if (isAuthenticated) return null;
 
   return (
-    <div className="min-h-screen w-full bg-gradient-to-br from-pink-100 via-white to-blue-100 dark:from-gray-900 dark:via-gray-800 dark:to-purple-900 flex items-center justify-center py-6 px-2 sm:p-4 md:p-6 lg:p-8 overflow-hidden relative">
-      {/* Background decorative elements - optimized for different screen sizes */}
+    <div className="min-h-screen w-full bg-gradient-to-br from-yellow-50 via-white to-orange-50 dark:from-gray-900 dark:via-gray-800 dark:to-orange-950/30 flex items-center justify-center py-6 px-2 sm:p-4 md:p-6 lg:p-8 overflow-hidden relative">
+      {/* Background decorative elements (subtle, uniform) */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
-        <div className="absolute top-10 sm:top-20 left-5 sm:left-20 w-32 sm:w-64 h-32 sm:h-64 bg-pink-300 dark:bg-pink-600 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob"></div>
-        <div className="absolute top-20 sm:top-40 right-10 sm:right-40 w-40 sm:w-72 h-40 sm:h-72 bg-purple-300 dark:bg-purple-600 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-2000"></div>
-        <div className="absolute bottom-10 sm:bottom-20 left-1/4 w-48 sm:w-80 h-48 sm:h-80 bg-blue-300 dark:bg-blue-600 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-4000"></div>
+        <div className="absolute top-16 left-10 w-40 sm:w-64 h-40 sm:h-64 bg-orange-300 dark:bg-orange-600 rounded-full mix-blend-multiply filter blur-2xl opacity-20"></div>
+        <div className="absolute bottom-16 right-10 w-48 sm:w-80 h-48 sm:h-80 bg-yellow-300 dark:bg-yellow-600 rounded-full mix-blend-multiply filter blur-2xl opacity-20"></div>
       </div>
 
-      <div className="max-w-4xl w-full backdrop-blur-lg bg-white/40 dark:bg-gray-800/50 rounded-2xl border border-white/20 dark:border-gray-700/30 shadow-2xl overflow-hidden p-4 sm:p-6 md:p-8 z-10 hover:shadow-pink-200/20 dark:hover:shadow-pink-700/20 transition-all duration-300">
+      <div className="max-w-4xl w-full backdrop-blur-lg bg-white/40 dark:bg-gray-800/50 rounded-2xl border border-white/20 dark:border-gray-700/30 shadow-2xl overflow-hidden p-4 sm:p-6 md:p-8 z-10 hover:shadow-orange-200/20 dark:hover:shadow-orange-700/20 transition-all duration-300">
         {success ? (
           <div className="text-center">
             <div className="w-16 h-16 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -316,7 +303,7 @@ export default function RegisterPage() {
             <div className="flex flex-col sm:flex-row justify-center gap-4 sm:space-x-4">
               <Link
                 href="/login"
-                className="px-6 py-3 bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-xl hover:from-pink-600 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-pink-500/25 font-medium text-sm sm:text-base"
+                className="px-6 py-3 bg-gradient-to-r from-orange-500 to-yellow-500 text-white rounded-xl hover:from-orange-600 hover:to-yellow-600 transition-all duration-300 shadow-lg hover:shadow-orange-500/25 font-medium text-sm sm:text-base"
               >
                 Go to Login
               </Link>
@@ -332,11 +319,11 @@ export default function RegisterPage() {
           <>
             <div className="text-center mb-6 sm:mb-8">
               <div className="flex justify-center">
-                <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 flex items-center justify-center text-white text-xl sm:text-2xl font-bold mb-3 sm:mb-4">
-                  CS
+                <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-gradient-to-r from-orange-500 to-yellow-500 flex items-center justify-center text-white text-xl sm:text-2xl font-bold mb-3 sm:mb-4">
+                  SP
                 </div>
               </div>
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-600">
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-yellow-500">
                 New Resident Registration
               </h2>
               <p className="mt-1 sm:mt-2 text-xs sm:text-sm text-gray-600 dark:text-gray-400">
@@ -344,57 +331,60 @@ export default function RegisterPage() {
               </p>
             </div>
 
-            {/* Progress bar - now more responsive for mobile */}
+            {/* Progress bar */}
             <div className="mb-6 sm:mb-8">
               <div className="flex justify-between mb-2">
-                {Array.from({ length: totalSteps }).map((_, index) => (
-                  <div
-                    key={index}
-                    className={`flex flex-col items-center ${
-                      index + 1 === currentStep
-                        ? "text-pink-600 dark:text-pink-400"
-                        : index + 1 < currentStep
-                          ? "text-green-500 dark:text-green-400"
-                          : "text-gray-400 dark:text-gray-500"
-                    }`}
-                  >
+                {Array.from({ length: totalSteps }).map((_, index) => {
+                  const step = index + 1;
+                  const isActive = step === currentStep;
+                  const isCompleted = step < currentStep;
+                  return (
                     <div
-                      className={`w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center mb-1 ${
-                        index + 1 === currentStep
-                          ? "bg-pink-100 dark:bg-pink-900 text-pink-600 dark:text-pink-400 border-2 border-pink-500"
-                          : index + 1 < currentStep
-                            ? "bg-green-100 dark:bg-green-900 text-green-500 dark:text-green-400"
-                            : "bg-gray-100 dark:bg-gray-800"
+                      key={index}
+                      className={`flex flex-col items-center ${
+                        isActive || isCompleted
+                          ? "text-orange-600 dark:text-orange-400"
+                          : "text-gray-400 dark:text-gray-500"
                       }`}
                     >
-                      {index + 1 < currentStep ? (
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="h-5 w-5 sm:h-6 sm:w-6"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M5 13l4 4L19 7"
-                          />
-                        </svg>
-                      ) : (
-                        index + 1
-                      )}
+                      <div
+                        className={`w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center mb-1 ${
+                          isActive
+                            ? "bg-orange-100 dark:bg-orange-900 text-orange-600 dark:text-orange-400 border-2 border-orange-500"
+                            : isCompleted
+                              ? "bg-orange-100 dark:bg-orange-900 text-orange-600 dark:text-orange-400"
+                              : "bg-gray-100 dark:bg-gray-800"
+                        }`}
+                      >
+                        {isCompleted ? (
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="h-5 w-5 sm:h-6 sm:w-6"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M5 13l4 4L19 7"
+                            />
+                          </svg>
+                        ) : (
+                          step
+                        )}
+                      </div>
+                      <span className="text-[10px] sm:text-xs font-medium">
+                        {index === 0 ? "Personal Info" : "Identity"}
+                      </span>
                     </div>
-                    <span className="text-[10px] sm:text-xs font-medium">
-                      {index === 0 ? "Personal Info" : "Identity"}
-                    </span>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
               <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
                 <div
-                  className="bg-gradient-to-r from-pink-500 to-purple-600 h-2 rounded-full transition-all duration-500 ease-in-out"
+                  className="bg-gradient-to-r from-orange-500 to-yellow-500 h-2 rounded-full transition-all duration-500 ease-in-out"
                   style={{
                     width: `${((currentStep - 1) / (totalSteps - 1)) * 100}%`,
                   }}
@@ -402,11 +392,12 @@ export default function RegisterPage() {
               </div>
             </div>
 
-            {/* Error message - optimized for mobile */}
+            {/* Error message */}
             {error && (
               <div
                 className="mb-4 sm:mb-6 bg-red-100/80 dark:bg-red-900/30 backdrop-blur-sm border border-red-200 dark:border-red-800/50 text-red-700 dark:text-red-300 px-3 sm:px-4 py-2 sm:py-3 rounded-xl relative flex items-center"
                 role="alert"
+                aria-live="polite"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -430,7 +421,7 @@ export default function RegisterPage() {
                 <div className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="relative group">
-                      <div className="absolute -inset-0.5 bg-gradient-to-r from-pink-600 to-purple-600 rounded-lg blur opacity-30 group-hover:opacity-60 transition duration-300"></div>
+                      <div className="absolute -inset-0.5 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-lg blur opacity-20 group-hover:opacity-40 transition duration-300"></div>
                       <div className="relative bg-white/60 dark:bg-gray-900/60 rounded-lg p-1">
                         <label
                           htmlFor="fullName"
@@ -452,7 +443,7 @@ export default function RegisterPage() {
                     </div>
 
                     <div className="relative group">
-                      <div className="absolute -inset-0.5 bg-gradient-to-r from-pink-600 to-purple-600 rounded-lg blur opacity-30 group-hover:opacity-60 transition duration-300"></div>
+                      <div className="absolute -inset-0.5 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-lg blur opacity-20 group-hover:opacity-40 transition duration-300"></div>
                       <div className="relative bg-white/60 dark:bg-gray-900/60 rounded-lg p-1">
                         <label
                           htmlFor="emailAddress"
@@ -474,7 +465,7 @@ export default function RegisterPage() {
                     </div>
 
                     <div className="relative group">
-                      <div className="absolute -inset-0.5 bg-gradient-to-r from-pink-600 to-purple-600 rounded-lg blur opacity-30 group-hover:opacity-60 transition duration-300"></div>
+                      <div className="absolute -inset-0.5 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-lg blur opacity-20 group-hover:opacity-40 transition duration-300"></div>
                       <div className="relative bg-white/60 dark:bg-gray-900/60 rounded-lg p-1">
                         <label
                           htmlFor="fathersName"
@@ -495,7 +486,7 @@ export default function RegisterPage() {
                     </div>
 
                     <div className="relative group">
-                      <div className="absolute -inset-0.5 bg-gradient-to-r from-pink-600 to-purple-600 rounded-lg blur opacity-30 group-hover:opacity-60 transition duration-300"></div>
+                      <div className="absolute -inset-0.5 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-lg blur opacity-20 group-hover:opacity-40 transition duration-300"></div>
                       <div className="relative bg-white/60 dark:bg-gray-900/60 rounded-lg p-1">
                         <label
                           htmlFor="mobileNumber"
@@ -523,7 +514,7 @@ export default function RegisterPage() {
                     </div>
 
                     <div className="relative group">
-                      <div className="absolute -inset-0.5 bg-gradient-to-r from-pink-600 to-purple-600 rounded-lg blur opacity-30 group-hover:opacity-60 transition duration-300"></div>
+                      <div className="absolute -inset-0.5 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-lg blur opacity-20 group-hover:opacity-40 transition duration-300"></div>
                       <div className="relative bg-white/60 dark:bg-gray-900/60 rounded-lg p-1">
                         <label
                           htmlFor="guardianMobileNumber"
@@ -551,7 +542,7 @@ export default function RegisterPage() {
                     </div>
 
                     <div className="relative group md:col-span-2">
-                      <div className="absolute -inset-0.5 bg-gradient-to-r from-pink-600 to-purple-600 rounded-lg blur opacity-30 group-hover:opacity-60 transition duration-300"></div>
+                      <div className="absolute -inset-0.5 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-lg blur opacity-20 group-hover:opacity-40 transition duration-300"></div>
                       <div className="relative bg-white/60 dark:bg-gray-900/60 rounded-lg p-1">
                         <label
                           htmlFor="permanentAddress"
@@ -572,7 +563,7 @@ export default function RegisterPage() {
                     </div>
 
                     <div className="relative group">
-                      <div className="absolute -inset-0.5 bg-gradient-to-r from-pink-600 to-purple-600 rounded-lg blur opacity-30 group-hover:opacity-60 transition duration-300"></div>
+                      <div className="absolute -inset-0.5 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-lg blur opacity-20 group-hover:opacity-40 transition duration-300"></div>
                       <div className="relative bg-white/60 dark:bg-gray-900/60 rounded-lg p-1">
                         <label
                           htmlFor="city"
@@ -593,7 +584,7 @@ export default function RegisterPage() {
                     </div>
 
                     <div className="relative group">
-                      <div className="absolute -inset-0.5 bg-gradient-to-r from-pink-600 to-purple-600 rounded-lg blur opacity-30 group-hover:opacity-60 transition duration-300"></div>
+                      <div className="absolute -inset-0.5 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-lg blur opacity-20 group-hover:opacity-40 transition duration-300"></div>
                       <div className="relative bg-white/60 dark:bg-gray-900/60 rounded-lg p-1">
                         <label
                           htmlFor="state"
@@ -627,7 +618,7 @@ export default function RegisterPage() {
                 <div className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                     <div className="relative group">
-                      <div className="absolute -inset-0.5 bg-gradient-to-r from-pink-600 to-purple-600 rounded-lg blur opacity-30 group-hover:opacity-60 transition duration-300"></div>
+                      <div className="absolute -inset-0.5 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-lg blur opacity-20 group-hover:opacity-40 transition duration-300"></div>
                       <div className="relative bg-white/60 dark:bg-gray-900/60 rounded-lg p-1">
                         <label
                           htmlFor="validIdType"
@@ -653,7 +644,7 @@ export default function RegisterPage() {
                     </div>
 
                     <div className="relative group">
-                      <div className="absolute -inset-0.5 bg-gradient-to-r from-pink-600 to-purple-600 rounded-lg blur opacity-30 group-hover:opacity-60 transition duration-300"></div>
+                      <div className="absolute -inset-0.5 bg-gradient-to-r from-indigo-600 to-violet-600 rounded-lg blur opacity-20 group-hover:opacity-40 transition duration-300"></div>
                       <div className="relative bg-white/60 dark:bg-gray-900/60 rounded-lg p-1">
                         <label
                           htmlFor="companyName"
@@ -675,7 +666,7 @@ export default function RegisterPage() {
                     </div>
 
                     <div className="relative group">
-                      <div className="absolute -inset-0.5 bg-gradient-to-r from-pink-600 to-purple-600 rounded-lg blur opacity-30 group-hover:opacity-60 transition duration-300"></div>
+                      <div className="absolute -inset-0.5 bg-gradient-to-r from-indigo-600 to-violet-600 rounded-lg blur opacity-20 group-hover:opacity-40 transition duration-300"></div>
                       <div className="relative bg-white/60 dark:bg-gray-900/60 rounded-lg p-1">
                         <label
                           htmlFor="employeeId"
@@ -697,7 +688,7 @@ export default function RegisterPage() {
                     </div>
 
                     <div className="relative group md:col-span-2">
-                      <div className="absolute -inset-0.5 bg-gradient-to-r from-pink-600 to-purple-600 rounded-lg blur opacity-30 group-hover:opacity-60 transition duration-300"></div>
+                      <div className="absolute -inset-0.5 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-lg blur opacity-20 group-hover:opacity-40 transition duration-300"></div>
                       <div className="relative bg-white/60 dark:bg-gray-900/60 rounded-lg p-1">
                         <label
                           htmlFor="companyAddress"
@@ -793,11 +784,11 @@ export default function RegisterPage() {
                 </div>
               )}
 
-              {/* Terms and Conditions Checkbox */}
+              {/* Terms and Conditions */}
               {currentStep === 2 && (
                 <div className="mt-8">
                   <div className="relative group">
-                    <div className="absolute -inset-0.5 bg-gradient-to-r from-pink-600 to-purple-600 rounded-lg blur opacity-30 group-hover:opacity-60 transition duration-300"></div>
+                    <div className="absolute -inset-0.5 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-lg blur opacity-20 group-hover:opacity-40 transition duration-300"></div>
                     <div className="relative bg-white/60 dark:bg-gray-900/60 rounded-lg p-5">
                       <div className="flex items-start gap-3">
                         <div className="flex-shrink-0 mt-0.5">
@@ -807,7 +798,7 @@ export default function RegisterPage() {
                             name="agreeToTerms"
                             checked={formData.agreeToTerms}
                             onChange={handleChange}
-                            className="h-5 w-5 text-purple-500 border-gray-300 rounded focus:ring-purple-500 cursor-pointer"
+                            className="h-5 w-5 text-orange-600 border-gray-300 rounded focus:ring-orange-600 cursor-pointer"
                           />
                         </div>
                         <div>
@@ -819,7 +810,7 @@ export default function RegisterPage() {
                             <Link
                               href="/rules-regulations"
                               target="_blank"
-                              className="text-pink-600 dark:text-pink-400 hover:text-pink-500 dark:hover:text-pink-300 font-semibold underline"
+                              className="text-orange-600 dark:text-orange-400 hover:text-orange-500 dark:hover:text-orange-300 font-semibold underline"
                             >
                               Rules and Regulations
                             </Link>{" "}
@@ -837,9 +828,9 @@ export default function RegisterPage() {
                 </div>
               )}
 
-              {/* Add information notice for step 2 */}
+              {/* Information notice */}
               {currentStep === 2 && (
-                <div className="bg-blue-100/70 dark:bg-blue-900/30 backdrop-blur-sm border border-blue-200 dark:border-blue-800/50 text-blue-700 dark:text-blue-300 p-4 rounded-xl mt-6 max-w-md mx-auto">
+                <div className="bg-yellow-100/70 dark:bg-yellow-900/30 backdrop-blur-sm border border-yellow-200 dark:border-yellow-800/50 text-yellow-700 dark:text-yellow-300 p-4 rounded-xl mt-6 max-w-md mx-auto">
                   <div className="flex">
                     <div className="flex-shrink-0">
                       <svg
@@ -867,7 +858,7 @@ export default function RegisterPage() {
                 </div>
               )}
 
-              {/* Navigation buttons - improved for mobile */}
+              {/* Navigation buttons */}
               <div className="flex flex-col sm:flex-row justify-between gap-4 sm:gap-0 mt-8">
                 {currentStep > 1 ? (
                   <button
@@ -897,7 +888,7 @@ export default function RegisterPage() {
                   <button
                     type="button"
                     onClick={nextStep}
-                    className="px-5 py-2.5 sm:px-6 sm:py-3 bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-xl hover:from-pink-600 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-pink-500/25 font-medium flex items-center justify-center sm:justify-start text-sm"
+                    className="px-5 py-2.5 sm:px-6 sm:py-3 bg-gradient-to-r from-orange-500 to-yellow-500 text-white rounded-xl hover:from-orange-600 hover:to-yellow-600 transition-all duration-300 shadow-lg hover:shadow-orange-500/25 font-medium flex items-center justify-center sm:justify-start text-sm"
                   >
                     Next
                     <svg
@@ -917,7 +908,7 @@ export default function RegisterPage() {
                   <button
                     type="submit"
                     disabled={loading}
-                    className={`px-5 py-2.5 sm:px-6 sm:py-3 w-full sm:w-auto bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-xl hover:from-pink-600 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-pink-500/25 font-medium flex items-center justify-center text-sm ${
+                    className={`px-5 py-2.5 sm:px-6 sm:py-3 w-full sm:w-auto bg-gradient-to-r from-orange-500 to-yellow-500 text-white rounded-xl hover:from-orange-600 hover:to-yellow-600 transition-all duration-300 shadow-lg hover:shadow-orange-500/25 font-medium flex items-center justify-center text-sm ${
                       loading ? "opacity-70 cursor-not-allowed" : ""
                     }`}
                   >
@@ -970,7 +961,7 @@ export default function RegisterPage() {
                 Already have an account?{" "}
                 <Link
                   href="/login"
-                  className="font-medium text-pink-600 dark:text-pink-400 hover:text-pink-500 dark:hover:text-pink-300"
+                  className="font-medium text-orange-600 dark:text-orange-400 hover:text-orange-500 dark:hover:text-orange-300"
                 >
                   Login here
                 </Link>

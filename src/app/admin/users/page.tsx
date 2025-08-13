@@ -372,13 +372,13 @@ export default function UsersPage() {
   }
 
   return (
-    <div className="min-h-screen w-full bg-gradient-to-br from-pink-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-purple-900 p-4 sm:p-6 lg:p-8">
+    <div className="min-h-screen w-full bg-gradient-to-br from-yellow-50 via-white to-orange-50 dark:from-gray-900 dark:via-gray-800 dark:to-orange-950/30 p-4 sm:p-6 lg:p-8">
       <div className="max-w-7xl mx-auto">
         {/* Page header */}
         <div className="backdrop-blur-sm bg-white/60 dark:bg-gray-800/40 rounded-2xl p-6 mb-6 border border-white/20 dark:border-gray-700/30 shadow-lg">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
             <div>
-              <h1 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-600">
+              <h1 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-yellow-500">
                 Manage Users
               </h1>
               <p className="text-gray-600 dark:text-gray-400">
@@ -387,7 +387,7 @@ export default function UsersPage() {
             </div>
             <button
               onClick={exportUsersToCSV}
-              className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 transition-colors duration-200"
+              className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-orange-600 hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 transition-colors duration-200"
             >
               <FaFileExport className="mr-2" />
               Export Users
@@ -422,7 +422,7 @@ export default function UsersPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {/* Search input */}
             <div className="relative group">
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-pink-500 to-purple-600 rounded-lg blur opacity-20 group-hover:opacity-40 transition duration-300"></div>
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-lg blur opacity-20 group-hover:opacity-40 transition duration-300"></div>
               <div className="relative bg-white/60 dark:bg-gray-900/60 rounded-lg">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                   <svg
@@ -451,7 +451,7 @@ export default function UsersPage() {
 
             {/* Status filter */}
             <div className="relative group">
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-pink-500 to-purple-600 rounded-lg blur opacity-20 group-hover:opacity-40 transition duration-300"></div>
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-lg blur opacity-20 group-hover:opacity-40 transition duration-300"></div>
               <div className="relative bg-white/60 dark:bg-gray-900/60 rounded-lg">
                 <select
                   className="block w-full pl-3 pr-10 py-2.5 bg-transparent border-0 text-gray-900 dark:text-white focus:outline-none focus:ring-0 sm:text-sm"
@@ -468,7 +468,7 @@ export default function UsersPage() {
 
             {/* Payment filter */}
             <div className="relative group">
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-pink-500 to-purple-600 rounded-lg blur opacity-20 group-hover:opacity-40 transition duration-300"></div>
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-lg blur opacity-20 group-hover:opacity-40 transition duration-300"></div>
               <div className="relative bg-white/60 dark:bg-gray-900/60 rounded-lg">
                 <select
                   className="block w-full pl-3 pr-10 py-2.5 bg-transparent border-0 text-gray-900 dark:text-white focus:outline-none focus:ring-0 sm:text-sm"
@@ -622,11 +622,11 @@ export default function UsersPage() {
                               handleReminderClick(e, user._id, user.name)
                             }
                             disabled={sendingReminder === user._id}
-                            className="p-2 text-indigo-600 hover:text-indigo-900 dark:text-indigo-400 dark:hover:text-indigo-300 rounded-full hover:bg-indigo-50 dark:hover:bg-indigo-900/30 transition-colors duration-200"
+                            className="p-2 text-orange-600 hover:text-orange-900 dark:text-orange-400 dark:hover:text-orange-300 rounded-full hover:bg-orange-50 dark:hover:bg-orange-900/20 transition-colors duration-200"
                             title="Send Reminder"
                           >
                             {sendingReminder === user._id ? (
-                              <div className="h-5 w-5 border-2 border-indigo-600 border-t-transparent rounded-full animate-spin"></div>
+                              <div className="h-5 w-5 border-2 border-orange-600 border-t-transparent rounded-full animate-spin"></div>
                             ) : (
                               <FiBell className="h-5 w-5" />
                             )}
@@ -719,7 +719,7 @@ export default function UsersPage() {
                         onClick={() => setCurrentPage(index + 1)}
                         className={`relative inline-flex items-center px-4 py-2 border ${
                           currentPage === index + 1
-                            ? "bg-gradient-to-r from-pink-500 to-purple-600 text-white border-pink-500 dark:border-purple-600"
+                            ? "bg-gradient-to-r from-orange-500 to-yellow-500 text-white border-orange-500 dark:border-orange-600"
                             : "bg-white/70 dark:bg-gray-800/70 text-gray-700 dark:text-gray-300 border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700"
                         } text-sm font-medium`}
                       >
@@ -794,7 +794,7 @@ export default function UsersPage() {
               <button
                 onClick={handleSendReminder}
                 disabled={sendingReminder === selectedUserId}
-                className="px-4 py-2 text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 rounded-md transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="px-4 py-2 text-sm font-medium text-white bg-orange-600 hover:bg-orange-700 rounded-md transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {sendingReminder === selectedUserId ? (
                   <div className="flex items-center">

@@ -343,7 +343,7 @@ export async function POST(
                     <p style="font-size: 14px; color: #666; margin: 0 0 10px;">© 2025 Sunrise PG. All rights reserved.</p>
                     <p style="font-size: 14px; color: #666; margin: 0 0 5px;">Hinjewadi Phase 1 Rd, Mukai Nagar, Pune, Maharashtra 411057</p>
                     <p style="font-size: 14px; margin: 15px 0 0;">
-                      <a href="tel:+919922538989" style="color: #ff8c00; text-decoration: none; margin: 0 10px;">+91 9922 538 989</a> |
+                      <a href="tel:+919922538989" style="color: #ff8c00; text-decoration: none; margin: 0 10px;">+91 88880 30009</a> |
                       <a href="mailto:info@sunrisepg.com" style="color: #ff8c00; text-decoration: none; margin: 0 10px;">info@sunrisepg.com</a>
                     </p>
                   </td>

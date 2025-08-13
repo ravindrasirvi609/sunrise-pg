@@ -49,7 +49,7 @@ const SEOHead = ({ type }: SEOHeadProps) => {
         name: "How can I book a room at Sunrise PG?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "You can book a room by contacting us at +91 9922 538 989 or emailing us at info@sunrisepg.com. You can also visit our contact page at www.sunrisepg.com/contact to submit an inquiry form.",
+          text: "You can book a room by contacting us at +91 88880 30009 or emailing us at info@sunrisepg.com. You can also visit our contact page at www.sunrisepg.com/contact to submit an inquiry form.",
         },
       },
     ],

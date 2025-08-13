@@ -52,7 +52,7 @@ const Location = () => {
                     <div>
                       <p className="font-semibold">Phone</p>
                       <p className="text-gray-600 dark:text-gray-300">
-                        +91 9922 538 989
+                        +91 88880 30009
                       </p>
                     </div>
                   </div>

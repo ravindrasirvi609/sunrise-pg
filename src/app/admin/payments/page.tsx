@@ -275,7 +275,7 @@ export default function PaymentsPage() {
   if (loading) {
     return (
       <div className="flex justify-center items-center h-screen">
-        <FaSpinner className="animate-spin text-4xl text-pink-600" />
+        <FaSpinner className="animate-spin text-4xl text-orange-600" />
       </div>
     );
   }
@@ -285,7 +285,7 @@ export default function PaymentsPage() {
       {/* Page Header */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
         <div>
-          <h1 className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-600 dark:from-pink-400 dark:to-purple-500">
+          <h1 className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-yellow-500 dark:from-orange-400 dark:to-yellow-500">
             Payment Management
           </h1>
           <p className="text-gray-600 dark:text-gray-400 mt-1">
@@ -652,7 +652,7 @@ export default function PaymentsPage() {
                           href={`/api/payments/${payment._id}/receipt`}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-blue-600 hover:text-blue-900 dark:text-blue-400 dark:hover:text-blue-300"
+                          className="text-orange-600 hover:text-orange-900 dark:text-orange-400 dark:hover:text-orange-300"
                           title="Download Receipt"
                         >
                           <FaDownload className="inline" />

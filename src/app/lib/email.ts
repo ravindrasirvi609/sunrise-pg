@@ -299,7 +299,7 @@ export async function sendRegistrationConfirmationEmail(
                     <p style="font-size: 14px; margin: 15px 0 0;">
                       <a href="https://www.sunrisepg.com" style="color: #ff8c00; text-decoration: none; margin: 0 10px;">Website</a> |
                       <a href="https://www.sunrisepg.com/contact" style="color: #ff8c00; text-decoration: none; margin: 0 10px;">Contact</a> |
-                      <a href="tel:+919922538989" style="color: #ff8c00; text-decoration: none; margin: 0 10px;">+91 9922 538 989</a>
+                      <a href="tel:+919922538989" style="color: #ff8c00; text-decoration: none; margin: 0 10px;">+91 88880 30009</a>
                     </p>
                   </td>
                 </tr>
@@ -493,7 +493,7 @@ export async function sendWelcomeEmail(
                     <p style="font-size: 14px; margin: 15px 0 0;">
                       <a href="${process.env.NEXT_PUBLIC_SITE_URL}" style="color: #ff8c00; text-decoration: none; margin: 0 10px;">Website</a> |
                       <a href="${process.env.NEXT_PUBLIC_SITE_URL}/contact" style="color: #ff8c00; text-decoration: none; margin: 0 10px;">Contact</a> |
-                      <a href="tel:+919922538989" style="color: #ff8c00; text-decoration: none; margin: 0 10px;">+91 9922 538 989</a>
+                      <a href="tel:+919922538989" style="color: #ff8c00; text-decoration: none; margin: 0 10px;">+91 88880 30009</a>
                     </p>
                   </td>
                 </tr>
@@ -607,7 +607,7 @@ export async function sendResetCredentialsEmail(
                     <p style="font-size: 14px; margin: 15px 0 0;">
                       <a href="${process.env.NEXT_PUBLIC_SITE_URL}" style="color: #ff8c00; text-decoration: none; margin: 0 10px;">Website</a> |
                       <a href="${process.env.NEXT_PUBLIC_SITE_URL}/contact" style="color: #ff8c00; text-decoration: none; margin: 0 10px;">Contact</a> |
-                      <a href="tel:+919922538989" style="color: #ff8c00; text-decoration: none; margin: 0 10px;">+91 9922 538 989</a>
+                      <a href="tel:+919922538989" style="color: #ff8c00; text-decoration: none; margin: 0 10px;">+91 88880 30009</a>
                     </p>
                   </td>
                 </tr>
@@ -719,7 +719,7 @@ export async function sendRejectionEmail(
                     <p style="font-size: 14px; margin: 15px 0 0;">
                       <a href="${process.env.NEXT_PUBLIC_SITE_URL}" style="color: #ff8c00; text-decoration: none; margin: 0 10px;">Website</a> |
                       <a href="${process.env.NEXT_PUBLIC_SITE_URL}/contact" style="color: #ff8c00; text-decoration: none; margin: 0 10px;">Contact</a> |
-                      <a href="tel:+919922538989" style="color: #ff8c00; text-decoration: none; margin: 0 10px;">+91 9922 538 989</a>
+                      <a href="tel:+919922538989" style="color: #ff8c00; text-decoration: none; margin: 0 10px;">+91 88880 30009</a>
                     </p>
                   </td>
                 </tr>
@@ -816,7 +816,7 @@ export async function sendContactInquiryConfirmationEmail(
                     <p style="font-size: 14px; margin: 15px 0 0;">
                       <a href="${process.env.NEXT_PUBLIC_SITE_URL}" style="color: #ff8c00; text-decoration: none; margin: 0 10px;">Website</a> |
                       <a href="${process.env.NEXT_PUBLIC_SITE_URL}/contact" style="color: #ff8c00; text-decoration: none; margin: 0 10px;">Contact</a> |
-                      <a href="tel:+919922538989" style="color: #ff8c00; text-decoration: none; margin: 0 10px;">+91 9922 538 989</a>
+                      <a href="tel:+919922538989" style="color: #ff8c00; text-decoration: none; margin: 0 10px;">+91 88880 30009</a>
                     </p>
                   </td>
                 </tr>
