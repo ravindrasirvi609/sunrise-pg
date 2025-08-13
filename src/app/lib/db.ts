@@ -12,14 +12,6 @@ if (!MONGODB_URI) {
 // Now TypeScript knows MONGODB_URI is definitely a string
 const connectionString: string = MONGODB_URI;
 
-console.log(
-  "[DB] Connecting to MongoDB:",
-  connectionString.replace(
-    /mongodb(\+srv)?:\/\/([^:]+):([^@]+)@/,
-    "mongodb$1://**:**@"
-  )
-);
-
 interface Cached {
   conn: mongoose.Connection | null;
   promise: Promise<mongoose.Connection> | null;
