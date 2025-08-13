@@ -3,6 +3,8 @@ import { IUser } from "../interfaces/models";
 
 // Adding additional fields specific to archive
 interface IUserArchive extends IUser {
+  // Reference back to the original User document (stable user _id)
+  originalUserId?: mongoose.Types.ObjectId | string;
   archiveReason: string;
   archiveDate: Date;
   exitSurveyCompleted: boolean;
@@ -154,6 +156,12 @@ const UserArchiveSchema = new Schema<IUserArchive>(
     updatedAt: {
       type: Date,
       default: Date.now,
+    },
+    // Reference to the original User _id for reactivation
+    originalUserId: {
+      type: Schema.Types.ObjectId,
+      ref: "User",
+      index: true,
     },
   },
   {

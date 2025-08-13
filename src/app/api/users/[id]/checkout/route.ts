@@ -89,6 +89,7 @@ export async function POST(
     // Create archive record with appropriate fields
     const archiveRecord = new UserArchive({
       ...userToCheckout.toObject(),
+      originalUserId: userToCheckout._id,
       archiveReason,
       archiveDate: new Date(),
       exitSurveyCompleted: !!exitSurvey || skipSurvey,

@@ -308,6 +308,7 @@ export async function DELETE(
 
         archiveRecord = new UserArchive({
           ...userObj,
+          originalUserId: userToDelete._id,
           userId: userToDelete._id, // Store the original user ID as a reference
           archiveReason: "Other", // Default reason for admin deactivation
           archiveDate: new Date(),

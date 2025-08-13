@@ -61,8 +61,42 @@ export async function PUT(request: NextRequest) {
     }
 
     try {
-      // Find the user first to check if exists
-      const userToActivate = await User.findById(userId);
+      // Find the user first; if not present, attempt to resolve from archive (reactivation flow)
+      let userToActivate = await User.findById(userId);
+
+      if (!userToActivate) {
+        // Try to find archive by provided id
+        const UserArchive = (await import("@/app/api/models/UserArchive"))
+          .default;
+        const archive = await UserArchive.findById(userId);
+
+        if (archive && archive.originalUserId) {
+          // Try original user id
+          userToActivate = await User.findById(archive.originalUserId);
+        }
+
+        if (!userToActivate && archive) {
+          // Reconstruct user document from archive (excluding archive-only fields)
+          const {
+            _id, // archive id
+            originalUserId,
+            archiveReason,
+            archiveDate,
+            exitSurveyCompleted,
+            stayDuration,
+            exitFeedback,
+            ...userFields
+          } = archive.toObject();
+
+          // Use originalUserId if available to preserve references; else create new
+          const reconstructedData: any = { ...userFields };
+          if (originalUserId) {
+            reconstructedData._id = originalUserId;
+          }
+          reconstructedData.isActive = false; // will set to true below
+          userToActivate = await User.create(reconstructedData);
+        }
+      }
 
       if (!userToActivate) {
         return NextResponse.json(

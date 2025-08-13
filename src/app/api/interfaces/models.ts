@@ -50,6 +50,7 @@ export interface IUser {
  * User Archive model interface
  */
 export interface IUserArchive extends IUser {
+  originalUserId?: string; // Original User collection _id to allow reactivation
   archiveReason:
     | "Completed Stay"
     | "Early Departure"
