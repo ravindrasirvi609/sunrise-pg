@@ -12,7 +12,7 @@ const LocalBusinessSchema = () => {
       "Premium girls' PG accommodation in Hinjawadi, Pune with modern amenities, nutritious meals, and 24/7 security.",
     url: "https://www.comfortstaypg.com",
     telephone: "+91 88880 30009",
-    email: "info@comfortstay.com",
+    email: "info@sunrisepg.com",
     address: {
       "@type": "PostalAddress",
       streetAddress: "Hinjewadi Phase 1 Rd, Mukai Nagar, Phase 1",
