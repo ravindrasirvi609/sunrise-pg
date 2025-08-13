@@ -152,7 +152,7 @@ export async function POST(
     // Create standard password based on mobile number's last 4 digits
     const phone = pendingRegistration.phone;
     const lastFourDigits = phone.slice(-4);
-    const plainPassword = `Comfort@${lastFourDigits}`;
+    const plainPassword = `Sunrise@${lastFourDigits}`;
 
     // Hash the password
     const salt = await bcrypt.genSalt(10);

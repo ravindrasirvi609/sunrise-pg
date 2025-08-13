@@ -394,10 +394,10 @@ export async function GET(request: Request, context: unknown) {
         </head>
         <body>
           <div class="receipt">
-            <div class="watermark">SUNRISE PG</div>
+            <div class="watermark">Sunrise PG</div>
             <div class="receipt-header">
               <div class="brand">
-                <div class="brand-name">SUNRISE PG</div>
+                <div class="brand-name">Sunrise PG</div>
                 <div class="brand-slogan">Your Home Away From Home</div>
                 <div class="brand-address">
                   Hinjewadi Phase 1 Rd, Mukai Nagar, Phase 1, 
