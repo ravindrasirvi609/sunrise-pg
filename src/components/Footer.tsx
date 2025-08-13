@@ -15,6 +15,7 @@ import {
   Heart,
   Loader2,
 } from "lucide-react";
+import Image from "next/image";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -79,9 +80,16 @@ const Footer = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* About Section */}
             <div>
-              <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-orange-500 dark:text-orange-300">
-                Sunrise
-              </h3>
+              <div className="w-full py-6 flex items-center justify-center">
+                <Image
+                  src="/logo.png"
+                  alt="Sunrise PG logo"
+                  width={120}
+                  height={120}
+                  className="h-16 w-auto object-contain opacity-90"
+                  loading="lazy"
+                />
+              </div>
               <p className="text-gray-600 dark:text-orange-100/70 mb-4 text-sm leading-relaxed">
                 Premium girls PG accommodation in Hinjewadi, Pune. Experience
                 comfort, security, and modern amenities in a safe and welcoming

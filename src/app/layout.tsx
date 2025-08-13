@@ -7,6 +7,7 @@ import Providers from "@/components/Providers";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import LocalBusinessSchema from "@/components/LocalBusinessSchema";
+import Image from "next/image";
 
 const poppins = Poppins({
   weight: ["300", "400", "500", "600", "700"],
@@ -110,13 +111,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       {/* <head> section is generally managed by Next.js metadata API,
           custom tags like PWA links might still be needed here if not covered by manifest */}
-      <head>
-        {/* If manifest.json handles icons, these might be redundant */}
-        {/* <link rel="apple-touch-icon" href="/icons/icon-192x192.png" /> */}
-        {/* <meta name="apple-mobile-web-app-capable" content="yes" /> */}
-        {/* <meta name="apple-mobile-web-app-status-bar-style" content="default" /> */}
-        {/* <meta name="apple-mobile-web-app-title" content="Sunrise PG" /> */}
-      </head>
+      <head></head>
       <body className={poppins.className}>
         <Providers>
           <div className="min-h-screen bg-gradient-to-br from-[#fff8f1] via-[#fffbf5] to-[#fef3c7] dark:from-[#4a3728] dark:via-[#452e1d] dark:to-[#3e2723] overflow-x-hidden">

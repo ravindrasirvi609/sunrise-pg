@@ -62,14 +62,14 @@ export default function Navbar() {
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center">
             <Link href="/" className="flex items-center">
-              <div className="bg-gradient-to-r from-orange-400 to-yellow-500 h-10 w-10 rounded-full flex items-center justify-center mr-2 shadow-sm">
-                <span className="text-white font-bold text-lg">S</span>
-              </div>
-              <span className="text-xl md:text-2xl font-bold text-gray-800 dark:text-white">
-                <span className="bg-gradient-to-r from-orange-500 to-yellow-500 bg-clip-text text-transparent">
-                  Sunrise<span className="text-orange-500">PG</span>
-                </span>
-              </span>
+              <Image
+                src="/logo.png"
+                alt="Sunrise PG logo"
+                width={72}
+                height={72}
+                priority
+                className="h-28 w-28 object-contain"
+              />
             </Link>
           </div>
 
@@ -182,7 +182,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`block px-3 py-2 rounded-md text-base font-medium transition-colors flex items-center gap-2 ${
+                className={`px-3 py-2 rounded-md text-base font-medium transition-colors flex items-center gap-2 ${
                   pathname === link.href
                     ? "text-orange-600 dark:text-orange-400 bg-orange-50 dark:bg-orange-900/20"
                     : "text-gray-700 dark:text-gray-200 hover:bg-orange-50 dark:hover:bg-orange-900/10 hover:text-orange-600 dark:hover:text-orange-400"
