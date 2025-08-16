@@ -382,7 +382,7 @@ export default function UsersPage() {
                 Manage Users
               </h1>
               <p className="text-gray-600 dark:text-gray-400">
-                View and manage all registered users of Comfort Stay PG
+                View and manage all registered users of Sunrise PG
               </p>
             </div>
             <button

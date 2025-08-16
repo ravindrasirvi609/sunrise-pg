@@ -269,11 +269,7 @@ export async function sendRegistrationConfirmationEmail(
                         </td>
                         <td style="font-size: 15px; padding-bottom: 12px;">High-speed WiFi and fully furnished rooms</td>
                       </tr>
-                      <tr>
-                        <td width="25" valign="top" style="padding-right: 10px;">
-                          <div style="width: 8px; height: 8px; background-color: #ffcc02; border-radius: 50%; margin-top: 6px;"></div>
-                        </td>
-                      </tr>
+                     
                     </table>
                   </td>
                 </tr>

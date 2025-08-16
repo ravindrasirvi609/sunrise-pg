@@ -906,7 +906,7 @@ export default function PendingRegistrationDetailsPage() {
                         value={formData.checkInDate}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-md shadow-sm focus:outline-none focus:ring-pink-500 focus:border-pink-500 dark:bg-gray-800 dark:text-white text-sm"
+                        className="w-full px-3 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-pink-500 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 text-sm"
                       />
                     </div>
                   </div>
@@ -934,7 +934,7 @@ export default function PendingRegistrationDetailsPage() {
                         value={formData.amount}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-md shadow-sm focus:outline-none focus:ring-pink-500 focus:border-pink-500 dark:bg-gray-800 dark:text-white text-sm"
+                        className="w-full px-3 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-pink-500 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 text-sm"
                         placeholder="Enter payment amount"
                       />
                     </div>
@@ -953,7 +953,7 @@ export default function PendingRegistrationDetailsPage() {
                         name="depositAmount"
                         value={formData.depositAmount}
                         onChange={handleInputChange}
-                        className="w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-md shadow-sm focus:outline-none focus:ring-pink-500 focus:border-pink-500 dark:bg-gray-800 dark:text-white text-sm"
+                        className="w-full px-3 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-pink-500 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 text-sm"
                         placeholder="Enter security deposit amount"
                       />
                     </div>
@@ -974,7 +974,7 @@ export default function PendingRegistrationDetailsPage() {
                         value={formData.paymentMethod}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-md shadow-sm focus:outline-none focus:ring-pink-500 focus:border-pink-500 dark:bg-gray-800 dark:text-white text-sm"
+                        className="w-full px-3 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-pink-500 text-gray-900 dark:text-white text-sm"
                       >
                         <option value="Cash">Cash</option>
                         <option value="UPI">UPI</option>
@@ -998,7 +998,7 @@ export default function PendingRegistrationDetailsPage() {
                         value={formData.paymentStatus}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-md shadow-sm focus:outline-none focus:ring-pink-500 focus:border-pink-500 dark:bg-gray-800 dark:text-white text-sm"
+                        className="w-full px-3 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-pink-500 text-gray-900 dark:text-white text-sm"
                       >
                         <option value="Paid">Paid</option>
                         <option value="Pending">Pending</option>
@@ -1024,7 +1024,11 @@ export default function PendingRegistrationDetailsPage() {
                       return (
                         <label
                           key={month}
-                          className="flex items-center space-x-2 hover:bg-gray-50 dark:hover:bg-gray-700 p-1 rounded"
+                          className={`flex items-center space-x-2 p-1 rounded transition-colors border border-transparent ${
+                            formData.months.includes(month)
+                              ? "bg-pink-50 dark:bg-pink-900/30 border-pink-300/60 dark:border-pink-600/40"
+                              : "hover:bg-gray-50 dark:hover:bg-gray-700"
+                          }`}
                         >
                           <input
                             type="checkbox"
