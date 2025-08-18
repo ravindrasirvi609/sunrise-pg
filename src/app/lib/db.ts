@@ -1,16 +1,6 @@
 import mongoose from "mongoose";
 import "./models";
 
-// Get MongoDB URI from environment or throw error if missing
-const MONGODB_URI = process.env.MONGODB_URI;
-
-if (!MONGODB_URI) {
-  throw new Error("Please define the MONGODB_URI environment variable");
-}
-
-// Now TypeScript knows MONGODB_URI is definitely a string
-const connectionString: string = MONGODB_URI;
-
 interface Cached {
   conn: mongoose.Connection | null;
   promise: Promise<mongoose.Connection> | null;
@@ -37,13 +27,16 @@ export async function connectToDatabase(): Promise<mongoose.Connection> {
       socketTimeoutMS: 45000,
     };
 
-    // Store connection promise
-    cached.promise = mongoose
-      .connect(connectionString, opts)
-      .then((mongoose) => {
-        console.log("[DB] MongoDB connected successfully");
-        return mongoose.connection;
-      });
+    const uri = process.env.MONGODB_URI;
+    if (!uri) {
+      throw new Error(
+        "MONGODB_URI is not defined. Ensure it is set in .env.local or environment variables."
+      );
+    }
+    cached.promise = mongoose.connect(uri, opts).then((mongoose) => {
+      console.log("[DB] MongoDB connected successfully");
+      return mongoose.connection;
+    });
   }
 
   try {

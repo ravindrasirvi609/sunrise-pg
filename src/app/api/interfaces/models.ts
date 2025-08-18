@@ -87,7 +87,7 @@ export interface IRoom {
   building: "A" | "B";
   roomNumber: string;
   floor: number;
-  type: "2-sharing" | "3-sharing";
+  type: "2-sharing" | "3-sharing" | "6-sharing";
   price: number;
   capacity: number;
   currentOccupancy: number;

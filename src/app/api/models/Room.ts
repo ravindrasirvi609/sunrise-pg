@@ -15,12 +15,12 @@ const RoomSchema = new Schema<IRoom>(
     floor: {
       type: Number,
       min: 1,
-      max: 6,
+      max: 5, // Updated: only 5 floors now
       required: true,
     },
     type: {
       type: String,
-      enum: ["2-sharing", "3-sharing"],
+      enum: ["2-sharing", "3-sharing", "6-sharing", "5-sharing", "4-sharing"], // Added 6-sharing
       required: true,
     },
     price: {

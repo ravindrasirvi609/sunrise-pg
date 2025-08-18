@@ -7,50 +7,46 @@ import * as url from "url";
 const __filename = url.fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Load environment variables from .env.local
-config({ path: path.resolve(__dirname, "../../../.env.local") });
+// Load environment variables from project root .env.local.
+// Previous path used ../../../ which pointed one level above project root.
+const envPath = path.resolve(__dirname, "../../.env.local");
+config({ path: envPath });
+if (!process.env.MONGODB_URI) {
+  // Fallback attempt using CWD if first attempt failed
+  config({ path: path.resolve(process.cwd(), ".env.local") });
+  if (!process.env.MONGODB_URI) {
+    console.warn(
+      `[createRooms] MONGODB_URI not found after loading env file at ${envPath}. Ensure .env.local exists at project root.`
+    );
+  }
+}
+console.log("[createRooms] Env file loaded from:", envPath);
+console.log(
+  "[createRooms] MONGODB_URI present?",
+  process.env.MONGODB_URI ? "yes" : "no"
+);
 
 import mongoose from "mongoose";
 import { connectToDatabase } from "../app/lib/db";
 import Room from "../app/api/models/Room";
 
-// Configuration
-const FLOORS = 6;
-const ROOMS_PER_FLOOR = 17;
-const ROOM_TYPES: Record<number, "2-sharing" | "3-sharing"> = {
-  // Room numbers for each floor that are 3-sharing
-  // All other rooms will be 2-sharing
-  101: "3-sharing",
-  105: "3-sharing",
-  110: "3-sharing",
-  115: "3-sharing",
-  201: "3-sharing",
-  205: "3-sharing",
-  210: "3-sharing",
-  215: "3-sharing",
-  301: "3-sharing",
-  305: "3-sharing",
-  310: "3-sharing",
-  315: "3-sharing",
-  401: "3-sharing",
-  405: "3-sharing",
-  410: "3-sharing",
-  415: "3-sharing",
-  501: "3-sharing",
-  505: "3-sharing",
-  510: "3-sharing",
-  515: "3-sharing",
-  601: "3-sharing",
-  605: "3-sharing",
-  610: "3-sharing",
-  615: "3-sharing",
-};
+// -----------------------------------------------------------------------------
+// New Configuration (Updated per latest requirements)
+// Floors: 5 total
+// Rooms per floor: Floors 1 & 5 have 13 rooms, Floors 2,3,4 have 14 rooms
+// All rooms are 6-sharing with capacity 6
+// -----------------------------------------------------------------------------
+const FLOORS = 5;
 
-// Pricing based on room type
-const PRICING: Record<"2-sharing" | "3-sharing", number> = {
-  "2-sharing": 9500, // Price for 2-sharing rooms
-  "3-sharing": 8000, // Price for 3-sharing rooms
-};
+// Helper to decide how many rooms on a given floor
+const roomsOnFloor = (floor: number) => (floor === 1 || floor === 5 ? 7 : 8);
+
+// Single room type now (extending schema to allow "6-sharing")
+type RoomType = "6-sharing";
+
+// Pricing: Assumption made (adjust if needed)
+// NOTE: Change this value if a different price is required for 6-sharing rooms.
+const PRICE_PER_6_SHARING = 7500;
 
 // Amenities common for all rooms
 const DEFAULT_AMENITIES = [
@@ -75,23 +71,19 @@ async function createRooms() {
     await Room.deleteMany({});
     console.log("Existing rooms cleared");
 
-    const roomsToCreate = [];
+    const roomsToCreate: any[] = [];
 
-    // Create rooms for each floor
     for (let floor = 1; floor <= FLOORS; floor++) {
-      for (let roomNum = 1; roomNum <= ROOMS_PER_FLOOR; roomNum++) {
-        const roomNumber = `${floor}${roomNum.toString().padStart(2, "0")}`;
-        const roomNumberInt = parseInt(roomNumber);
-        const type = ROOM_TYPES[roomNumberInt] || "2-sharing";
-        const capacity = type === "2-sharing" ? 2 : 3;
-        const price = PRICING[type];
-
+      const totalRooms = roomsOnFloor(floor);
+      for (let roomSeq = 1; roomSeq <= totalRooms; roomSeq++) {
+        const roomNumber = `${floor}${roomSeq.toString().padStart(2, "0")}`; // e.g., 101, 102...
         roomsToCreate.push({
+          building: "A", // Assumption: All rooms belong to Building A
           roomNumber,
           floor,
-          type,
-          price,
-          capacity,
+          type: "6-sharing" as RoomType,
+          price: PRICE_PER_6_SHARING,
+          capacity: 6,
           currentOccupancy: 0,
           amenities: DEFAULT_AMENITIES,
           status: "available",
@@ -108,12 +100,10 @@ async function createRooms() {
     const sampleRooms = await Room.find().limit(5);
     console.log(sampleRooms);
 
-    console.log("\nRoom count by type:");
-    const twoSharingCount = await Room.countDocuments({ type: "2-sharing" });
-    const threeSharingCount = await Room.countDocuments({ type: "3-sharing" });
-    console.log(`2-sharing rooms: ${twoSharingCount}`);
-    console.log(`3-sharing rooms: ${threeSharingCount}`);
-    console.log(`Total rooms: ${twoSharingCount + threeSharingCount}`);
+    console.log("\nRoom count summary:");
+    const sixSharingCount = await Room.countDocuments({ type: "6-sharing" });
+    console.log(`6-sharing rooms: ${sixSharingCount}`);
+    console.log(`Total rooms: ${sixSharingCount}`);
   } catch (error) {
     console.error("Error creating rooms:", error);
   } finally {

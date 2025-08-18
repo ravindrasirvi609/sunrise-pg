@@ -187,7 +187,7 @@ const Contact = () => {
                 <div className="space-y-4">
                   <div className="flex justify-between items-center p-4 bg-gradient-to-r from-yellow-50 to-orange-50 dark:from-yellow-900/20 dark:to-orange-900/20 rounded-xl">
                     <span className="font-semibold text-gray-800 dark:text-white">
-                      Monday - Saturday
+                      Monday - Sunday
                     </span>
                     <span className="text-orange-600 dark:text-orange-400 font-semibold">
                       10:00 AM - 10:00 PM
