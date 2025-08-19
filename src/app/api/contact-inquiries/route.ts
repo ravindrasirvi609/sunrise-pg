@@ -3,6 +3,7 @@ import ContactInquiry from "@/app/api/models/ContactInquiry";
 import Notification from "@/app/api/models/Notification";
 import User from "@/app/api/models/User";
 import { connectToDatabase } from "@/app/lib/db";
+import { notifyAllAdmins } from "@/app/lib/notifications";
 
 export async function POST(request: NextRequest) {
   try {
@@ -33,38 +34,14 @@ export async function POST(request: NextRequest) {
     );
     await sendContactInquiryConfirmationEmail(name, email, phone, message);
 
-    // Find all admin users to notify them
-    const adminUsers = await User.find({ role: "admin" });
-
-    // Create notifications for each admin user
-    const notificationPromises = adminUsers.map((admin) => {
-      return Notification.create({
-        userId: admin._id,
-        title: "New Contact Inquiry",
-        message: `${name} has submitted a new contact inquiry.`,
-        type: "Contact",
-        relatedId: newInquiry._id,
-        relatedModel: "ContactInquiry",
-        isRead: false,
-        isActive: true,
-      });
+    // Notify all admins
+    await notifyAllAdmins({
+      title: "New Contact Inquiry",
+      message: `${name} has submitted a new contact inquiry.`,
+      type: "Contact",
+      relatedId: newInquiry._id,
+      relatedModel: "ContactInquiry",
     });
-
-    // Also create a notification for the hardcoded admin ID
-    notificationPromises.push(
-      Notification.create({
-        userId: "admin_id_123456789", // Hardcoded admin ID
-        title: "New Contact Inquiry",
-        message: `${name} has submitted a new contact inquiry.`,
-        type: "Contact",
-        relatedId: newInquiry._id,
-        relatedModel: "ContactInquiry",
-        isRead: false,
-        isActive: true,
-      })
-    );
-
-    await Promise.all(notificationPromises);
 
     return NextResponse.json(
       {

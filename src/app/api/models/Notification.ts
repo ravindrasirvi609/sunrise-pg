@@ -31,6 +31,7 @@ const NotificationSchema = new Schema<INotification>(
         "NoticePeriod",
         "Notice",
         "Contact",
+        "Checkout",
       ],
       default: "System",
     },

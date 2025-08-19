@@ -6,6 +6,7 @@ import User from "@/app/api/models/User";
 import Room from "@/app/api/models/Room";
 import UserArchive from "@/app/api/models/UserArchive";
 import Notification from "@/app/api/models/Notification";
+import { notifyAllAdmins, notifyUser } from "@/app/lib/notifications";
 import { differenceInDays } from "date-fns";
 
 export async function POST(
@@ -102,17 +103,25 @@ export async function POST(
 
     await archiveRecord.save();
 
-    // Create a notification for the admin
-    await Notification.create({
-      userId: isAdmin(user) ? params.id : "admin_id_123456789", // If admin is checking out a user, notify that user
+    // Notify all admins about the checkout
+    await notifyAllAdmins({
       title: "Checkout Completed",
       message: `${userToCheckout.name} has been checked out. ${adminComments ? `Admin comments: ${adminComments}` : ""}`,
       type: "Checkout",
-      isRead: false,
-      isActive: true,
       relatedId: archiveRecord._id,
       relatedModel: "UserArchive",
     });
+
+    // Also notify the user themselves (if different)
+    if (userToCheckout._id.toString() !== user._id.toString()) {
+      await notifyUser(userToCheckout._id, {
+        title: "You Have Been Checked Out",
+        message: `Your checkout has been processed.${adminComments ? ` Admin comments: ${adminComments}` : ""}`,
+        type: "Checkout",
+        relatedId: archiveRecord._id,
+        relatedModel: "UserArchive",
+      });
+    }
 
     // Update user record to reflect checkout
     userToCheckout.isActive = false;

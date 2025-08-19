@@ -4,6 +4,7 @@ import { isAuthenticated, isAdmin } from "@/app/lib/auth";
 import Complaint from "@/app/api/models/Complaint";
 import User from "@/app/api/models/User";
 import Notification from "@/app/api/models/Notification";
+import { notifyAllAdmins } from "@/app/lib/notifications";
 
 // Get all complaints
 export async function GET() {
@@ -89,16 +90,13 @@ export async function POST(request: NextRequest) {
 
     await newComplaint.save();
 
-    // Create notification for admin
-    await Notification.create({
-      userId: 'admin_id_123456789', // Admin ID
-      title: 'New Complaint Submitted',
-      message: `${user.name || 'A user'} has submitted a new complaint: "${title}"`,
-      type: 'Complaint',
-      isRead: false,
-      isActive: true,
+    // Notify all admins
+    await notifyAllAdmins({
+      title: "New Complaint Submitted",
+      message: `${user.name || "A user"} has submitted a new complaint: "${title}"`,
+      type: "Complaint",
       relatedId: newComplaint._id,
-      relatedModel: 'Complaint'
+      relatedModel: "Complaint",
     });
 
     return NextResponse.json({

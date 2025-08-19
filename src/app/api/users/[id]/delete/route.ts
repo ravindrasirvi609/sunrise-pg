@@ -5,6 +5,7 @@ import { isAdmin } from "@/app/utils/roleCheck";
 import User from "@/app/api/models/User";
 import UserArchive from "@/app/api/models/UserArchive";
 import Notification from "@/app/api/models/Notification";
+import { notifyAllAdmins } from "@/app/lib/notifications";
 import Payment from "@/app/api/models/Payment";
 import Complaint from "@/app/api/models/Complaint";
 
@@ -80,13 +81,10 @@ export async function DELETE(
     console.log("GDPR Deletion Record:", deletionRecord);
 
     // Also record the deletion in the admin activity log (implement this as needed)
-    await Notification.create({
-      userId: "admin_id_123456789", // Admin ID
+    await notifyAllAdmins({
       title: "GDPR User Deletion",
       message: `User ${userToDelete.name} (${userToDelete.email}) was permanently deleted by ${user.name}. Reason: ${reason}`,
       type: "System",
-      isRead: false,
-      isActive: true,
     });
 
     // Permanently delete all user-related data

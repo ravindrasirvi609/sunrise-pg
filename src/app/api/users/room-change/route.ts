@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { connectToDatabase } from "@/app/lib/db";
 import { isAuthenticated, isAdmin } from "@/app/lib/auth";
 import { User, Room, RoomChangeRequest, Notification } from "@/app/api/models";
+import { notifyAllAdmins } from "@/app/lib/notifications";
 import mongoose from "mongoose";
 
 // Handle room change request (admin only)
@@ -150,14 +151,11 @@ export async function POST(request: NextRequest) {
 
       await roomChangeRecord.save({ session });
 
-      // Create notification for admin
-      await Notification.create({
-        userId: "admin_id_123456789", // Admin ID
+      // Notify all admins
+      await notifyAllAdmins({
         title: "Room Change Completed",
         message: `${userToUpdate.name || "A resident"} has been moved from Room ${currentRoom.roomNumber} to Room ${newRoom.roomNumber}`,
         type: "RoomChange",
-        isRead: false,
-        isActive: true,
         relatedId: roomChangeRecord._id,
         relatedModel: "RoomChangeRequest",
       });

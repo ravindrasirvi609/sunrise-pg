@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { connectToDatabase } from "@/app/lib/db";
 import { User, Notification } from "@/app/api/models";
+import { notifyAllAdmins } from "@/app/lib/notifications";
 import { sendRegistrationConfirmationEmail } from "@/app/lib/email";
 
 export async function POST(request: NextRequest) {
@@ -91,14 +92,11 @@ export async function POST(request: NextRequest) {
       savedUser._id
     );
 
-    // Create notification for admin
-    await Notification.create({
-      userId: "admin_id_123456789", // Admin ID
+    // Notify all admins
+    await notifyAllAdmins({
       title: "New User Registration",
       message: `${fullName} has submitted a new registration request from ${city}, ${state}. Email: ${emailAddress}`,
       type: "System",
-      isRead: false,
-      isActive: true,
       relatedId: savedUser._id,
       relatedModel: "User",
     });

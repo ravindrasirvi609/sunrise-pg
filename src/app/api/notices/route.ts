@@ -5,6 +5,7 @@ import Notice from "@/app/api/models/Notice";
 import User from "@/app/api/models/User";
 import Notification from "@/app/api/models/Notification";
 import mongoose from "mongoose";
+import { notifyAllAdmins } from "@/app/lib/notifications";
 
 // Get all notices
 export async function GET() {
@@ -74,22 +75,11 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Handle the special case for hardcoded admin ID
-    let createdByValue;
-
-    if (user._id === "admin_id_123456789") {
-      // For the hardcoded admin ID, create a MongoDB ObjectId
-      createdByValue = new mongoose.Types.ObjectId();
-    } else {
-      // For regular users, use their ID directly (it should already be an ObjectId)
-      createdByValue = user._id;
-    }
-
-    // Create new notice with the appropriate createdBy value
+    // Create new notice
     const newNotice = new Notice({
       title,
       description,
-      createdBy: createdByValue,
+      createdBy: user._id,
     });
 
     await newNotice.save();
