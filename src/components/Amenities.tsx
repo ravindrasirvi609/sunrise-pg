@@ -290,19 +290,6 @@ const Amenities = () => {
                   </div>
                 ))}
               </div>
-
-              {/* Learn More Button */}
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="w-full bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600 transition-all duration-300 text-white py-3 px-6 rounded-xl font-semibold flex items-center justify-center gap-2 group-hover:shadow-lg"
-              >
-                Learn More
-                <ArrowRight
-                  size={16}
-                  className="group-hover:translate-x-1 transition-transform"
-                />
-              </motion.button>
             </motion.div>
           ))}
         </div>
