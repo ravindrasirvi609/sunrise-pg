@@ -115,7 +115,7 @@ const Hero = () => {
             >
               <span className="text-gray-800 dark:text-white">Welcome to</span>
               <br />
-              <span className="sunrise-text">Sunrise</span>
+              <span className="sunrise-text">Sunrise Services</span>
               <br />
               <span className="text-gray-800 dark:text-white">PG</span>
             </motion.h1>
