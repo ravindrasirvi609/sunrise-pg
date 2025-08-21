@@ -1,7 +1,7 @@
 import mongoose, { Schema } from "mongoose";
 import { IRoomChangeRequest } from "../interfaces/models";
 
-const RoomChangeRequestSchema = new Schema<IRoomChangeRequest>(
+const RoomChangeRequestSchema = new Schema(
   {
     userId: {
       type: Schema.Types.ObjectId,

@@ -9,6 +9,7 @@ import Image from "next/image";
 import { isValidImageSrc } from "@/utils/isValidImageSrc";
 import { FiUsers, FiEye, FiBell, FiX } from "react-icons/fi";
 import { FaFileExport, FaFileInvoiceDollar, FaUsers } from "react-icons/fa";
+import SettlementModal from "@/components/SettlementModal";
 
 // Define PaymentData interface based on Payment model
 interface PaymentData {
@@ -88,6 +89,19 @@ export default function UsersPage() {
   const [selectedUserId, setSelectedUserId] = useState<string | null>(null);
   const [selectedUserName, setSelectedUserName] = useState<string>("");
 
+  // Settlement modal state
+  const [settlementModal, setSettlementModal] = useState<{
+    isOpen: boolean;
+    user: User | null;
+    month: string;
+    dueAmount: number;
+  }>({
+    isOpen: false,
+    user: null,
+    month: "",
+    dueAmount: 0,
+  });
+
   // Fetch users and payments data
   useEffect(() => {
     const fetchData = async () => {
@@ -108,47 +122,14 @@ export default function UsersPage() {
         const currentMonthYear = `${currentDate.toLocaleString("default", { month: "long" })} ${currentDate.getFullYear()}`;
         console.log("currentMonthYear", currentMonthYear);
 
-        const processedUsers = usersData.map((user: User) => {
-          let rentStatus: User["currentMonthRentStatus"] = "N/A";
-          let dueAmount = 0; // Initialize due amount
-          const roomPrice =
-            typeof user.roomId === "object" && user.roomId?.price
-              ? user.roomId.price
-              : 0;
-          console.log("roomPrice", roomPrice);
-
-          if (roomPrice > 0) {
-            const userPaymentsForCurrentMonth = allFetchedPayments.filter(
-              (p) =>
-                p.userId && // Important: Check if userId is not null
-                p.userId.id === user._id && // Using .id as per your last change, ensure this is correct from API population
-                !p.isDepositPayment &&
-                p.months.includes(currentMonthYear) // Corrected to use p.months
-            );
-
-            // Refined logic: Sum all 'Paid' payments for the current month
-            let totalAmountPaidForCurrentMonth = 0;
-            for (const payment of userPaymentsForCurrentMonth) {
-              if (payment.paymentStatus === "Paid") {
-                totalAmountPaidForCurrentMonth += payment.amount;
-              }
-            }
-
-            if (totalAmountPaidForCurrentMonth >= roomPrice) {
-              rentStatus = "Paid";
-            } else {
-              rentStatus = "Unpaid";
-              // Calculate due amount as difference between room price and amount paid
-              dueAmount = roomPrice - totalAmountPaidForCurrentMonth;
-            }
-          }
-
-          return {
-            ...user,
-            currentMonthRentStatus: rentStatus,
-            dueAmount: dueAmount,
-          };
+        // Calculate dues on server side
+        const duesResponse = await axios.post("/api/users/calculate-dues", {
+          users: usersData,
         });
+
+        const processedUsers = duesResponse.data.success
+          ? duesResponse.data.users
+          : usersData;
 
         setUsers(processedUsers);
         setLoading(false);
@@ -272,6 +253,63 @@ export default function UsersPage() {
       setShowConfirmDialog(false);
       setSelectedUserId(null);
       setSelectedUserName("");
+    }
+  };
+
+  // Function to handle settle due button click
+  const handleSettleDue = (e: React.MouseEvent, user: User) => {
+    e.stopPropagation();
+    const currentDate = new Date();
+    const currentMonthYear = `${currentDate.toLocaleString("default", { month: "long" })} ${currentDate.getFullYear()}`;
+
+    setSettlementModal({
+      isOpen: true,
+      user,
+      month: currentMonthYear,
+      dueAmount: user.dueAmount,
+    });
+  };
+
+  // Function to handle settlement success
+  const handleSettlementSuccess = () => {
+    // Refresh the users data to reflect the settlement
+    fetchData();
+  };
+
+  // Function to refresh data
+  const fetchData = async () => {
+    try {
+      setLoading(true);
+      // Fetch users
+      const usersResponse = await axios.get("/api/users");
+      const usersData = usersResponse.data.users || [];
+
+      // Fetch all non-deposit payments
+      const paymentsResponse = await axios.get("/api/payments");
+      const allFetchedPayments: PaymentData[] =
+        paymentsResponse.data.payments || [];
+      setAllPayments(allFetchedPayments);
+
+      // Get current month and year in "Month YYYY" format (e.g., "July 2024")
+      const currentDate = new Date();
+      const currentMonthYear = `${currentDate.toLocaleString("default", { month: "long" })} ${currentDate.getFullYear()}`;
+      console.log("currentMonthYear", currentMonthYear);
+
+      // Calculate dues on server side
+      const duesResponse = await axios.post("/api/users/calculate-dues", {
+        users: usersData,
+      });
+
+      const processedUsers = duesResponse.data.success
+        ? duesResponse.data.users
+        : usersData;
+
+      setUsers(processedUsers);
+      setLoading(false);
+    } catch (err) {
+      console.error("Error fetching data:", err);
+      setError("Failed to load user or payment data");
+      setLoading(false);
     }
   };
 
@@ -617,20 +655,29 @@ export default function UsersPage() {
                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
                       <div className="flex items-center space-x-3">
                         {user.dueAmount > 0 && (
-                          <button
-                            onClick={(e) =>
-                              handleReminderClick(e, user._id, user.name)
-                            }
-                            disabled={sendingReminder === user._id}
-                            className="p-2 text-orange-600 hover:text-orange-900 dark:text-orange-400 dark:hover:text-orange-300 rounded-full hover:bg-orange-50 dark:hover:bg-orange-900/20 transition-colors duration-200"
-                            title="Send Reminder"
-                          >
-                            {sendingReminder === user._id ? (
-                              <div className="h-5 w-5 border-2 border-orange-600 border-t-transparent rounded-full animate-spin"></div>
-                            ) : (
-                              <FiBell className="h-5 w-5" />
-                            )}
-                          </button>
+                          <>
+                            <button
+                              onClick={(e) =>
+                                handleReminderClick(e, user._id, user.name)
+                              }
+                              disabled={sendingReminder === user._id}
+                              className="p-2 text-orange-600 hover:text-orange-900 dark:text-orange-400 dark:hover:text-orange-300 rounded-full hover:bg-orange-50 dark:hover:bg-orange-900/20 transition-colors duration-200"
+                              title="Send Reminder"
+                            >
+                              {sendingReminder === user._id ? (
+                                <div className="h-5 w-5 border-2 border-orange-600 border-t-transparent rounded-full animate-spin"></div>
+                              ) : (
+                                <FiBell className="h-5 w-5" />
+                              )}
+                            </button>
+                            <button
+                              onClick={(e) => handleSettleDue(e, user)}
+                              className="px-3 py-1 text-xs font-medium text-white bg-green-600 hover:bg-green-700 dark:bg-green-700 dark:hover:bg-green-800 rounded-md transition-colors duration-200"
+                              title="Settle Due"
+                            >
+                              Settle Due
+                            </button>
+                          </>
                         )}
                       </div>
                     </td>
@@ -809,6 +856,18 @@ export default function UsersPage() {
           </div>
         </div>
       )}
+
+      {/* Settlement Modal */}
+      <SettlementModal
+        isOpen={settlementModal.isOpen}
+        onClose={() =>
+          setSettlementModal({ ...settlementModal, isOpen: false })
+        }
+        user={settlementModal.user}
+        month={settlementModal.month}
+        dueAmount={settlementModal.dueAmount}
+        onSuccess={handleSettlementSuccess}
+      />
     </div>
   );
 }

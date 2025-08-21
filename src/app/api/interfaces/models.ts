@@ -52,32 +52,14 @@ export interface IUser {
  * User Archive model interface
  */
 export interface IUserArchive extends IUser {
-  originalUserId?: string; // Original User collection _id to allow reactivation
-  archiveReason:
-    | "Completed Stay"
-    | "Early Departure"
-    | "Rule Violation"
-    | "Payment Issues"
-    | "Other";
-  archiveDate: Date;
-  exitSurveyCompleted: boolean;
-  stayDuration: number; // in days
-  exitFeedback?: {
-    overallExperience?: number;
-    cleanliness?: number;
-    facilities?: number;
-    staff?: number;
-    foodQuality?: number;
-    valueForMoney?: number;
-    wouldRecommend?: boolean;
-    likedMost?: string;
-    improvements?: string;
-    exitReason?: string;
-    otherComments?: string;
-  };
-  depositReturn?: {
+  originalUserId?: string;
+  checkoutDate?: Date;
+  checkoutReason?: string;
+  checkoutRemarks?: string;
+  checkoutBy?: string;
+  finalPayment?: {
     amount: number;
-    date?: Date;
+    date: Date;
   };
 }
 
@@ -89,40 +71,13 @@ export interface IRoom {
   building: "A" | "B";
   roomNumber: string;
   floor: number;
-  type: "2-sharing" | "3-sharing" | "6-sharing";
+  type: "2-sharing" | "3-sharing" | "4-sharing" | "5-sharing" | "6-sharing";
   price: number;
   capacity: number;
   currentOccupancy: number;
-  amenities?: string[];
+  amenities: string[];
   status: "available" | "occupied" | "maintenance";
   isActive: boolean;
-  createdAt?: Date;
-  updatedAt?: Date;
-  residents?: IUser[];
-}
-
-/**
- * Bed assignment interface
- */
-export interface IBed {
-  bedNumber: number;
-  isOccupied: boolean;
-  resident: IUser | null;
-}
-
-/**
- * Payment model interface
- */
-export interface IPayment {
-  _id?: string;
-  userId: Schema.Types.ObjectId | IUser;
-  amount: number;
-  months: string[];
-  paymentMethod: "Cash" | "UPI" | "Bank Transfer" | "Other";
-  paymentStatus: "Paid" | "Pending" | "Failed";
-  transactionId?: string;
-  paymentDate: Date;
-  isDeleted?: boolean;
   createdAt?: Date;
   updatedAt?: Date;
 }
@@ -132,7 +87,7 @@ export interface IPayment {
  */
 export interface IComplaint {
   _id?: string;
-  userId: Schema.Types.ObjectId | IUser;
+  userId: string;
   title: string;
   description: string;
   category:
@@ -152,6 +107,9 @@ export interface IComplaint {
   updatedAt?: Date;
 }
 
+/**
+ * Payment model interface
+ */
 export interface Payment {
   _id: string;
   userId: string;
@@ -172,17 +130,39 @@ export interface Payment {
 }
 
 /**
+ * Due Settlement model interface
+ */
+export interface IDueSettlement {
+  _id?: string;
+  userId: string;
+  month: string;
+  amount: number;
+  reason:
+    | "Mid-month entry"
+    | "Special discount"
+    | "Compensation"
+    | "Admin discretion"
+    | "Other";
+  remarks?: string;
+  settledBy: string;
+  settledAt?: Date;
+  isActive: boolean;
+  createdAt?: Date;
+  updatedAt?: Date;
+}
+
+/**
  * Room Change Request interface
  */
 export interface IRoomChangeRequest {
   _id?: string;
-  userId: Schema.Types.ObjectId | IUser;
-  oldRoomId: Schema.Types.ObjectId | IRoom;
-  newRoomId: Schema.Types.ObjectId | IRoom;
+  userId: string;
+  oldRoomId: string;
+  newRoomId: string;
   oldBedNumber: number;
   newBedNumber: number;
   status: "Completed" | "Cancelled";
-  requestedAt: Date;
+  requestedAt?: Date;
   completedAt?: Date;
   isActive: boolean;
   createdAt?: Date;
@@ -194,7 +174,7 @@ export interface IRoomChangeRequest {
  */
 export interface INotification {
   _id?: string;
-  userId: Schema.Types.ObjectId | IUser;
+  userId: string;
   title: string;
   message: string;
   type:
@@ -206,9 +186,9 @@ export interface INotification {
     | "Other"
     | "NoticePeriod"
     | "Notice"
-    | "Checkout"
-    | "Contact";
-  relatedId?: Schema.Types.ObjectId;
+    | "Contact"
+    | "Checkout";
+  relatedId?: string;
   relatedModel?:
     | "Payment"
     | "Complaint"
@@ -216,7 +196,6 @@ export interface INotification {
     | "User"
     | "Room"
     | "Notice"
-    | "UserArchive"
     | "ContactInquiry";
   isRead: boolean;
   isEmailSent: boolean;
@@ -232,7 +211,7 @@ export interface INotification {
 }
 
 /**
- * Contact Inquiry interface
+ * Contact Inquiry model interface
  */
 export interface IContactInquiry {
   _id?: string;
@@ -240,14 +219,15 @@ export interface IContactInquiry {
   email: string;
   phone: string;
   message: string;
-  respondedTo: boolean;
+  status: "New" | "In Progress" | "Resolved" | "Closed";
+  adminRemarks?: string;
   isActive: boolean;
   createdAt?: Date;
   updatedAt?: Date;
 }
 
 /**
- * Visit Request interface
+ * Visit Request model interface
  */
 export interface IVisitRequest {
   _id?: string;
@@ -257,31 +237,34 @@ export interface IVisitRequest {
   preferredDate: Date;
   preferredTime: string;
   message?: string;
-  status: "Pending" | "Scheduled" | "Completed" | "Cancelled";
+  status: "Pending" | "Approved" | "Rejected" | "Completed";
+  adminRemarks?: string;
   isActive: boolean;
   createdAt?: Date;
   updatedAt?: Date;
 }
 
 /**
- * Subscriber interface
+ * Subscriber model interface
  */
 export interface ISubscriber {
   _id?: string;
   email: string;
-  subscriptionDate: Date;
   isActive: boolean;
-  createdAt?: Date;
-  updatedAt?: Date;
+  subscribedAt?: Date;
+  unsubscribedAt?: Date;
 }
 
+/**
+ * Expense model interface
+ */
 export interface IExpense {
   _id?: string;
   amount: number;
   category: "Food" | "Maintenance" | "Utilities" | "Other";
   description: string;
   date: Date;
-  createdBy: string; // User _id
+  createdBy: string;
   status: "Pending" | "Approved" | "Rejected";
   createdAt?: Date;
   updatedAt?: Date;
