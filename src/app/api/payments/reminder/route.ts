@@ -76,7 +76,7 @@ export async function POST(request: NextRequest) {
               </div>
               <p>Please make the payment at your earliest convenience to avoid any late fees.</p>
               <p>If you have already made the payment, please disregard this message.</p>
-              <p>Thank you,<br>Sunrise PG Management</p>
+              <p>Thank you,<br>Sunrise PG Services Management</p>
             </div>
           `,
         });
@@ -137,7 +137,7 @@ export async function POST(request: NextRequest) {
                 </div>
                 <p>Please make the payment at your earliest convenience to avoid any late fees.</p>
                 <p>If you have already made the payment, please disregard this message.</p>
-                <p>Thank you,<br>Sunrise PG Management</p>
+                <p>Thank you,<br>Sunrise PG Services Management</p>
               </div>
             `,
           });

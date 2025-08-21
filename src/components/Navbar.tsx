@@ -64,7 +64,7 @@ export default function Navbar() {
             <Link href="/" className="flex items-center">
               <Image
                 src="/logo.png"
-                alt="Sunrise PG logo"
+                alt="Sunrise PG Services logo"
                 width={72}
                 height={72}
                 priority

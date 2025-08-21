@@ -17,6 +17,7 @@ import {
   CheckCircle,
   ArrowRight,
 } from "lucide-react";
+import Link from "next/link";
 
 const amenities = [
   {
@@ -103,12 +104,7 @@ const amenities = [
     title: "Laundry Service",
     description: "Self-service laundry with washing and drying facilities.",
     color: "from-orange-500 to-yellow-500",
-    features: [
-      "Washing Machines",
-      "Dryers Available",
-      "Ironing Facilities",
-      "Detergent Provided",
-    ],
+    features: ["Washing Machines", "Dryers Available", "Ironing Facilities"],
     category: "Convenience",
   },
   {
@@ -124,25 +120,13 @@ const amenities = [
     ],
     category: "Convenience",
   },
-  {
-    icon: <Tv size={32} />,
-    title: "Entertainment",
-    description: "Smart TV and recreational area for leisure time",
-    color: "from-orange-500 to-yellow-500",
-    features: ["Smart TV", "Recreation Room", "Board Games", "Movie Nights"],
-    category: "Entertainment",
-  },
+
   {
     icon: <Coffee size={32} />,
     title: "Lounge & Kitchen",
     description: "Fully equipped common kitchen and with self cooking facility",
     color: "from-yellow-500 to-orange-500",
-    features: [
-      "Fully Equipped",
-      "Self Cooking",
-      "Common Lounge",
-      "Coffee Machine",
-    ],
+    features: ["Fully Equipped", "Self Cooking", "Common Lounge"],
     category: "Dining",
   },
   {
@@ -317,13 +301,16 @@ const Amenities = () => {
                 whileTap={{ scale: 0.95 }}
                 className="group relative overflow-hidden bg-gradient-to-r from-orange-500 to-yellow-500 text-white px-8 py-4 rounded-2xl font-bold text-lg shadow-xl hover:shadow-2xl transition-all duration-300"
               >
-                <span className="relative z-10 flex items-center gap-3">
+                <Link
+                  href="/register"
+                  className="relative z-10 flex items-center gap-3"
+                >
                   Book Your Stay
                   <ArrowRight
                     size={20}
                     className="group-hover:translate-x-1 transition-transform"
                   />
-                </span>
+                </Link>
                 <div className="absolute inset-0 bg-gradient-to-r from-orange-600 to-yellow-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </motion.button>
             </div>

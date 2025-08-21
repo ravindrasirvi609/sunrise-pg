@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 import {
   Users,
   Bed,
@@ -18,8 +19,8 @@ const rooms = [
   {
     type: "Triple Sharing",
     capacity: "3 Girls",
-    price: "₹8,000/month",
-    originalPrice: "₹10,000",
+    price: "₹6,800/month",
+    originalPrice: "₹8,000",
     discount: "20% OFF",
     features: [
       "Brand new room",
@@ -44,8 +45,8 @@ const rooms = [
   {
     type: "Twin Sharing",
     capacity: "2 Girls",
-    price: "₹9,500/month",
-    originalPrice: "₹12,000",
+    price: "₹7,500/month",
+    originalPrice: "₹9,000",
     discount: "21% OFF",
     features: [
       "Brand new room",
@@ -70,6 +71,7 @@ const rooms = [
 ];
 
 const Rooms = () => {
+  const router = useRouter();
   return (
     <section
       id="rooms"
@@ -113,8 +115,8 @@ const Rooms = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-lg sm:text-xl md:text-2xl text-gray-600 dark:text-gray-400 max-w-4xl mx-auto leading-relaxed px-4"
           >
-            Our brand new building opened in February 2025 with two comfortable
-            room options designed for your comfort
+            Our building opened in April 2014 with two comfortable room options
+            designed for your comfort
           </motion.p>
         </div>
 
@@ -245,6 +247,7 @@ const Rooms = () => {
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                       disabled={!room.available}
+                      onClick={() => room.available && router.push("/register")}
                       className={`w-full py-3 sm:py-4 px-4 sm:px-6 rounded-xl sm:rounded-2xl font-bold text-base sm:text-lg flex items-center justify-center gap-2 sm:gap-3 transition-all duration-300 ${
                         room.available
                           ? "bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600 text-white shadow-xl hover:shadow-2xl"
@@ -329,13 +332,14 @@ const Rooms = () => {
                 Limited Rooms Available!
               </h3>
               <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-6 sm:mb-8 max-w-2xl mx-auto px-4">
-                Our brand new building opened in February 2025 and rooms are
-                filling up fast. Book your stay today to secure your spot!
+                Our building opened in April 2014 and rooms are filling up fast.
+                Book your stay today to secure your spot!
               </p>
               <motion.button
                 whileHover={{ scale: 1.05, y: -5 }}
                 whileTap={{ scale: 0.95 }}
                 className="group relative overflow-hidden bg-gradient-to-r from-orange-500 to-yellow-500 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-bold text-base sm:text-lg shadow-xl hover:shadow-2xl transition-all duration-300"
+                onClick={() => router.push("/register")}
               >
                 <span className="relative z-10 flex items-center gap-2 sm:gap-3">
                   Book Your Room Now

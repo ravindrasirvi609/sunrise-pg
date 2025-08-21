@@ -7,12 +7,12 @@ const LocalBusinessSchema = () => {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "LodgingBusiness",
-    name: "Sunrise PG",
+    name: "Sunrise PG Services",
     description:
       "Premium girls' PG accommodation in Hinjawadi, Pune with modern amenities, nutritious meals, and 24/7 security.",
     url: "https://www.comfortstaypg.com",
     telephone: "+91 88880 30009",
-    email: "info@sunrisepg.com",
+    email: "info@sunrisehospitalityservices.com",
     address: {
       "@type": "PostalAddress",
       streetAddress: "Hinjewadi Phase 1 Rd, Mukai Nagar, Phase 1",
@@ -26,7 +26,7 @@ const LocalBusinessSchema = () => {
       latitude: "18.595507", // Update with actual coordinates
       longitude: "73.730114", // Update with actual coordinates
     },
-    priceRange: "₹8,000 - ₹9,500",
+    priceRange: "₹7,000 - ₹9,500",
     openingHoursSpecification: {
       "@type": "OpeningHoursSpecification",
       dayOfWeek: [

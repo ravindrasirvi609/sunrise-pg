@@ -296,9 +296,9 @@ export default function RegisterPage() {
               Registration Request Submitted!
             </h2>
             <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-6">
-              Thank you for registering with Sunrise PG. Your request has been
-              submitted for admin approval. Once approved, you will receive your
-              login credentials via email.
+              Thank you for registering with Sunrise PG Services. Your request
+              has been submitted for admin approval. Once approved, you will
+              receive your login credentials via email.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4 sm:space-x-4">
               <Link
@@ -327,7 +327,7 @@ export default function RegisterPage() {
                 New Resident Registration
               </h2>
               <p className="mt-1 sm:mt-2 text-xs sm:text-sm text-gray-600 dark:text-gray-400">
-                Create your account to request residence at Sunrise PG
+                Create your account to request residence at Sunrise PG Services
               </p>
             </div>
 
@@ -814,7 +814,7 @@ export default function RegisterPage() {
                             >
                               Rules and Regulations
                             </Link>{" "}
-                            of Sunrise PG *
+                            of Sunrise PG Services *
                           </label>
                           <p className="mt-1 text-xs text-gray-600 dark:text-gray-400">
                             By checking this box, you confirm that you have

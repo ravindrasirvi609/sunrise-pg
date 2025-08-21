@@ -394,10 +394,10 @@ export async function GET(request: Request, context: unknown) {
         </head>
         <body>
           <div class="receipt">
-            <div class="watermark">Sunrise PG</div>
+            <div class="watermark">Sunrise PG Services</div>
             <div class="receipt-header">
               <div class="brand">
-                <div class="brand-name">Sunrise PG</div>
+                <div class="brand-name">Sunrise PG Services</div>
                 <div class="brand-slogan">Your Home Away From Home</div>
                 <div class="brand-address">
                   Hinjewadi Phase 1 Rd, Mukai Nagar, Phase 1, 
@@ -406,8 +406,8 @@ export async function GET(request: Request, context: unknown) {
                 </div>
                 <div class="brand-contact">
                   <span style="margin-right: 10px;">📞 +91 88880 30009</span>
-                  <span style="margin-right: 10px;">✉️ info@sunrisepg.com</span>
-                  <span>🌐 www.sunrisepg.com</span>
+                  <span style="margin-right: 10px;">✉️ info@sunrisehospitalityservices.com</span>
+                  <span>🌐 www.sunrisehospitalityservices.com</span>
                 </div>
               </div>
               <div>
@@ -524,8 +524,8 @@ export async function GET(request: Request, context: unknown) {
             
             <div class="footer">
               <p>This is a computer-generated receipt and does not require a signature.</p>
-              <p style="margin-top: 10px; color: #ff8c00;">Thank you for choosing Sunrise PG!</p>
-              <p style="margin-top: 5px; font-size: 11px;">Visit us at: <a href="https://www.sunrisepg.com" style="color: #ff8c00; text-decoration: none;">www.sunrisepg.com</a></p>
+              <p style="margin-top: 10px; color: #ff8c00;">Thank you for choosing Sunrise PG Services!</p>
+              <p style="margin-top: 5px; font-size: 11px;">Visit us at: <a href="https://www.sunrisehospitalityservices.com" style="color: #ff8c00; text-decoration: none;">www.sunrisehospitalityservices.com</a></p>
             </div>
           </div>
         </body>

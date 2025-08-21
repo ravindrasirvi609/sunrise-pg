@@ -45,7 +45,7 @@ export async function sendEmail({
     const data = await resend.emails.send({
       from:
         process.env.NEXT_PUBLIC_EMAIL_FROM ||
-        "Sunrise PG <dev@ravindrachoudhary.in>",
+        "Sunrise PG Services <dev@ravindrachoudhary.in>",
       to,
       subject,
       html,
@@ -125,7 +125,7 @@ export async function sendRegistrationConfirmationEmail(
   email: string,
   userId?: string | mongoose.Types.ObjectId
 ) {
-  const subject = "Registration Received - Sunrise PG";
+  const subject = "Registration Received - Sunrise PG Services";
 
   const html = `
     <!DOCTYPE html>
@@ -151,7 +151,7 @@ export async function sendRegistrationConfirmationEmail(
               <table border="0" cellpadding="0" cellspacing="0" width="100%">
                 <tr>
                   <td style="background: linear-gradient(90deg, #ff8c00 0%, #ffa726 25%, #ffcc02 50%, #ffeb3b 75%, #fff176 100%); padding: 30px; text-align: center; border-radius: 8px 8px 0 0;">
-                    <h1 style="color: #ffffff; font-size: 28px; margin: 0; font-weight: 600;">Sunrise PG</h1>
+                    <h1 style="color: #ffffff; font-size: 28px; margin: 0; font-weight: 600;">Sunrise PG Services</h1>
                   </td>
                 </tr>
               </table>
@@ -162,7 +162,7 @@ export async function sendRegistrationConfirmationEmail(
             <td style="padding: 30px 40px;">
               <h2 style="color: #ff8c00; font-size: 22px; margin: 0 0 20px; font-weight: 600;">Registration Received</h2>
               <p style="font-size: 16px; line-height: 1.5; margin: 0 0 15px;">Dear ${name},</p>
-              <p style="font-size: 16px; line-height: 1.5; margin: 0 0 20px;">Thank you for registering with Sunrise PG. We're excited about your interest in our premium accommodation services!</p>
+              <p style="font-size: 16px; line-height: 1.5; margin: 0 0 20px;">Thank you for registering with Sunrise PG Services. We're excited about your interest in our premium accommodation services!</p>
               <!-- Status Box -->
               <table border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #fffde7; border-radius: 8px; margin: 0 0 25px;">
                 <tr>
@@ -241,7 +241,7 @@ export async function sendRegistrationConfirmationEmail(
               <table border="0" cellpadding="0" cellspacing="0" width="100%" style="margin: 30px 0;">
                 <tr>
                   <td align="center">
-                    <a href="https://www.sunrisepg.com/rules-regulations" target="_blank" style="background: linear-gradient(90deg, #ff8c00 0%, #ffa726 25%, #ffcc02 50%, #ffeb3b 75%, #fff176 100%); color: white; text-decoration: none; font-weight: 600; padding: 14px 30px; border-radius: 6px; font-size: 16px; display: inline-block; text-align: center; margin: 0 10px;">View Full Rules & Regulations</a>
+                    <a href="https://www.sunrisehospitalityservices.com/rules-regulations" target="_blank" style="background: linear-gradient(90deg, #ff8c00 0%, #ffa726 25%, #ffcc02 50%, #ffeb3b 75%, #fff176 100%); color: white; text-decoration: none; font-weight: 600; padding: 14px 30px; border-radius: 6px; font-size: 16px; display: inline-block; text-align: center; margin: 0 10px;">View Full Rules & Regulations</a>
                   </td>
                 </tr>
               </table>
@@ -249,7 +249,7 @@ export async function sendRegistrationConfirmationEmail(
               <table border="0" cellpadding="0" cellspacing="0" width="100%" style="margin: 20px 0 25px;">
                 <tr>
                   <td>
-                    <h3 style="color: #ff8c00; font-size: 18px; margin: 0 0 15px;">What to expect at Sunrise PG:</h3>
+                    <h3 style="color: #ff8c00; font-size: 18px; margin: 0 0 15px;">What to expect at Sunrise PG Services:</h3>
                     <table border="0" cellpadding="0" cellspacing="0" width="100%">
                       <tr>
                         <td width="25" valign="top" style="padding-right: 10px; padding-bottom: 12px;">
@@ -278,7 +278,7 @@ export async function sendRegistrationConfirmationEmail(
               <table border="0" cellpadding="0" cellspacing="0" width="100%" style="margin: 30px 0;">
                 <tr>
                   <td align="center">
-                    <a href="https://www.sunrisepg.com/rules-regulations" target="_blank" style="background: linear-gradient(90deg, #ff8c00 0%, #ffa726 25%, #ffcc02 50%, #ffeb3b 75%, #fff176 100%); color: white; text-decoration: none; font-weight: 600; padding: 14px 30px; border-radius: 6px; font-size: 16px; display: inline-block; text-align: center;">View Full Rules & Regulations</a>
+                    <a href="https://www.sunrisehospitalityservices.com/rules-regulations" target="_blank" style="background: linear-gradient(90deg, #ff8c00 0%, #ffa726 25%, #ffcc02 50%, #ffeb3b 75%, #fff176 100%); color: white; text-decoration: none; font-weight: 600; padding: 14px 30px; border-radius: 6px; font-size: 16px; display: inline-block; text-align: center;">View Full Rules & Regulations</a>
                   </td>
                 </tr>
               </table>
@@ -290,11 +290,11 @@ export async function sendRegistrationConfirmationEmail(
               <table border="0" cellpadding="0" cellspacing="0" width="100%">
                 <tr>
                   <td style="background-color: #fffde7; padding: 20px 40px; text-align: center; border-radius: 0 0 8px 8px; border-top: 1px solid #ffe082;">
-                    <p style="font-size: 14px; color: #666; margin: 0 0 10px;">© ${new Date().getFullYear()} Sunrise PG. All rights reserved.</p>
+                    <p style="font-size: 14px; color: #666; margin: 0 0 10px;">© ${new Date().getFullYear()} Sunrise PG Services. All rights reserved.</p>
                     <p style="font-size: 14px; color: #666; margin: 0 0 5px;">Hinjewadi Phase 1 Rd, Mukai Nagar, Pune, Maharashtra 411057</p>
                     <p style="font-size: 14px; margin: 15px 0 0;">
-                      <a href="https://www.sunrisepg.com" style="color: #ff8c00; text-decoration: none; margin: 0 10px;">Website</a> |
-                      <a href="https://www.sunrisepg.com/contact" style="color: #ff8c00; text-decoration: none; margin: 0 10px;">Contact</a> |
+                      <a href="https://www.sunrisehospitalityservices.com" style="color: #ff8c00; text-decoration: none; margin: 0 10px;">Website</a> |
+                      <a href="https://www.sunrisehospitalityservices.com/contact" style="color: #ff8c00; text-decoration: none; margin: 0 10px;">Contact</a> |
                       <a href="tel:+919922538989" style="color: #ff8c00; text-decoration: none; margin: 0 10px;">+91 88880 30009</a>
                     </p>
                   </td>
@@ -321,7 +321,7 @@ export async function sendWelcomeEmail(
   password: string,
   userId?: string | mongoose.Types.ObjectId
 ) {
-  const subject = "Welcome to Sunrise PG - Your Login Credentials";
+  const subject = "Welcome to Sunrise PG Services - Your Login Credentials";
 
   const html = `
     <!DOCTYPE html>
@@ -347,7 +347,7 @@ export async function sendWelcomeEmail(
               <table border="0" cellpadding="0" cellspacing="0" width="100%">
                 <tr>
                   <td style="background: linear-gradient(90deg, #ff8c00 0%, #ffa726 25%, #ffcc02 50%, #ffeb3b 75%, #fff176 100%); padding: 30px; text-align: center; border-radius: 8px 8px 0 0;">
-                    <h1 style="color: #ffffff; font-size: 28px; margin: 0; font-weight: 600;">Welcome to Sunrise PG!</h1>
+                    <h1 style="color: #ffffff; font-size: 28px; margin: 0; font-weight: 600;">Welcome to Sunrise PG Services!</h1>
                   </td>
                 </tr>
               </table>
@@ -359,7 +359,7 @@ export async function sendWelcomeEmail(
             <td style="padding: 30px 40px;">
               <p style="font-size: 16px; line-height: 1.5; margin: 0 0 15px;">Dear ${name},</p>
               
-              <p style="font-size: 16px; line-height: 1.5; margin: 0 0 20px;">We're thrilled to welcome you to Sunrise PG! Your registration has been approved, and we've created your account. Below are your login credentials to access our resident portal:</p>
+              <p style="font-size: 16px; line-height: 1.5; margin: 0 0 20px;">We're thrilled to welcome you to Sunrise PG Services! Your registration has been approved, and we've created your account. Below are your login credentials to access our resident portal:</p>
               
               <!-- Credentials Box -->
               <table border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #fffde7; border-radius: 8px; margin: 0 0 25px;">
@@ -474,7 +474,7 @@ export async function sendWelcomeEmail(
               <p style="font-size: 16px; line-height: 1.5; margin: 25px 0 10px;">We're delighted to have you as part of our community! If you have any questions, please don't hesitate to reach out to us.</p>
               
               <p style="font-size: 16px; line-height: 1.5; margin: 0;">Warm Regards,<br>
-              <strong>The Sunrise PG Team</strong></p>
+              <strong>The Sunrise PG Services Team</strong></p>
             </td>
           </tr>
           
@@ -484,7 +484,7 @@ export async function sendWelcomeEmail(
               <table border="0" cellpadding="0" cellspacing="0" width="100%">
                 <tr>
                   <td style="background-color: #fffde7; padding: 20px 40px; text-align: center; border-radius: 0 0 8px 8px; border-top: 1px solid #ffe082;">
-                    <p style="font-size: 14px; color: #666; margin: 0 0 10px;">© ${new Date().getFullYear()} Sunrise PG. All rights reserved.</p>
+                    <p style="font-size: 14px; color: #666; margin: 0 0 10px;">© ${new Date().getFullYear()} Sunrise PG Services. All rights reserved.</p>
                     <p style="font-size: 14px; color: #666; margin: 0 0 5px;">Hinjewadi Phase 1 Rd, Mukai Nagar, Pune, Maharashtra 411057</p>
                     <p style="font-size: 14px; margin: 15px 0 0;">
                       <a href="${process.env.NEXT_PUBLIC_SITE_URL}" style="color: #ff8c00; text-decoration: none; margin: 0 10px;">Website</a> |
@@ -515,7 +515,7 @@ export async function sendResetCredentialsEmail(
   password: string,
   userId?: string | mongoose.Types.ObjectId
 ) {
-  const subject = "Your Sunrise PG Account Has Been Reset";
+  const subject = "Your Sunrise PG Services Account Has Been Reset";
 
   const html = `
     <!DOCTYPE html>
@@ -588,7 +588,7 @@ export async function sendResetCredentialsEmail(
               <p style="font-size: 16px; line-height: 1.5; margin: 0 0 10px;">If you need any assistance, don't hesitate to reach out to our support team.</p>
               
               <p style="font-size: 16px; line-height: 1.5; margin: 0;">Warm Regards,<br>
-              <strong>The Sunrise PG Team</strong></p>
+              <strong>The Sunrise PG Services Team</strong></p>
             </td>
           </tr>
           
@@ -598,7 +598,7 @@ export async function sendResetCredentialsEmail(
               <table border="0" cellpadding="0" cellspacing="0" width="100%">
                 <tr>
                   <td style="background-color: #fffde7; padding: 20px 40px; text-align: center; border-radius: 0 0 8px 8px; border-top: 1px solid #ffe082;">
-                    <p style="font-size: 14px; color: #666; margin: 0 0 10px;">© ${new Date().getFullYear()} Sunrise PG. All rights reserved.</p>
+                    <p style="font-size: 14px; color: #666; margin: 0 0 10px;">© ${new Date().getFullYear()} Sunrise PG Services. All rights reserved.</p>
                     <p style="font-size: 14px; color: #666; margin: 0 0 5px;">Hinjewadi Phase 1 Rd, Mukai Nagar, Pune, Maharashtra 411057</p>
                     <p style="font-size: 14px; margin: 15px 0 0;">
                       <a href="${process.env.NEXT_PUBLIC_SITE_URL}" style="color: #ff8c00; text-decoration: none; margin: 0 10px;">Website</a> |
@@ -628,7 +628,7 @@ export async function sendRejectionEmail(
   reason: string = "",
   userId?: string | mongoose.Types.ObjectId
 ) {
-  const subject = "Application Status Update - Sunrise PG";
+  const subject = "Application Status Update - Sunrise PG Services";
 
   const html = `
     <!DOCTYPE html>
@@ -666,7 +666,7 @@ export async function sendRejectionEmail(
             <td style="padding: 30px 40px;">
               <p style="font-size: 16px; line-height: 1.5; margin: 0 0 15px;">Dear ${name},</p>
               
-              <p style="font-size: 16px; line-height: 1.5; margin: 0 0 20px;">Thank you for your interest in Sunrise PG. We appreciate the time you took to submit your application.</p>
+              <p style="font-size: 16px; line-height: 1.5; margin: 0 0 20px;">Thank you for your interest in Sunrise PG Services. We appreciate the time you took to submit your application.</p>
               
               <p style="font-size: 16px; line-height: 1.5; margin: 0 0 20px;">After careful review of your application, we regret to inform you that we are unable to proceed with your registration at this time.</p>
               
@@ -700,7 +700,7 @@ export async function sendRejectionEmail(
               </table>
               
               <p style="font-size: 16px; line-height: 1.5; margin: 0;">Warm Regards,<br>
-              <strong>The Sunrise PG Team</strong></p>
+              <strong>The Sunrise PG Services Team</strong></p>
             </td>
           </tr>
           
@@ -710,7 +710,7 @@ export async function sendRejectionEmail(
               <table border="0" cellpadding="0" cellspacing="0" width="100%">
                 <tr>
                   <td style="background-color: #fffde7; padding: 20px 40px; text-align: center; border-radius: 0 0 8px 8px; border-top: 1px solid #ffe082;">
-                    <p style="font-size: 14px; color: #666; margin: 0 0 10px;">© ${new Date().getFullYear()} Sunrise PG. All rights reserved.</p>
+                    <p style="font-size: 14px; color: #666; margin: 0 0 10px;">© ${new Date().getFullYear()} Sunrise PG Services. All rights reserved.</p>
                     <p style="font-size: 14px; color: #666; margin: 0 0 5px;">Hinjewadi Phase 1 Rd, Mukai Nagar, Pune, Maharashtra 411057</p>
                     <p style="font-size: 14px; margin: 15px 0 0;">
                       <a href="${process.env.NEXT_PUBLIC_SITE_URL}" style="color: #ff8c00; text-decoration: none; margin: 0 10px;">Website</a> |
@@ -740,7 +740,7 @@ export async function sendContactInquiryConfirmationEmail(
   phone: string,
   message: string
 ) {
-  const subject = "Contact Inquiry Received - Sunrise PG";
+  const subject = "Contact Inquiry Received - Sunrise PG Services";
   const whatsappNumber = "+919922538989"; // Use your PG WhatsApp number
   const whatsappUrl = `https://wa.me/${whatsappNumber.replace(/[^\d]/g, "")}?text=Hello%2C%20I%20have%20an%20urgent%20query%20regarding%20Sunrise%20PG.`;
 
@@ -761,7 +761,7 @@ export async function sendContactInquiryConfirmationEmail(
               <table border="0" cellpadding="0" cellspacing="0" width="100%">
                 <tr>
                   <td style="background: linear-gradient(90deg, #ff8c00 0%, #ffa726 25%, #ffcc02 50%, #ffeb3b 75%, #fff176 100%); padding: 30px; text-align: center; border-radius: 8px 8px 0 0;">
-                    <h1 style="color: #ffffff; font-size: 28px; margin: 0; font-weight: 600;">Sunrise PG</h1>
+                    <h1 style="color: #ffffff; font-size: 28px; margin: 0; font-weight: 600;">Sunrise PG Services</h1>
                   </td>
                 </tr>
               </table>
@@ -772,7 +772,7 @@ export async function sendContactInquiryConfirmationEmail(
             <td style="padding: 30px 40px;">
               <h2 style="color: #ff8c00; font-size: 22px; margin: 0 0 20px; font-weight: 600;">Contact Inquiry Received</h2>
               <p style="font-size: 16px; line-height: 1.5; margin: 0 0 15px;">Dear ${name},</p>
-              <p style="font-size: 16px; line-height: 1.5; margin: 0 0 20px;">Thank you for reaching out to Sunrise PG. Your inquiry has been received and our team will get back to you soon.</p>
+              <p style="font-size: 16px; line-height: 1.5; margin: 0 0 20px;">Thank you for reaching out to Sunrise PG Services. Your inquiry has been received and our team will get back to you soon.</p>
               <table border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #fffde7; border-radius: 8px; margin: 0 0 25px;">
                 <tr>
                   <td style="padding: 20px 25px;">
@@ -797,8 +797,8 @@ export async function sendContactInquiryConfirmationEmail(
                   </td>
                 </tr>
               </table>
-              <p style="font-size: 16px; line-height: 1.5; margin: 0 0 10px;">We appreciate your interest in Sunrise PG. If you have any further questions, feel free to reply to this email or contact us via WhatsApp.</p>
-              <p style="font-size: 16px; line-height: 1.5; margin: 0;">Warm Regards,<br><strong>The Sunrise PG Team</strong></p>
+              <p style="font-size: 16px; line-height: 1.5; margin: 0 0 10px;">We appreciate your interest in Sunrise PG Services. If you have any further questions, feel free to reply to this email or contact us via WhatsApp.</p>
+              <p style="font-size: 16px; line-height: 1.5; margin: 0;">Warm Regards,<br><strong>The Sunrise PG Services Team</strong></p>
             </td>
           </tr>
           <!-- Footer -->
@@ -807,7 +807,7 @@ export async function sendContactInquiryConfirmationEmail(
               <table border="0" cellpadding="0" cellspacing="0" width="100%">
                 <tr>
                   <td style="background-color: #fffde7; padding: 20px 40px; text-align: center; border-radius: 0 0 8px 8px; border-top: 1px solid #ffe082;">
-                    <p style="font-size: 14px; color: #666; margin: 0 0 10px;">© ${new Date().getFullYear()} Sunrise PG. All rights reserved.</p>
+                    <p style="font-size: 14px; color: #666; margin: 0 0 10px;">© ${new Date().getFullYear()} Sunrise PG Services. All rights reserved.</p>
                     <p style="font-size: 14px; color: #666; margin: 0 0 5px;">Hinjewadi Phase 1 Rd, Mukai Nagar, Pune, Maharashtra 411057</p>
                     <p style="font-size: 14px; margin: 15px 0 0;">
                       <a href="${process.env.NEXT_PUBLIC_SITE_URL}" style="color: #ff8c00; text-decoration: none; margin: 0 10px;">Website</a> |

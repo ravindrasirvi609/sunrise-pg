@@ -14,15 +14,15 @@ const SEOHead = ({ type }: SEOHeadProps) => {
     mainEntity: [
       {
         "@type": "Question",
-        name: "What amenities are included in Sunrise PG?",
+        name: "What amenities are included in Sunrise PG Services?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Sunrise PG offers high-speed WiFi, nutritious meals three times a day, 24/7 hot water, comfortable beds, enhanced security with female guards and CCTV, secure parking, laundry services, flexible timings with digital access, entertainment areas, common kitchen, study room, and more.",
+          text: "Sunrise PG Services offers high-speed WiFi, nutritious meals three times a day, 24/7 hot water, comfortable beds, enhanced security with female guards and CCTV, secure parking, laundry services, flexible timings with digital access, entertainment areas, common kitchen, study room, and more.",
         },
       },
       {
         "@type": "Question",
-        name: "What are the room options and pricing at Sunrise PG?",
+        name: "What are the room options and pricing at Sunrise PG Services?",
         acceptedAnswer: {
           "@type": "Answer",
           text: "We offer two room types: Triple Sharing at ₹8,000/month and Twin Sharing at ₹9,500/month. All rooms include meals, electricity, water, WiFi, and housekeeping services. Our rooms feature brand new furnishings, personal storage, and attached bathrooms.",
@@ -30,26 +30,26 @@ const SEOHead = ({ type }: SEOHeadProps) => {
       },
       {
         "@type": "Question",
-        name: "Where is Sunrise PG located?",
+        name: "Where is Sunrise PG Services located?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Sunrise PG is located at Hinjewadi Phase 1 Rd, Mukai Nagar, Phase 1, Hinjawadi Rajiv Gandhi Infotech Park, Hinjawadi, Pune, Maharashtra 411057. We're within 5 minutes walking distance to Hinjawadi IT Park.",
+          text: "Sunrise PG Services is located at Hinjewadi Phase 1 Rd, Mukai Nagar, Phase 1, Hinjawadi Rajiv Gandhi Infotech Park, Hinjawadi, Pune, Maharashtra 411057. We're within 5 minutes walking distance to Hinjawadi IT Park.",
         },
       },
       {
         "@type": "Question",
-        name: "Is there a curfew at Sunrise PG?",
+        name: "Is there a curfew at Sunrise PG Services?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Sunrise PG offers flexible timings with no strict curfew. We provide secure digital access for residents to ensure safety while allowing independence.",
+          text: "Sunrise PG Services offers flexible timings with no strict curfew. We provide secure digital access for residents to ensure safety while allowing independence.",
         },
       },
       {
         "@type": "Question",
-        name: "How can I book a room at Sunrise PG?",
+        name: "How can I book a room at Sunrise PG Services?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "You can book a room by contacting us at +91 88880 30009 or emailing us at info@sunrisepg.com. You can also visit our contact page at www.sunrisepg.com/contact to submit an inquiry form.",
+          text: "You can book a room by contacting us at +91 88880 30009 or emailing us at info@sunrisehospitalityservices.com. You can also visit our contact page at www.sunrisehospitalityservices.com/contact to submit an inquiry form.",
         },
       },
     ],
@@ -61,8 +61,9 @@ const SEOHead = ({ type }: SEOHeadProps) => {
     "@type": "AggregateRating",
     itemReviewed: {
       "@type": "LodgingBusiness",
-      name: "Sunrise PG",
-      image: "https://www.sunrisepg.com/images/sunrise-building.jpg",
+      name: "Sunrise PG Services",
+      image:
+        "https://www.sunrisehospitalityservices.com/images/sunrise-building.jpg",
     },
     ratingValue: "4.8",
     bestRating: "5",

@@ -83,7 +83,7 @@ const Footer = () => {
               <div className="w-full py-6 flex items-center justify-center">
                 <Image
                   src="/logo.png"
-                  alt="Sunrise PG logo"
+                  alt="Sunrise PG Services logo"
                   width={120}
                   height={120}
                   className="h-16 w-auto object-contain opacity-90"
@@ -165,7 +165,7 @@ const Footer = () => {
                     className="text-orange-400 mt-1 flex-shrink-0"
                   />
                   <span className="text-sm">
-                    Sunrise PG, Mukai Nagar,
+                    Sunrise PG Services, Mukai Nagar,
                     <br />
                     Hinjawadi Rajiv Gandhi Infotech Park,
                     <br />
@@ -180,7 +180,9 @@ const Footer = () => {
                 </li>
                 <li className="flex items-center gap-3">
                   <Mail size={18} className="text-orange-400 flex-shrink-0" />
-                  <span className="text-sm">info@sunrisepg.com</span>
+                  <span className="text-sm">
+                    info@sunrisehospitalityservices.com
+                  </span>
                 </li>
               </ul>
             </div>
@@ -225,8 +227,8 @@ const Footer = () => {
         {/* Copyright */}
         <div className="py-5 sm:py-6 text-center text-gray-500 dark:text-orange-100/40 text-xs">
           <p>
-            &copy; {currentYear} Sunrise PG. All rights reserved. Made with in
-            Pune
+            &copy; {currentYear} Sunrise PG Services. All rights reserved. Made
+            with in Pune
           </p>
           <p className="mt-2">
             Developed and maintained by{" "}

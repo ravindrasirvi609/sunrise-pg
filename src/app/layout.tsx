@@ -21,15 +21,16 @@ export const metadata: Metadata = {
   // Add metadataBase
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Sunrise PG - Premium Girls PG Accommodation in Hinjawadi, Pune",
-    template: "%s | Sunrise PG", // Allows page titles to be dynamic like "About Us | Sunrise PG"
+    default:
+      "Sunrise PG Services - Premium Girls PG Accommodation in Hinjawadi, Pune",
+    template: "%s | Sunrise PG Services", // Allows page titles to be dynamic like "About Us | Sunrise PG Services"
   },
   description:
-    "Experience comfortable and secure living at Sunrise PG, a premium girls' PG accommodation located in Hinjawadi Phase 1, Pune. Offering modern amenities, high-speed WiFi, healthy meals, and 24/7 security.",
+    "Experience comfortable and secure living at Sunrise PG Services, a premium girls' PG accommodation located in Hinjawadi Phase 1, Pune. Offering modern amenities, high-speed WiFi, healthy meals, and 24/7 security.",
   keywords: [
     "Girls PG in Hinjawadi",
     "PG in Pune",
-    "Sunrise PG",
+    "Sunrise PG Services",
     "Girls Accommodation",
     "Ladies PG",
     "Women's Hostel",
@@ -42,17 +43,17 @@ export const metadata: Metadata = {
     "Best PG for women in Pune",
   ],
   openGraph: {
-    title: "Sunrise PG - Premium Girls PG in Hinjawadi, Pune",
+    title: "Sunrise PG Services - Premium Girls PG in Hinjawadi, Pune",
     description:
       "Comfortable & secure girls' PG in Hinjawadi Phase 1, Pune with modern amenities, nutritious meals, and 24/7 security.",
     url: siteUrl,
-    siteName: "Sunrise PG",
+    siteName: "Sunrise PG Services",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Sunrise PG Hinjawadi Pune",
+        alt: "Sunrise PG Services Hinjawadi Pune",
       },
     ],
     type: "website",
@@ -60,18 +61,18 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sunrise PG - Premium Girls PG in Hinjawadi, Pune",
+    title: "Sunrise PG Services - Premium Girls PG in Hinjawadi, Pune",
     description:
       "Comfortable & secure girls' PG in Hinjawadi Phase 1, Pune with modern amenities.",
     images: ["/og-image.png"],
   },
-  authors: [{ name: "Sunrise PG", url: siteUrl }],
+  authors: [{ name: "Sunrise PG Services", url: siteUrl }],
   alternates: {
     canonical: siteUrl,
   },
   category: "Accommodation",
-  creator: "Sunrise PG",
-  publisher: "Sunrise PG",
+  creator: "Sunrise PG Services",
+  publisher: "Sunrise PG Services",
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon-16x16.png",
@@ -91,7 +92,7 @@ export const metadata: Metadata = {
     },
   },
   manifest: "/manifest.json",
-  applicationName: "Sunrise PG",
+  applicationName: "Sunrise PG Services",
 };
 
 export const viewport: Viewport = {

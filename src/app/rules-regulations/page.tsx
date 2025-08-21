@@ -204,8 +204,8 @@ export default function RulesAndRegulations() {
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             For a harmonious and safe living environment, all residents are
             required to adhere to the following rules and regulations. By
-            accepting accommodation at Sunrise PG, you agree to comply with
-            these guidelines.
+            accepting accommodation at Sunrise PG Services, you agree to comply
+            with these guidelines.
           </p>
         </motion.div>
 

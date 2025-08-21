@@ -335,7 +335,7 @@ export default function AdminLayout({
                 SP
               </div>
               <div className="font-bold text-lg text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-yellow-500">
-                Sunrise PG
+                Sunrise PG Services
               </div>
             </div>
           </div>
@@ -376,7 +376,7 @@ export default function AdminLayout({
                   Admin
                 </p>
                 <p className="text-xs text-gray-500 dark:text-gray-400 truncate">
-                  admin@sunrisepg.com
+                  admin@sunrisehospitalityservices.com
                 </p>
               </div>
               <Link

@@ -102,7 +102,7 @@ export default function LoginPage() {
             </div>
           </div>
           <h2 className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-yellow-500">
-            Sunrise PG
+            Sunrise PG Services
           </h2>
           <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
             Login to manage your account

@@ -23,7 +23,7 @@ export async function GET() {
     // If no PG details exist yet, return a default template
     if (!pgDetails) {
       pgDetails = {
-        name: "Sunrise PG",
+        name: "Sunrise PG Services",
         address: "",
         city: "",
         state: "",

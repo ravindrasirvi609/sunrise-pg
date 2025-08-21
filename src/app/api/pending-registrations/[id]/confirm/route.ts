@@ -209,14 +209,14 @@ export async function POST(
     try {
       await sendEmail({
         to: pendingRegistration.email,
-        subject: "Your Registration is Approved - Sunrise PG",
+        subject: "Your Registration is Approved - Sunrise PG Services",
         html: `
     <!DOCTYPE html>
     <html lang="en">
     <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Registration Approved - Sunrise PG</title>
+      <title>Registration Approved - Sunrise PG Services</title>
       <!--[if mso]>
       <style type="text/css">
         table {border-collapse: collapse;}
@@ -234,7 +234,7 @@ export async function POST(
               <table border="0" cellpadding="0" cellspacing="0" width="100%">
                 <tr>
                   <td style="background: linear-gradient(90deg, #ff8c00 0%, #ffa726 25%, #ffcc02 50%, #ffeb3b 75%, #fff176 100%); padding: 30px; text-align: center; border-radius: 8px 8px 0 0;">
-                    <h1 style="color: #ffffff; font-size: 28px; margin: 0; font-weight: 600;">Sunrise PG</h1>
+                    <h1 style="color: #ffffff; font-size: 28px; margin: 0; font-weight: 600;">Sunrise PG Services</h1>
                   </td>
                 </tr>
               </table>
@@ -248,7 +248,7 @@ export async function POST(
               
               <p style="font-size: 16px; line-height: 1.5; margin: 0 0 15px;">Dear ${pendingRegistration.name},</p>
               
-              <p style="font-size: 16px; line-height: 1.5; margin: 0 0 25px;">We're delighted to inform you that your registration has been approved. Welcome to the Sunrise PG family! You can now login to your account using the following credentials:</p>
+              <p style="font-size: 16px; line-height: 1.5; margin: 0 0 25px;">We're delighted to inform you that your registration has been approved. Welcome to the Sunrise PG Services family! You can now login to your account using the following credentials:</p>
               
               <!-- Credentials Box -->
               <table border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #fffde7; border-radius: 8px; margin: 0 0 25px;">
@@ -322,15 +322,15 @@ export async function POST(
               <table border="0" cellpadding="0" cellspacing="0" width="100%" style="margin: 30px 0;">
                 <tr>
                   <td align="center">
-                    <a href="https://www.sunrisepg.com/login" target="_blank" style="background: linear-gradient(90deg, #ff8c00 0%, #ffa726 25%, #ffcc02 50%, #ffeb3b 75%, #fff176 100%); color: white; text-decoration: none; font-weight: 600; padding: 14px 30px; border-radius: 6px; font-size: 16px; display: inline-block; text-align: center;">Login to Your Account</a>
+                    <a href="https://www.sunrisehospitalityservices.com/login" target="_blank" style="background: linear-gradient(90deg, #ff8c00 0%, #ffa726 25%, #ffcc02 50%, #ffeb3b 75%, #fff176 100%); color: white; text-decoration: none; font-weight: 600; padding: 14px 30px; border-radius: 6px; font-size: 16px; display: inline-block; text-align: center;">Login to Your Account</a>
                   </td>
                 </tr>
               </table>
               
-              <p style="font-size: 16px; line-height: 1.5; margin: 0 0 15px;">Welcome to Sunrise PG! We're excited to have you join our community.</p>
+              <p style="font-size: 16px; line-height: 1.5; margin: 0 0 15px;">Welcome to Sunrise PG Services! We're excited to have you join our community.</p>
               
               <p style="font-size: 16px; line-height: 1.5; margin: 0;">Warm Regards,<br>
-              <strong>Sunrise PG Team</strong></p>
+              <strong>Sunrise PG Services Team</strong></p>
             </td>
           </tr>
           
@@ -340,11 +340,11 @@ export async function POST(
               <table border="0" cellpadding="0" cellspacing="0" width="100%">
                 <tr>
                   <td style="background-color: #fffde7; padding: 20px 40px; text-align: center; border-radius: 0 0 8px 8px; border-top: 1px solid #ffe082;">
-                    <p style="font-size: 14px; color: #666; margin: 0 0 10px;">© 2025 Sunrise PG. All rights reserved.</p>
+                    <p style="font-size: 14px; color: #666; margin: 0 0 10px;">© 2025 Sunrise PG Services. All rights reserved.</p>
                     <p style="font-size: 14px; color: #666; margin: 0 0 5px;">Hinjewadi Phase 1 Rd, Mukai Nagar, Pune, Maharashtra 411057</p>
                     <p style="font-size: 14px; margin: 15px 0 0;">
                       <a href="tel:+919922538989" style="color: #ff8c00; text-decoration: none; margin: 0 10px;">+91 88880 30009</a> |
-                      <a href="mailto:info@sunrisepg.com" style="color: #ff8c00; text-decoration: none; margin: 0 10px;">info@sunrisepg.com</a>
+                      <a href="mailto:info@sunrisehospitalityservices.com" style="color: #ff8c00; text-decoration: none; margin: 0 10px;">info@sunrisehospitalityservices.com</a>
                     </p>
                   </td>
                 </tr>

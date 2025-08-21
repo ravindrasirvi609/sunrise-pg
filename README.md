@@ -1,6 +1,6 @@
-# Sunrise PG Management System
+# Sunrise PG Services Management System
 
-A comprehensive Paying Guest (PG) Management System for Sunrise PG, built with Next.js, MongoDB, and Tailwind CSS.
+A comprehensive Paying Guest (PG) Management System for Sunrise PG Services, built with Next.js, MongoDB, and Tailwind CSS.
 
 ## Features
 

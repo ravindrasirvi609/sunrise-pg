@@ -1,6 +1,6 @@
 {
-  "name": "Sunrise PG - Premium Girls PG in Hinjawadi, Pune",
-  "short_name": "Sunrise PG",
+  "name": "Sunrise PG Services - Premium Girls PG in Hinjawadi, Pune",
+  "short_name": "Sunrise PG Services",
   "description": "Premium girls' PG accommodation in Hinjawadi, Pune with modern amenities, nutritious meals, and 24/7 security.",
   "start_url": "/",
   "display": "standalone",
@@ -79,14 +79,14 @@
     {
       "name": "Book a Room",
       "short_name": "Book",
-      "description": "Book a room at Sunrise PG",
+      "description": "Book a room at Sunrise PG Services",
       "url": "/contact?action=book",
       "icons": [{ "src": "/icons/book.png", "sizes": "192x192" }]
     },
     {
       "name": "View Amenities",
       "short_name": "Amenities",
-      "description": "See all amenities at Sunrise PG",
+      "description": "See all amenities at Sunrise PG Services",
       "url": "/#amenities",
       "icons": [{ "src": "/icons/amenities.png", "sizes": "192x192" }]
     }

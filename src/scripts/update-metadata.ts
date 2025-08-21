@@ -19,7 +19,7 @@ const SHARED_METADATA_CONTENT = `import type { Viewport } from 'next';
 export const defaultViewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  themeColor: '#f59e0b', // Sunrise PG brand color
+  themeColor: '#f59e0b', // Sunrise PG Services brand color
 };
 `;
 

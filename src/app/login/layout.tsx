@@ -1,8 +1,8 @@
 import type { Metadata, Viewport } from "next";
 
 export const metadata: Metadata = {
-  title: "Login - Sunrise PG",
-  description: "Login to your Sunrise PG account",
+  title: "Login - Sunrise PG Services",
+  description: "Login to your Sunrise PG Services account",
 };
 
 export const viewport: Viewport = {

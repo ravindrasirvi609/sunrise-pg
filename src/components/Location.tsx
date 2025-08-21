@@ -64,7 +64,7 @@ const Location = () => {
                     <div>
                       <p className="font-semibold">Email</p>
                       <p className="text-gray-600 dark:text-gray-300">
-                        info@sunrisepg.com
+                        info@sunrisehospitalityservices.com
                       </p>
                     </div>
                   </div>

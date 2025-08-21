@@ -14,6 +14,7 @@ import {
   ArrowRight,
   MapPin,
 } from "lucide-react";
+import Link from "next/link";
 
 const features = [
   {
@@ -87,7 +88,9 @@ const About = () => {
             className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-500 to-yellow-500 text-white px-6 py-3 rounded-full mb-8 shadow-xl"
           >
             <Star size={16} />
-            <span className="font-semibold text-sm">About Sunrise PG</span>
+            <span className="font-semibold text-sm">
+              About Sunrise PG Services
+            </span>
           </motion.div>
 
           <motion.h2
@@ -97,7 +100,7 @@ const About = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-5xl md:text-6xl font-black mb-8"
           >
-            Welcome to <span className="sunrise-text">Sunrise PG</span>
+            Welcome to <span className="sunrise-text">Sunrise PG Services</span>
           </motion.h2>
 
           <motion.p
@@ -108,8 +111,8 @@ const About = () => {
             className="text-2xl text-gray-600 dark:text-gray-400 max-w-4xl mx-auto leading-relaxed"
           >
             Your premier accommodation choice in Hinjewadi Phase 1, Pune. Opened
-            in February 2025, our brand new facility is designed specifically
-            for female professionals and students.
+            in April 2014, our brand new facility is designed specifically for
+            female professionals and students.
           </motion.p>
         </div>
 
@@ -143,20 +146,20 @@ const About = () => {
                         Our Story
                       </h3>
                       <p className="text-gray-600 dark:text-gray-400">
-                        Established 2025
+                        Established April 2014
                       </p>
                     </div>
                   </div>
                   <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
                     Welcome to{" "}
                     <span className="font-semibold text-orange-600 dark:text-orange-400">
-                      Sunrise PG
+                      Sunrise PG Services
                     </span>
                     , an exclusive girls&apos; paying guest accommodation that
-                    opened in February 2025 in the heart of Hinjewadi, Pune. Our
-                    brand new building offers a perfect blend of comfort,
-                    security, and modern amenities designed specifically for
-                    working women and female students.
+                    opened in April 2014 in the heart of Hinjewadi, Pune. Our
+                    building offers a perfect blend of comfort, security, and
+                    modern amenities designed specifically for working women and
+                    female students.
                   </p>
                 </div>
               </motion.div>
@@ -295,13 +298,15 @@ const About = () => {
                 whileTap={{ scale: 0.95 }}
                 className="group relative overflow-hidden bg-gradient-to-r from-orange-500 to-yellow-500 text-white px-8 py-4 rounded-2xl font-bold text-lg shadow-xl hover:shadow-2xl transition-all duration-300"
               >
-                <span className="relative z-10 flex items-center gap-3">
-                  Book Your Room Now
-                  <ArrowRight
-                    size={20}
-                    className="group-hover:translate-x-1 transition-transform"
-                  />
-                </span>
+                <Link href="/register">
+                  <span className="relative z-10 flex items-center gap-3">
+                    Book Your Room Now
+                    <ArrowRight
+                      size={20}
+                      className="group-hover:translate-x-1 transition-transform"
+                    />
+                  </span>
+                </Link>
                 <div className="absolute inset-0 bg-gradient-to-r from-orange-600 to-yellow-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </motion.button>
             </div>

@@ -151,7 +151,7 @@ const Contact = () => {
                         Email
                       </p>
                       <p className="text-gray-600 dark:text-gray-300">
-                        info@sunrisepg.com
+                        info@sunrisehospitalityservices.com
                       </p>
                     </div>
                   </div>
@@ -165,9 +165,9 @@ const Contact = () => {
                         Address
                       </p>
                       <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                        Sunrise PG, Hinjewadi Phase 1 Rd, Mukai Nagar, Phase 1,
-                        Hinjawadi Rajiv Gandhi Infotech Park, Hinjawadi, Pune,
-                        Pimpri-Chinchwad, Maharashtra 411057
+                        Sunrise PG Services, Hinjewadi Phase 1 Rd, Mukai Nagar,
+                        Phase 1, Hinjawadi Rajiv Gandhi Infotech Park,
+                        Hinjawadi, Pune, Pimpri-Chinchwad, Maharashtra 411057
                       </p>
                     </div>
                   </div>
@@ -232,7 +232,7 @@ const Contact = () => {
 
               <div className="mt-4 p-4 bg-gradient-to-r from-orange-50 to-yellow-50 dark:from-orange-900/20 dark:to-yellow-900/20 rounded-xl">
                 <p className="text-sm text-gray-600 dark:text-gray-300 text-center">
-                  <strong>Sunrise PG Services (for Ladies)</strong>
+                  <strong>Sunrise PG Services Services (for Ladies)</strong>
                   <br />
                   Hinjewadi Phase 1 Rd, Mukai Nagar, Phase 1, Hinjawadi Rajiv
                   Gandhi Infotech Park, Hinjawadi, Pune, Pimpri-Chinchwad,

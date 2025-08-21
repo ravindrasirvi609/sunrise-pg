@@ -115,9 +115,9 @@ const Hero = () => {
             >
               <span className="text-gray-800 dark:text-white">Welcome to</span>
               <br />
-              <span className="sunrise-text">Sunrise Services</span>
+              <span className="sunrise-text">Sunrise PG</span>
               <br />
-              <span className="text-gray-800 dark:text-white">PG</span>
+              <span className="text-gray-800 dark:text-white">Services</span>
             </motion.h1>
 
             {/* Subtitle */}
@@ -183,20 +183,6 @@ const Hero = () => {
                   />
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-orange-600 to-yellow-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </motion.button>
-
-              <motion.button
-                whileHover={{ scale: 1.05, y: -5 }}
-                whileTap={{ scale: 0.95 }}
-                className="group relative overflow-hidden border-2 border-orange-500 text-orange-600 dark:text-orange-400 px-8 py-4 rounded-2xl font-bold text-lg hover:bg-orange-500 hover:text-white transition-all duration-300"
-              >
-                <span className="relative z-10 flex items-center gap-3">
-                  <Play
-                    size={20}
-                    className="group-hover:scale-110 transition-transform"
-                  />
-                  Watch Video
-                </span>
               </motion.button>
             </motion.div>
           </motion.div>
