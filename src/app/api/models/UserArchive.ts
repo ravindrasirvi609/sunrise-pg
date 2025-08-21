@@ -23,6 +23,8 @@ interface IUserArchive extends IUser {
     otherComments: string;
   };
   keyIssued: boolean;
+  pillowIssued?: boolean;
+  pillowCoverIssued?: boolean;
   depositReturn: {
     amount: number;
     date: Date;
@@ -97,6 +99,15 @@ const UserArchiveSchema = new Schema<IUserArchive>(
 
     // Key tracking
     keyIssued: {
+      type: Boolean,
+      default: false,
+    },
+    // Issued items tracking
+    pillowIssued: {
+      type: Boolean,
+      default: false,
+    },
+    pillowCoverIssued: {
       type: Boolean,
       default: false,
     },

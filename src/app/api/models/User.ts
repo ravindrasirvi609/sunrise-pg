@@ -151,6 +151,15 @@ const UserSchema = new Schema<IUser>(
       type: Boolean,
       default: false,
     },
+    // Issued items tracking
+    pillowIssued: {
+      type: Boolean,
+      default: false,
+    },
+    pillowCoverIssued: {
+      type: Boolean,
+      default: false,
+    },
     // Deposit return tracking
     depositReturn: {
       amount: {

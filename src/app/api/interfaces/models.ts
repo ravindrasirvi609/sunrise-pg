@@ -39,6 +39,8 @@ export interface IUser {
   createdAt?: Date;
   updatedAt?: Date;
   keyIssued?: boolean;
+  pillowIssued?: boolean;
+  pillowCoverIssued?: boolean;
   agreeToTerms?: boolean;
   depositReturn?: {
     amount: number;

@@ -35,8 +35,15 @@ export async function POST(
 
     // Get data from the request body
     const data = await request.json();
-    const { roomId, checkInDate, paymentDetails, depositAmount, keyIssued } =
-      data;
+    const {
+      roomId,
+      checkInDate,
+      paymentDetails,
+      depositAmount,
+      keyIssued,
+      pillowIssued,
+      pillowCoverIssued,
+    } = data;
 
     if (!roomId) {
       return NextResponse.json(
@@ -175,6 +182,8 @@ export async function POST(
       pendingRegistration.pgId = pgId;
       pendingRegistration.isActive = true;
       pendingRegistration.keyIssued = keyIssued || false;
+      pendingRegistration.pillowIssued = pillowIssued || false;
+      pendingRegistration.pillowCoverIssued = pillowCoverIssued || false;
 
       await pendingRegistration.save();
 

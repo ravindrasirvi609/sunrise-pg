@@ -77,6 +77,8 @@ export default function PendingRegistrationDetailsPage() {
     checkInDate: new Date().toISOString().split("T")[0],
     depositAmount: "",
     keyIssued: false,
+    pillowIssued: false,
+    pillowCoverIssued: false,
   });
 
   const [rooms, setRooms] = useState<Room[]>([]);
@@ -194,6 +196,8 @@ export default function PendingRegistrationDetailsPage() {
             ? Number(formData.depositAmount)
             : 0,
           keyIssued: formData.keyIssued,
+          pillowIssued: formData.pillowIssued,
+          pillowCoverIssued: formData.pillowCoverIssued,
         }
       );
 
@@ -1054,10 +1058,10 @@ export default function PendingRegistrationDetailsPage() {
                   )}
                 </div>
 
-                {/* Key Status */}
+                {/* Issued Items */}
                 <div className="md:col-span-2 mt-4">
                   <h4 className="text-md font-medium text-gray-900 dark:text-white mb-3 border-b border-gray-200 dark:border-gray-700 pb-1">
-                    Key Status
+                    Issued Items
                   </h4>
                   <div className="flex items-center mt-2">
                     <input
@@ -1080,9 +1084,51 @@ export default function PendingRegistrationDetailsPage() {
                       Room key issued to resident
                     </label>
                   </div>
+                  <div className="flex items-center mt-3">
+                    <input
+                      type="checkbox"
+                      id="pillowIssued"
+                      name="pillowIssued"
+                      checked={formData.pillowIssued}
+                      onChange={(e) =>
+                        setFormData((prev) => ({
+                          ...prev,
+                          pillowIssued: e.target.checked,
+                        }))
+                      }
+                      className="h-4 w-4 text-pink-600 focus:ring-pink-500 border-gray-300 rounded"
+                    />
+                    <label
+                      htmlFor="pillowIssued"
+                      className="ml-2 block text-sm text-gray-700 dark:text-gray-300"
+                    >
+                      Pillow issued to resident
+                    </label>
+                  </div>
+                  <div className="flex items-center mt-3">
+                    <input
+                      type="checkbox"
+                      id="pillowCoverIssued"
+                      name="pillowCoverIssued"
+                      checked={formData.pillowCoverIssued}
+                      onChange={(e) =>
+                        setFormData((prev) => ({
+                          ...prev,
+                          pillowCoverIssued: e.target.checked,
+                        }))
+                      }
+                      className="h-4 w-4 text-pink-600 focus:ring-pink-500 border-gray-300 rounded"
+                    />
+                    <label
+                      htmlFor="pillowCoverIssued"
+                      className="ml-2 block text-sm text-gray-700 dark:text-gray-300"
+                    >
+                      Pillow cover issued to resident
+                    </label>
+                  </div>
                   <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">
-                    Check this box if you've provided the room key to the
-                    resident
+                    Check items that have been issued to the resident at
+                    check-in
                   </p>
                 </div>
               </div>
