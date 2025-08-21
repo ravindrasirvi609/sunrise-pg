@@ -1,3 +1,5 @@
+"use client";
+
 /**
  * Cloudinary utility functions for image uploads
  */
