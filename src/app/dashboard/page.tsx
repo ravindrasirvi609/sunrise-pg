@@ -906,24 +906,8 @@ export default function UserProfilePage() {
                       <FaStar />
                     </div>
                     <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-white/70 dark:bg-gray-800/50 text-gray-800 dark:text-gray-200 text-sm font-medium border border-purple-100 dark:border-purple-900/30 shadow-sm">
-                      {roomDetails.type
-                        ? `${roomDetails.type.charAt(0).toUpperCase() + roomDetails.type.slice(1)} Room`
-                        : "Room"}
                       {user?.bedNumber ? ` • Bed #${user.bedNumber}` : ""}
                     </div>
-                  </motion.div>
-
-                  <motion.div
-                    whileHover={{ x: 5 }}
-                    className="p-3 rounded-lg bg-white/70 dark:bg-gray-700/30 hover:bg-white/90 dark:hover:bg-gray-700/50 transition-all duration-200"
-                  >
-                    <h3 className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">
-                      Room Type
-                    </h3>
-                    <p className="text-gray-900 dark:text-white capitalize flex items-center">
-                      <FaDoorOpen className="mr-2 text-purple-500" />
-                      {roomDetails.type || "Not specified"}
-                    </p>
                   </motion.div>
 
                   <motion.div
