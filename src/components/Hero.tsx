@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import {
   ArrowRight,
   MapPin,
@@ -175,13 +176,16 @@ const Hero = () => {
                 whileTap={{ scale: 0.95 }}
                 className="group relative overflow-hidden bg-gradient-to-r from-orange-500 to-yellow-500 text-white px-8 py-4 rounded-2xl font-bold text-lg shadow-xl hover:shadow-2xl transition-all duration-300"
               >
-                <span className="relative z-10 flex items-center gap-3">
+                <Link
+                  href="/register"
+                  className="relative z-10 flex items-center gap-3"
+                >
                   Book Your Stay
                   <ArrowRight
                     size={20}
                     className="group-hover:translate-x-1 transition-transform"
                   />
-                </span>
+                </Link>
                 <div className="absolute inset-0 bg-gradient-to-r from-orange-600 to-yellow-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </motion.button>
             </motion.div>

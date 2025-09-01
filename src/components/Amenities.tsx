@@ -198,33 +198,6 @@ const Amenities = () => {
           </motion.p>
         </div>
 
-        {/* Category Filter */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="flex flex-wrap justify-center gap-4 mb-16"
-        >
-          {categories.map((category, index) => (
-            <motion.button
-              key={category}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ scale: 1.05, y: -2 }}
-              className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
-                category === "All"
-                  ? "bg-gradient-to-r from-orange-500 to-yellow-500 text-white shadow-xl"
-                  : "bg-white/90 dark:bg-gray-800/90 text-gray-700 dark:text-gray-300 hover:bg-orange-50 dark:hover:bg-orange-900/20 border border-orange-200/50"
-              }`}
-            >
-              {category}
-            </motion.button>
-          ))}
-        </motion.div>
-
         {/* Amenities Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {amenities.map((amenity, index) => (
