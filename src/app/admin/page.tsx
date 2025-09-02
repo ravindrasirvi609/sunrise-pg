@@ -35,6 +35,7 @@ import {
   FiClipboard,
   FiSettings,
   FiDollarSign,
+  FiLayers,
 } from "react-icons/fi";
 import {
   RiWechatLine,
@@ -59,6 +60,9 @@ interface DashboardStats {
   usersWithDues: number;
   occupancyRate: number;
   previousMonthRent?: number;
+  totalBeds: number;
+  occupiedBeds: number;
+  bedOccupancyRate: number;
 }
 
 interface StateDistribution {
@@ -135,6 +139,9 @@ export default function AdminDashboard() {
     usersWithDues: 0,
     occupancyRate: 0,
     previousMonthRent: 0,
+    totalBeds: 0,
+    occupiedBeds: 0,
+    bedOccupancyRate: 0,
   });
 
   const [stateDistribution, setStateDistribution] = useState<
@@ -304,6 +311,18 @@ export default function AdminDashboard() {
         0
       );
 
+      // Calculate bed occupancy statistics
+      const totalBeds = rooms.reduce(
+        (sum: number, room: Room) => sum + room.capacity,
+        0
+      );
+      const occupiedBeds = rooms.reduce(
+        (sum: number, room: Room) => sum + room.currentOccupancy,
+        0
+      );
+      const bedOccupancyRate =
+        totalBeds > 0 ? Math.round((occupiedBeds / totalBeds) * 100) : 0;
+
       setStats({
         totalUsers: totalUsers,
         totalRooms: rooms.length,
@@ -314,6 +333,9 @@ export default function AdminDashboard() {
         usersWithDues: usersWithDuesData.length,
         occupancyRate,
         previousMonthRent: previousRentCollected,
+        totalBeds,
+        occupiedBeds,
+        bedOccupancyRate,
       });
 
       // Generate revenue data for the last 6 months
@@ -571,16 +593,18 @@ export default function AdminDashboard() {
                 <h3 className="text-3xl font-bold text-gray-900 dark:text-white mt-1">
                   {stats.occupancyRate}%
                 </h3>
-                <div className="flex items-center mt-2">
-                  <span className="text-xs text-gray-500 dark:text-gray-400 mr-2">
-                    {stats.occupiedRooms}/{stats.totalRooms} rooms
-                  </span>
-                  <Link
-                    href="/admin/rooms"
-                    className="text-xs font-medium text-blue-600 dark:text-blue-400 hover:underline"
-                  >
-                    Manage
-                  </Link>
+                <div className="flex flex-col mt-2">
+                  <div className="flex items-center">
+                    <span className="text-xs text-gray-500 dark:text-gray-400 mr-2">
+                      {stats.occupiedRooms}/{stats.totalRooms} rooms occupied
+                    </span>
+                    <Link
+                      href="/admin/rooms"
+                      className="text-xs font-medium text-blue-600 dark:text-blue-400 hover:underline"
+                    >
+                      Manage
+                    </Link>
+                  </div>
                 </div>
               </div>
               <div className="bg-blue-100 dark:bg-blue-900/30 p-3 rounded-full">
@@ -591,6 +615,43 @@ export default function AdminDashboard() {
               <div
                 className="h-2 bg-blue-600 dark:bg-blue-500 rounded-full"
                 style={{ width: `${stats.occupancyRate}%` }}
+              ></div>
+            </div>
+          </div>
+
+          {/* Bed Occupancy Card */}
+          <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 border border-gray-100 dark:border-gray-700 hover:shadow-lg transition-all">
+            <div className="flex justify-between items-start">
+              <div>
+                <p className="text-sm font-medium text-gray-500 dark:text-gray-400">
+                  Bed Occupancy
+                </p>
+                <h3 className="text-3xl font-bold text-gray-900 dark:text-white mt-1">
+                  {stats.bedOccupancyRate}%
+                </h3>
+                <div className="flex items-center mt-2">
+                  <span className="text-xs text-gray-500 dark:text-gray-400 mr-2">
+                    {stats.occupiedBeds}/{stats.totalBeds} beds
+                  </span>
+                  <span className="text-xs text-green-600 dark:text-green-400 mr-2">
+                    ({stats.totalBeds - stats.occupiedBeds} available)
+                  </span>
+                  <Link
+                    href="/admin/rooms"
+                    className="text-xs font-medium text-purple-600 dark:text-purple-400 hover:underline"
+                  >
+                    View details
+                  </Link>
+                </div>
+              </div>
+              <div className="bg-purple-100 dark:bg-purple-900/30 p-3 rounded-full">
+                <FiLayers className="h-6 w-6 text-purple-600 dark:text-purple-400" />
+              </div>
+            </div>
+            <div className="mt-4 h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+              <div
+                className="h-2 bg-purple-600 dark:bg-purple-500 rounded-full"
+                style={{ width: `${stats.bedOccupancyRate}%` }}
               ></div>
             </div>
           </div>
@@ -702,7 +763,51 @@ export default function AdminDashboard() {
             </div>
           </div>
         </div>
+      </div>
 
+      {/* Quick Occupancy Summary */}
+      <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-800 rounded-xl p-6 mb-8 border border-gray-200 dark:border-gray-700">
+        <h2 className="text-lg font-semibold text-gray-800 dark:text-white mb-4 flex items-center">
+          <FiLayers className="h-5 w-5 text-blue-600 mr-2" />
+          Occupancy Overview
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="bg-white dark:bg-gray-900 rounded-lg p-4 border border-gray-200 dark:border-gray-600">
+            <h3 className="text-sm font-medium text-gray-600 dark:text-gray-400 mb-2">
+              Room Occupancy
+            </h3>
+            <div className="flex items-center justify-between">
+              <div>
+                <span className="text-2xl font-bold text-blue-600 dark:text-blue-400">
+                  {stats.occupancyRate}%
+                </span>
+                <p className="text-sm text-gray-500 dark:text-gray-400">
+                  {stats.occupiedRooms} of {stats.totalRooms} rooms
+                </p>
+              </div>
+              <FiHome className="h-8 w-8 text-blue-600 dark:text-blue-400" />
+            </div>
+          </div>
+          <div className="bg-white dark:bg-gray-900 rounded-lg p-4 border border-gray-200 dark:border-gray-600">
+            <h3 className="text-sm font-medium text-gray-600 dark:text-gray-400 mb-2">
+              Bed Occupancy
+            </h3>
+            <div className="flex items-center justify-between">
+              <div>
+                <span className="text-2xl font-bold text-purple-600 dark:text-purple-400">
+                  {stats.bedOccupancyRate}%
+                </span>
+                <p className="text-sm text-gray-500 dark:text-gray-400">
+                  {stats.occupiedBeds} of {stats.totalBeds} beds
+                </p>
+              </div>
+              <FiLayers className="h-8 w-8 text-purple-600 dark:text-purple-400" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
         {/* Revenue Trend Chart */}
         <div className="col-span-1 bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 border border-gray-100 dark:border-gray-700">
           <div className="flex items-center justify-between mb-4">
