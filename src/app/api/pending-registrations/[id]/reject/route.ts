@@ -4,7 +4,10 @@ import { isAuthenticated, isAdmin } from "@/app/lib/auth";
 import { sendRejectionEmail } from "@/app/lib/email";
 import { User } from "@/app/api/models";
 
-export async function POST(request: NextRequest, props: { params: Promise<{ id: string }> }) {
+export async function POST(
+  request: NextRequest,
+  props: { params: Promise<{ id: string }> }
+) {
   const params = await props.params;
   try {
     // Check if user is authenticated and is an admin
@@ -27,9 +30,22 @@ export async function POST(request: NextRequest, props: { params: Promise<{ id: 
       );
     }
 
-    // Get request body for rejection reason
-    const requestData = await request.json();
-    const { reason } = requestData;
+    // Get request body for rejection reason (handle empty body safely)
+    let reason: string | undefined = undefined;
+    try {
+      const contentType = request.headers.get("content-type") || "";
+      if (contentType.includes("application/json")) {
+        // request.json() throws if body is empty; guard by reading text first
+        const text = await request.text();
+        if (text) {
+          const data = JSON.parse(text);
+          reason = data?.reason;
+        }
+      }
+    } catch (parseErr) {
+      // Ignore parse errors and proceed without a reason
+      reason = undefined;
+    }
 
     await connectToDatabase();
 
